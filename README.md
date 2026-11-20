@@ -20,6 +20,17 @@ Nous fournissons les règles de comparaison et l'encodage des entrées. Les deux
 
 Le test de la pièce en T utilise un masque de 25 × 25 et des rotations par quarts de tour. Les essais boulon–écrou extraient les silhouettes et les axes depuis les pixels, puis comparent les positions relatives. Ces résultats concernent des images générées, vues de dessus, avec des pièces séparées et un fond contrasté.
 
+## Au-delà des quarts de tour
+
+| Banc | Quarts de tour | Angles intermédiaires |
+| --- | --- | --- |
+| Dans la sphère · trois scènes obliques sur une grille de 25 × 25 | 0/3 | **3/3** avec un pas de 15° |
+| Comparaison géométrique · 18 scènes obliques sur des silhouettes séparées | 0/18 | **18/18** avec un pas de 2° |
+
+Dans la sphère, le même signal C revient au comparateur après **8 597 pas**. La jonction examine 24 orientations au lieu de quatre. Les deux variantes retrouvent la pièce à angle droit et rejettent la scène avec le leurre seul. Le contrôle retire C à l'entrée du comparateur tout en conservant le signal dans le bilan d'énergie. Il ne produit aucune reconnaissance. [Mesures dans la sphère](outputs/sphere-motif-angle-oblique-mesures.json)
+
+Le banc géométrique s'exécute hors de la sphère. Il vérifie l'effet de la résolution angulaire sur 50 scènes synthétiques appariées, dont 24 sans cible. Avec un seuil de recouvrement fixé à 0,86, les 24 sont rejetées. L'erreur angulaire moyenne sur les 18 scènes obliques reconnues est de 1,06°. La marge entre la cible la plus difficile et le meilleur leurre est d'environ 0,01 au score de recouvrement. [Figure du banc](outputs/sphere-banc-angles-figure.svg) · [Mesures](outputs/sphere-banc-angles-mesures.json)
+
 ## Rejouer les expériences
 
 Avec Node.js 24 et Bash, depuis la racine du dépôt :
@@ -28,7 +39,7 @@ Avec Node.js 24 et Bash, depuis la racine du dépôt :
 bash scripts/rejouer.sh
 ```
 
-Le script recalcule les 13 rapports dans un dossier temporaire et les compare octet pour octet aux mesures versionnées. Les simulations utilisent uniquement les modules intégrés à Node.js. Les masques, les images d'entrée et les paramètres sont versionnés. Les scripts de rendu des figures utilisent Python et sont facultatifs pour rejouer les mesures.
+Le script recalcule les 15 rapports dans un dossier temporaire et les compare octet pour octet aux mesures versionnées. Les simulations utilisent uniquement les modules intégrés à Node.js. Les masques, les images d'entrée et les paramètres sont versionnés. Les scripts de rendu des figures utilisent Python et sont facultatifs pour rejouer les mesures.
 
 - [Sources et paramètres](work/)
 - [Images et mesures](outputs/)

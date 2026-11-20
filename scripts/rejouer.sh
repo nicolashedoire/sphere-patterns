@@ -45,3 +45,9 @@ for mode in multiples diagonaux; do
   replay sphere-assemblage-photo-run "$name-mesures.json" \
     "$name-masques.json" "$name-mesures.json" "$name-prompt.txt" multiple
 done
+
+replay sphere-motif-angle-oblique-run sphere-motif-angle-oblique-mesures.json
+rm -f -- outputs/sphere-banc-angles-figure.svg
+replay sphere-banc-angles-run sphere-banc-angles-mesures.json
+cmp outputs/sphere-banc-angles-figure.svg "$repo/outputs/sphere-banc-angles-figure.svg"
+printf '%s\n' 'Figure du banc des angles identique.'
