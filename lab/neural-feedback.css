@@ -1,0 +1,57 @@
+.neural-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  gap: .75rem 1rem;
+  margin-bottom: 1rem;
+}
+.neural-controls label:not(.photo-check) {
+  display: grid;
+  gap: .3rem;
+  max-width: min(100%, 28rem);
+  font-size: .82rem;
+}
+.neural-controls select { min-width: 0; }
+.neural-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+.neural-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: .85rem 1rem;
+  gap: .35rem .65rem;
+}
+.neural-note { margin: 0; padding: .7rem 1rem; line-height: 1.5; }
+.neural-legend { padding: .7rem 1rem; border-top: 1px solid var(--line); }
+.neural-crop { --mark: var(--signal); --shade: #67e8f921; }
+.neural-crop rect { stroke-dasharray: 4 2; }
+.neural-crops { display: grid; grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr)); gap: .65rem; padding: .7rem 1rem .9rem; }
+.neural-crops[hidden] { display: none; }
+.neural-crops figure { width: min(100%, 8rem); }
+.neural-crops canvas { width: 100%; height: auto; display: block; border-radius: .4rem; background: #0a0f1e; }
+.neural-crops figcaption { font-size: .72rem; }
+.neural-steps { display: flex; flex-wrap: wrap; gap: .4rem; padding: 0 1rem .35rem; }
+.neural-steps button { min-height: 2.1rem; padding: .3rem .55rem; font-size: .78rem; }
+.neural-steps button[aria-pressed="true"] { color: var(--signal); border-color: #55b8ce; background: #203149; }
+.neural-table { overflow-x: auto; padding-inline: 1rem; }
+.neural-table table { width: 100%; border-collapse: collapse; text-align: left; font-size: .84rem; font-variant-numeric: tabular-nums; }
+.neural-table :is(th, td) { border-bottom: 1px solid var(--line); padding: .55rem .6rem; white-space: nowrap; }
+.neural-table thead th { color: var(--muted); }
+.neural-table tbody tr[data-first="true"] { background: #203149; }
+.neural-readout { padding: .9rem 1rem; border-top: 1px solid var(--line); }
+.neural-readout .metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.neural-results { padding: 1rem; margin-top: 1rem; }
+.neural-results .neural-table { padding-inline: 0; }
+.neural-results h3 { font-size: .9rem; margin: 1rem 0 .3rem; }
+.neural-trace-stage { height: clamp(15rem, 38vw, 27rem); margin: .8rem 0; border-radius: .6rem; }
+#neural-sphere { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
+#neural-sphere:active { cursor: grabbing; }
+#neural-tick { flex: 1 1 9rem; }
+#neural-clock { min-width: 4.5rem; font-variant-numeric: tabular-nums; color: var(--muted); font-size: .78rem; }
+.neural-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+@media (max-width: 780px) { .neural-layout { grid-template-columns: minmax(0, 1fr); } }

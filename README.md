@@ -73,6 +73,10 @@ The complete photograph enters the sphere as 15,552 luminance amplitudes. Two is
 
 Three groups of local details each propose a position, rotation and scale. Their pulses add when they support the same pose. Direct summation, the sphere with a return loop and the feed-forward path give identical votes in all **86 scenes**. With the loop connected, the cutoff accepts **7 of 16** targets in the additional synthetic panel with no false alarms. Severing the bore signal removes all seven accepted matches. On real T-LESS photos the method finds **0 of 29** targets. [Replay the pulses in 3D](https://nicolashedoire.github.io/sphere-patterns/pose-consensus.html) · [Protocol and results](RESEARCH.md#pose-agreement-from-local-details)
 
+### Neural features and same-frame feedback
+
+On 30 T-LESS replay photos, frozen DINOv2 features put **8 of 29** targets in the top five. RootSIFT and the matched dense-gradient control put none there. With five native 48 × 48 crops in either arm, fixed crops put 5 targets first and targeted crops put **6** first. Both accept one target at their development cutoffs. On that replay, fixed crops yield three false alarms and targeted crops yield one. The direct and wave feedback paths agree in all **86 scenes**. [Replay the crop requests and returns](https://nicolashedoire.github.io/sphere-patterns/neural-feedback.html) · [Protocol and results](RESEARCH.md#neural-features-and-same-frame-feedback)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.
@@ -97,3 +101,4 @@ python3 -m http.server 8000 --directory lab
 - [Held-out depth-component replay script](scripts/replay-components.sh)
 - [Full-frame wave replay script](scripts/replay-full-wave.sh)
 - [Local pose agreement replay script](scripts/replay-pose-consensus.sh)
+- [Neural feedback replay script](scripts/replay-neural-feedback.sh)

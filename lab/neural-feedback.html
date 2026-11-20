@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Replay fixed and hypothesis-directed image rereads and compare their measured pose decisions.">
+  <title>Neural feedback · Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="real-photos.css">
+  <link rel="stylesheet" href="neural-feedback.css">
+  <script src="neural-feedback.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <nav aria-label="Lab navigation" class="photo-links">
+      <a href="index.html">Wave simulator</a>
+      <a href="pose-consensus.html">Pose agreement</a>
+      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/RESEARCH.md">Research notes ↗</a>
+    </nav>
+  </header>
+  <main class="photo-page neural-page">
+    <h1>Can a second look resolve a pose?</h1>
+    <p class="photo-intro">Compare where each method rereads the same photo and how the new evidence changes the pose ranking.</p>
+    <p id="neural-status" class="photo-muted" role="status">Loading experiment measurements…</p>
+    <div id="neural-experiment" hidden>
+      <div class="neural-controls">
+        <label for="neural-scene">Scene
+          <select id="neural-scene"></select>
+        </label>
+        <label for="neural-arm">Reread method
+          <select id="neural-arm"></select>
+        </label>
+        <label class="photo-check"><input id="neural-show-truth" type="checkbox" checked> Show annotations</label>
+      </div>
+      <div class="neural-layout">
+        <section class="panel" aria-labelledby="neural-scene-heading">
+          <div class="neural-header">
+            <h2 id="neural-scene-heading">Input image</h2>
+            <span id="neural-scene-meta" class="photo-muted"></span>
+          </div>
+          <div id="neural-stage" class="photo-stage">
+            <img id="neural-photo" alt="">
+            <svg id="neural-overlay" class="photo-boxes" aria-hidden="true"></svg>
+          </div>
+          <ul class="photo-legend neural-legend" aria-label="Image overlays">
+            <li class="photo-mark annotation">Target annotation</li>
+            <li class="photo-mark">Pose candidate</li>
+            <li class="photo-mark neural-crop">Reread crop</li>
+          </ul>
+          <div id="neural-crops" class="neural-crops" aria-label="Reread crop previews" hidden></div>
+          <p id="neural-image-status" class="photo-muted neural-note" hidden></p>
+        </section>
+        <section class="panel neural-flow" aria-labelledby="neural-replay-heading">
+          <div class="neural-header">
+            <h2 id="neural-replay-heading">Decision replay</h2>
+            <span id="neural-budget" class="photo-muted"></span>
+          </div>
+          <div id="neural-steps" class="neural-steps" role="group" aria-label="Replay stage"></div>
+          <p id="neural-stage-note" class="neural-note" aria-live="polite"></p>
+          <div class="neural-table">
+            <table>
+              <caption class="neural-hidden">Candidate ranks and measured scores</caption>
+              <thead><tr><th scope="col">Candidate</th><th scope="col">First pass</th><th scope="col">After reread</th></tr></thead>
+              <tbody id="neural-ranking"></tbody>
+            </table>
+          </div>
+          <p id="neural-verdict" class="photo-muted neural-note"></p>
+          <section id="neural-readout-section" class="neural-readout" aria-labelledby="neural-readout-heading" hidden>
+            <h2 id="neural-readout-heading">Direct and wave readouts</h2>
+            <dl id="neural-readout" class="metrics"></dl>
+          </section>
+        </section>
+      </div>
+      <section id="neural-trace" class="panel neural-results" aria-labelledby="neural-trace-heading" hidden>
+        <div class="readings-header">
+          <h2 id="neural-trace-heading">Wave replay</h2>
+          <ul class="legend" aria-label="Signal types">
+            <li class="positive">Request</li>
+            <li class="negative">New evidence</li>
+            <li class="probe">Readout</li>
+          </ul>
+        </div>
+        <div class="stage neural-trace-stage">
+          <canvas id="neural-sphere" tabindex="0" aria-label="3D sphere with recorded pulses. Drag or use arrow keys to rotate."></canvas>
+        </div>
+        <div class="transport">
+          <button id="neural-play" class="primary-button" type="button">Play</button>
+          <input id="neural-tick" type="range" min="0" value="0" aria-label="Simulation tick">
+          <output id="neural-clock" for="neural-tick"></output>
+          <label class="speed-label" for="neural-speed">Speed
+            <select id="neural-speed">
+              <option value="0.25">0.25×</option>
+              <option value="0.5">0.5×</option>
+              <option value="1" selected>1×</option>
+              <option value="2">2×</option>
+            </select>
+          </label>
+        </div>
+        <p id="neural-trace-caption" class="fine-print"></p>
+      </section>
+      <section id="neural-results" class="panel neural-results" aria-labelledby="neural-results-heading" hidden>
+        <div class="readings-header">
+          <h2 id="neural-results-heading">Measured results</h2>
+          <span id="neural-encoder" class="photo-muted"></span>
+        </div>
+        <p id="neural-protocol" class="photo-muted" hidden></p>
+        <div id="neural-summaries"></div>
+        <p id="neural-parity" class="fine-print" hidden></p>
+      </section>
+      <p id="neural-credit" class="photo-credit" hidden>Real photos by Tomáš Hodaň et al. from <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).</p>
+    </div>
+  </main>
+</body>
+</html>

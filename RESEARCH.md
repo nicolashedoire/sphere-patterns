@@ -196,3 +196,33 @@ bash scripts/replay-pose-consensus.sh "$panel" "$full_wave/reference-photos" "$r
 cmp "$run/measurements.json" outputs/sphere-pose-consensus-measurements.json
 bash scripts/replay-pose-consensus.sh "$panel" "$full_wave/reference-photos" "$dense_run" --dense-real
 ```
+
+## Neural features and same-frame feedback
+
+Frozen DINOv2 ViT-S/14 encodes uniform overlapping tiles of each full photo. The scene feature grid uses a nine-pixel stride on T-LESS and a 14-pixel stride on the synthetic plate. For each rotation, C combines normalized features from two aligned isolated training views. The same geometric search shifts the response maps by the predicted locations of reference details, checks 12 in-plane angles and the recorded scales, and suppresses overlapping proposals. The neural and dense gradient encoders use the same search, views, tile positions and evaluation limits. The pinned DINOv3 checkpoint requires gated access, so this trial uses the publicly available DINOv2 checkpoint. The full-frame search reads only RGB, and scene annotations enter only during evaluation. [DINOv2 checkpoint](https://huggingface.co/facebook/dinov2-small/tree/ed25f3a31f01632728cabb09d1542f84ab7b0056)
+
+Each of the five leading candidates gets one native 48 × 48 scene crop. The fixed policy centers the crop on the candidate. The targeted policy chooses one of three reference sites using their projected separation under competing poses and their displacement from the center. It selects the addresses before the local verifier runs. Both policies expose 11,520 additional native pixels per scene to the verifier, counting pixels again when queries overlap. The neural verifier processes each crop at 84 × 84 and compares it to the matching crop of the posed reference. Agreement and disagreement generate signed evidence weighted by a texture and reference-coverage proxy. The score increases by 0.16 times that evidence. The previous full-frame encoding has already processed a coarse grid covering the scene. The charged budget measures extra crop access independently of full-frame encoding cost.
+
+For the wave arm, the chosen address travels as a word of discrete amplitude samples through the reverse route in the 1,000-junction sphere topology. The reader receives its crop coordinates from the decoded word. The signed response returns on the corresponding forward route. The junction updates the candidate score and the far probe reads it. The sparse simulator preserves amplitudes on dedicated delay lines and rounds scores and evidence to 10⁻⁴. The direct and wave arms match requests, local evidence and scores in all 86 scenes. Cutting the request route before the decoder issues zero crop reads across the same 86 scenes. The cut keeps the coarse result. The tight parity control measures the effect of routing with an otherwise identical feedback policy. [Interactive replay](https://nicolashedoire.github.io/sphere-patterns/neural-feedback.html)
+
+The two real panels use different physical setups from one another, with the same 24 development photos and 30 evaluation photos as the previous experiment. Both panels have appeared in earlier project trials. The 29 eligible evaluation instances have at least 20% visibility. Matches use visible-box IoU of at least 0.50 and one-to-one assignment. Each method is calibrated on development to maximize matches under the same budget of two false boxes and one target-absent photo with an alarm. The synthetic development budget is zero false alarms. The five-proposal rankings are reported separately from accepted detections.
+
+| T-LESS replay arm | Targets ranked first | Targets in top five | Accepted targets | False alarms at cutoff |
+| --- | ---: | ---: | ---: | ---: |
+| Previous RootSIFT | — | 0 | 0 | 0 |
+| Dense gradients with the same search | 0 | 0 | 0 | 0 |
+| Frozen DINOv2 proposals | 4 | 8 | 1 | 4 |
+| Fixed crops | 5 | 8 | 1 | 3 |
+| Targeted crops, direct or via waves | 6 | 8 | 1 | 1 |
+| Request route cut | 4 | 8 | 1 | 4 |
+
+The DINOv2 top five also contain 142 unmatched boxes before thresholding. In the additional 24-scene synthetic panel, targeted crops place 12 of 16 targets first, versus nine with fixed crops and eight with the first pass alone. The targeted arm abstains at its synthetic cutoff because its calibration panel supplies no safe nonzero cutoff. The reread only reranks the original five hypotheses. On the real scene `20-000407`, it moves a correctly localized object from third to first while leaving its score below the cutoff. This experiment supports neural proposals and tests feedback mechanics. The gain in accepted real detections over the gradient and old SIFT controls is one instance. [Measurements and scene records](outputs/sphere-neural-feedback-measurements.json)
+
+Reproduce with Node.js 24 and Python 3.12. The measured runtime used PyTorch 2.12.0, Transformers 4.57.6, NumPy 2.5.5, OpenCV 5.1.0 and Apple MPS. Set `SPHERE_NEURAL_DEVICE=cpu` to use a CPU, allowing for backend-level numerical differences. The script checks the SHA-256 of the official Safetensors checkpoint. The weights are downloaded separately from the public model repository. The inputs are the same camera panel and isolated PNGs as in the [pose agreement trial](#pose-agreement-from-local-details). T-LESS photo previews are resized JPEGs credited to Tomáš Hodaň and colleagues under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). [Dataset](https://cmp.felk.cvut.cz/t-less/)
+
+```sh
+hf download facebook/dinov2-small config.json model.safetensors \
+  --revision ed25f3a31f01632728cabb09d1542f84ab7b0056 --local-dir "$weights"
+bash scripts/replay-neural-feedback.sh "$panel" "$full_wave/reference-photos" "$weights" "$run"
+cmp "$run/measurements.json" outputs/sphere-neural-feedback-measurements.json
+```
