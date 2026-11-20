@@ -1,46 +1,67 @@
-# Sphère Motifs
+# Sphere Patterns
 
-Un simulateur de propagation en 3D qui extrait une référence depuis deux exemples et la réutilise pour retrouver une forme dans une nouvelle scène.
+A 3D wave simulator that extracts a reference from two examples and uses it to find a shape in a new scene.
 
-![Deux vues de la pièce forment un motif commun. Le motif retrouve la pièce retournée parmi un engrenage, une équerre, une rondelle et un boulon.](outputs/sphere-piece-localisee.png)
+**[Open the interactive 3D lab](https://nicolashedoire.github.io/sphere-patterns/)**
 
-## Ce que fait la sphère
+![Two views of a T-shaped part yield a shared template. The template locates the rotated part among a gear, an angle bracket, a washer and a bolt.](outputs/sphere-located-part.png)
 
-Deux motifs entrent dans le réseau sous forme d'impulsions. Une jonction compare leurs alignements et émet un signal **C** qui encode ce qu'ils ont en commun. C circule dans la sphère. À son retour, la jonction compare cette référence à une nouvelle scène. Les sondes mesurent ce qui a circulé et où la correspondance apparaît.
+## Run a simulation in your browser
 
-Nous fournissons les règles de comparaison et l'encodage des entrées. Les deux exemples déterminent la référence. Les essais de coupure permettent de vérifier si la reconnaissance dépend effectivement du retour de C.
+Choose an L or T, set its angle and position, then run the simulation. Rotate or zoom the sphere and scrub through the launch, return and probe readings. Run the same scene with the reference return disconnected to see which signal the match depends on.
 
-## Résultats reproduits
+The lab runs the network and alignment code in a browser worker. The playback shows samples taken from the simulated links. The browser inputs are synthetic silhouettes.
 
-| Essai | Résultat observé | Mesures |
+## The experiment
+
+Two patterns enter the network as pulses. A junction compares their alignments and emits a signal **C** encoding the shared shape. C circulates through the sphere and returns to the comparator. The comparator then uses it to locate the shape in a new scene.
+
+The comparator and input encoding are fixed. The examples supply the reference. Disconnecting the returning reference tests whether the detected shape depends on C.
+
+## Results
+
+| Experiment | Observation | Data |
 | --- | --- | --- |
-| Un L et un T dans la même scène | Deux références formées à partir d'exemples, puis deux formes retrouvées après déplacement et rotation. Le leurre obtient 4 cases sur 5. | [L et T](outputs/sphere-deux-references-mesures.json) |
-| Pièce mécanique en T | Sur une troisième image synthétique, la pièce retournée parmi d'autres objets obtient 41 cases sur les 42 du motif. Le second candidat en obtient 37. | [Pièce en T](outputs/sphere-mecanique-mesures.json) |
-| Boulons et écrous | Trois appariements retrouvés parmi 18 dans une image synthétique. Les écrous leurres sont presque à la même distance des boulons. Couper le retour de C supprime les trois appariements. | [Boulons en diagonale](outputs/sphere-assemblages-diagonaux-mesures.json) |
+| L and T in one scene | Both templates are extracted from examples and recovered after translation and rotation. A lookalike matches four out of five cells. | [Two shapes](outputs/sphere-two-references-measurements.json) |
+| T-shaped mechanical part | In a third synthetic image, the rotated part matches 41 of 42 template cells. The next candidate matches 37. | [Part recognition](outputs/sphere-mechanical-part-measurements.json) |
+| Bolts and nuts | Three correct pairs among 18 candidates in one synthetic image. The distractor nuts sit at nearly the same distance. Cutting C removes all three matches. | [Diagonal assemblies](outputs/sphere-diagonal-assemblies-measurements.json) |
 
-Le test de la pièce en T utilise un masque de 25 × 25 et des rotations par quarts de tour. Les essais boulon–écrou extraient les silhouettes et les axes depuis les pixels, puis comparent les positions relatives. Ces résultats concernent des images générées, vues de dessus, avec des pièces séparées et un fond contrasté.
+The mechanical-part benchmark uses 25 × 25 masks and quarter turns. The bolt-and-nut benchmark extracts silhouettes and axes from the pixels and compares relative positions. Both use synthetic overhead images of separated parts on a contrasting background.
 
-## Au-delà des quarts de tour
+### Intermediate rotations
 
-| Banc | Quarts de tour | Angles intermédiaires |
+| Benchmark | Quarter turns | Intermediate angles |
 | --- | --- | --- |
-| Dans la sphère · trois scènes obliques sur une grille de 25 × 25 | 0/3 | **3/3** avec un pas de 15° |
-| Comparaison géométrique · 18 scènes obliques sur des silhouettes séparées | 0/18 | **18/18** avec un pas de 2° |
+| Wave network, three oblique scenes on a 25 × 25 grid | 0/3 | **3/3** at 15° intervals |
+| Geometry benchmark, 18 oblique scenes with separated silhouettes | 0/18 | **18/18** at 2° intervals |
 
-Dans la sphère, le même signal C revient au comparateur après **8 597 pas**. La jonction examine 24 orientations au lieu de quatre. Les deux variantes retrouvent la pièce à angle droit et rejettent la scène avec le leurre seul. Le contrôle retire C à l'entrée du comparateur tout en conservant le signal dans le bilan d'énergie. Il ne produit aucune reconnaissance. [Mesures dans la sphère](outputs/sphere-motif-angle-oblique-mesures.json)
+The wave network receives the same reference after **8,597 simulation steps**. Both angle settings recover the right-angle control and reject the distractor-only scene. Removing C from the comparator input eliminates recognition while keeping the physical pulse in the energy ledger. [Wave-network measurements](outputs/sphere-pattern-oblique-angle-measurements.json)
 
-Le banc géométrique s'exécute hors de la sphère. Il vérifie l'effet de la résolution angulaire sur 50 scènes synthétiques appariées, dont 24 sans cible. Avec un seuil de recouvrement fixé à 0,86, les 24 sont rejetées. L'erreur angulaire moyenne sur les 18 scènes obliques reconnues est de 1,06°. La marge entre la cible la plus difficile et le meilleur leurre est d'environ 0,01 au score de recouvrement. [Figure du banc](outputs/sphere-banc-angles-figure.svg) · [Mesures](outputs/sphere-banc-angles-mesures.json)
+The geometry benchmark runs outside the sphere and isolates the effect of angular resolution. It rejects all 24 negative scenes at a fixed overlap threshold of 0.86. Mean orientation error on the 18 detected oblique shapes is 1.06°. The gap between the hardest positive and the closest lookalike is about 0.01 in overlap score. [Benchmark figure](outputs/sphere-angle-benchmark-figure.svg) · [Benchmark measurements](outputs/sphere-angle-benchmark-measurements.json)
 
-## Rejouer les expériences
+### Partial occlusion
 
-Avec Node.js 24 et Bash, depuis la racine du dépôt :
+The same returning reference is compared against three partially covered T brackets. The ordinary overlap score misses all three. Scoring only visible cells recovers **two of three**. The third scene has two equally good poses, so the comparator abstains. It also abstains on the heavily covered target and both negative scenes. Cutting the return of C removes the measured match in the 58° scene.
+
+The comparator receives a visibility mask supplied by the benchmark and requires at least 60% of the reference to remain visible. This tests recognition under known occlusion on fixed-scale synthetic silhouettes. [Occlusion figure](outputs/sphere-occlusion-figure.svg) · [Occlusion measurements](outputs/sphere-occlusion-measurements.json)
+
+## Reproduce the results
+
+Run this command from the repository root with Node.js 24 and Bash.
 
 ```sh
-bash scripts/rejouer.sh
+bash scripts/replay.sh
 ```
 
-Le script recalcule les 15 rapports dans un dossier temporaire et les compare octet pour octet aux mesures versionnées. Les simulations utilisent uniquement les modules intégrés à Node.js. Les masques, les images d'entrée et les paramètres sont versionnés. Les scripts de rendu des figures utilisent Python et sont facultatifs pour rejouer les mesures.
+The script runs the network controls, regenerates the measurements in a temporary directory and checks them byte for byte against the tracked outputs. The experiments use Node.js built-ins. Python is used for the optional mask and figure scripts.
 
-- [Sources et paramètres](work/)
-- [Images et mesures](outputs/)
-- [Script de rejeu](scripts/rejouer.sh)
+To start the browser lab locally, build its engine and serve the lab directory. Open [localhost:8000](http://localhost:8000/) after the server starts.
+
+```sh
+node scripts/build-lab.cjs
+python3 -m http.server 8000 --directory lab
+```
+
+- [Simulation source, inputs and parameters](work/)
+- [Figures and measurements](outputs/)
+- [Replay script](scripts/replay.sh)

@@ -18,24 +18,24 @@ const DEFAULTS = Object.freeze({
 function validateOptions(options) {
   if (options === undefined) return {};
   if (options === null || typeof options !== 'object' || Array.isArray(options)) {
-    throw new TypeError('Les options doivent être un objet.');
+    throw new TypeError('Options must be an object.');
   }
   for (const key of Object.keys(options)) {
-    if (key !== 'angles' && key !== 'writing') throw new TypeError('Option inconnue : ' + key);
+    if (key !== 'angles' && key !== 'writing') throw new TypeError('Unknown option: ' + key);
   }
   if (options.writing !== undefined && typeof options.writing !== 'boolean') {
-    throw new TypeError('writing doit être un booléen.');
+    throw new TypeError('writing must be a Boolean.');
   }
   return options;
 }
 
 function ownedAngleMap(input, length) {
   if (input === undefined) return new Float64Array(length);
-  if (!(input instanceof Float64Array)) throw new TypeError('angles doit être un Float64Array.');
-  if (input.length !== length) throw new RangeError('La carte doit contenir un angle par liaison.');
+  if (!(input instanceof Float64Array)) throw new TypeError('angles must be a Float64Array.');
+  if (input.length !== length) throw new RangeError('The map must contain one angle per link.');
   for (const value of input) {
     if (!Number.isFinite(value) || value < -DEFAULTS.cap || value > DEFAULTS.cap) {
-      throw new RangeError('Chaque angle doit être fini et compris entre -0,10 et +0,10 radian.');
+      throw new RangeError('Each angle must be finite and between -0.10 and +0.10 radians.');
     }
   }
   return Float64Array.from(input);
@@ -53,7 +53,7 @@ class DeformableSimulation extends Rules.Simulation {
     this.midpoints = Object.freeze(this.network.edges.map((edge, edgeIndex) => {
       const ab = this.network.arcs[edge.ab], ba = this.network.arcs[edge.ba];
       if (!ab || !ba || ab.delay !== ba.delay || ab.reverse !== edge.ba || ba.reverse !== edge.ab) {
-        throw new RangeError('Les deux directions de chaque liaison doivent être appariées et de même délai.');
+        throw new RangeError('Both directions of each link must be paired and have the same delay.');
       }
       const binAB = Math.floor((ab.delay - 1) / 2);
       // Complementary logical bins have coincident bin-center positions,
@@ -67,7 +67,7 @@ class DeformableSimulation extends Rules.Simulation {
 
   get writing() { return this._writing; }
   set writing(value) {
-    if (typeof value !== 'boolean') throw new TypeError('writing doit être un booléen.');
+    if (typeof value !== 'boolean') throw new TypeError('writing must be a Boolean.');
     this._writing = value;
   }
 
@@ -91,7 +91,7 @@ class DeformableSimulation extends Rules.Simulation {
     // Match the base kernel's coercion, limits, default and invalid-count errors.
     count = count == null ? 1 : Math.floor(count);
     if (!Number.isFinite(count) || count < 0 || count > 1000000) {
-      throw new RangeError('Nombre de pas invalide.');
+      throw new RangeError('Invalid step count.');
     }
     if (count === 0) return this;
     if (!this.writing && this.angles.every(value => value === 0)) {

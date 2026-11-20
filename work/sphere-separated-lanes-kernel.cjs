@@ -18,10 +18,10 @@ class SeparatedLanesSimulation extends UnusualSimulation {
         const lane = edge < nodes.length ? 0 : 1;
         const direction = edges[edge].ab === port ? 0 : 1;
         const position = lane * DIRECTIONS + direction;
-        if (positions[position] !== -1) throw new Error('Circuit de jonction ambigu.');
+        if (positions[position] !== -1) throw new Error('Ambiguous junction circuit.');
         positions[position] = index;
       }
-      if (positions.includes(-1)) throw new Error('Circuit de jonction incomplet.');
+      if (positions.includes(-1)) throw new Error('Incomplete junction circuit.');
       return positions;
     });
     this.junctionEchoes = new Float64Array(JUNCTION_DELAY * DIRECTIONS);
@@ -68,12 +68,12 @@ class SeparatedLanesSimulation extends UnusualSimulation {
   step(count) {
     count = count == null ? 1 : Math.floor(count);
     if (!Number.isFinite(count) || count < 0 || count > 1000000) {
-      throw new RangeError('Nombre de pas invalide.');
+      throw new RangeError('Invalid step count.');
     }
     for (let tick = 0; tick < count; tick++) {
       this.nodeIndex = 0;
       super.step(1);
-      if (this.nodeIndex !== this.lanePorts.length) throw new Error('Le nombre de jonctions a changé.');
+      if (this.nodeIndex !== this.lanePorts.length) throw new Error('The number of junctions changed.');
       this.echoPhase = (this.echoPhase + 1) % JUNCTION_DELAY;
     }
     return this;

@@ -2,26 +2,26 @@
 (function (root) {
   'use strict';
   const base = root.SphereKernel || (typeof require === 'function' ? require('./sphere-kernel.js') : null);
-  if (!base) throw new Error('SphereKernel doit être chargé avant SphereRules.');
+  if (!base) throw new Error('Load SphereKernel before SphereRules.');
   const DEFAULTS = Object.freeze({ theta0: 0.43, energyScale: 0.012, pulseAmplitude: 0.5 });
   // Frozen before experiments. Strengths are shared by all nodes and all inputs.
   const RULES = Object.freeze([
-    { id: 'original', label: 'Référence initiale', family: 'bounded-energy', strength: 0.72 },
-    { id: 'linear', label: 'Contrôle linéaire', family: 'linear', strength: 0 },
-    { id: 'bounded-001', label: 'Énergie bornée 0,01', family: 'bounded-energy', strength: 0.01 },
-    { id: 'bounded-003', label: 'Énergie bornée 0,03', family: 'bounded-energy', strength: 0.03 },
-    { id: 'bounded-006', label: 'Énergie bornée 0,06', family: 'bounded-energy', strength: 0.06 },
-    { id: 'band-006', label: 'Bande d’énergie 0,06', family: 'band-energy', strength: 0.06 },
-    { id: 'band-015', label: 'Bande d’énergie 0,15', family: 'band-energy', strength: 0.15 },
-    { id: 'junction-003', label: 'Énergie de jonction 0,03', family: 'junction-energy', strength: 0.03 },
-    { id: 'junction-008', label: 'Énergie de jonction 0,08', family: 'junction-energy', strength: 0.08 },
-    { id: 'balanced-002', label: 'Collision équilibrée 0,02', family: 'balanced-collision', strength: 0.02 },
-    { id: 'balanced-006', label: 'Collision équilibrée 0,06', family: 'balanced-collision', strength: 0.06 }
+    { id: 'original', label: 'Baseline', family: 'bounded-energy', strength: 0.72 },
+    { id: 'linear', label: 'Linear control', family: 'linear', strength: 0 },
+    { id: 'bounded-001', label: 'Bounded energy 0.01', family: 'bounded-energy', strength: 0.01 },
+    { id: 'bounded-003', label: 'Bounded energy 0.03', family: 'bounded-energy', strength: 0.03 },
+    { id: 'bounded-006', label: 'Bounded energy 0.06', family: 'bounded-energy', strength: 0.06 },
+    { id: 'band-006', label: 'Energy band 0.06', family: 'band-energy', strength: 0.06 },
+    { id: 'band-015', label: 'Energy band 0.15', family: 'band-energy', strength: 0.15 },
+    { id: 'junction-003', label: 'Junction energy 0.03', family: 'junction-energy', strength: 0.03 },
+    { id: 'junction-008', label: 'Junction energy 0.08', family: 'junction-energy', strength: 0.08 },
+    { id: 'balanced-002', label: 'Balanced collision 0.02', family: 'balanced-collision', strength: 0.02 },
+    { id: 'balanced-006', label: 'Balanced collision 0.06', family: 'balanced-collision', strength: 0.06 }
   ].map(rule => Object.freeze(rule)));
   function getRule(value) {
     const id = value == null ? 'original' : typeof value === 'string' ? value : value.id;
     const rule = RULES.find(candidate => candidate.id === id);
-    if (!rule) throw new RangeError('Règle locale inconnue : ' + String(id));
+    if (!rule) throw new RangeError('Unknown local rule: ' + String(id));
     return rule;
   }
   function angleFor(rule, values, first, second) {

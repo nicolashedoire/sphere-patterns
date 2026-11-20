@@ -65,7 +65,7 @@ function createSetup() {
   const sourceDelays = sourceArcs.map(index => network.arcs[index].delay);
   const firstMixerTick = Math.max(...sourceDelays) + 1;
   const launch = sourceDelays.map(delay => firstMixerTick - delay);
-  const farBand = JSON.parse(fs.readFileSync(path.join(__dirname, 'sphere-sondes-lointaines.json')));
+  const farBand = JSON.parse(fs.readFileSync(path.join(__dirname, 'sphere-distant-probes.json')));
   const origin = network.nodes[mixer];
   const candidates = farBand.nodes.map(node => {
     const probes = tours.map(({ route }) => route.get(node));
@@ -175,7 +175,8 @@ function runFirstRoundTrip() {
   const outputs = path.resolve(__dirname, '../outputs');
   fs.mkdirSync(receiverDir);
   fs.mkdirSync(senderDir);
-  const originals = [Buffer.from('La sphère tourne.\n', 'utf8'), makeImage()];
+  // Preserve the original UTF-8 text payload to reproduce the same wave samples.
+  const originals = [Buffer.from('The sphere spins.\n', 'utf8'), makeImage()];
   const sourceNames = ['original.txt', 'original.png'];
   for (const [i, original] of originals.entries()) fs.writeFileSync(path.join(senderDir, sourceNames[i]), original);
   const streams = sourceNames.map(name => encode(fs.readFileSync(path.join(senderDir, name)), AMPLITUDE));
@@ -185,7 +186,7 @@ function runFirstRoundTrip() {
   const transmission = record(setup, streams, totalTicks);
   const capture = { amplitude: AMPLITUDE, firstTicks: calibration.firstTicks, matrix: calibration.matrix,
     traces: transmission.traces.map(trace => Array.from(trace)) };
-  const captureName = path.join(receiverDir, 'sondes.json');
+  const captureName = path.join(receiverDir, 'probes.json');
   fs.writeFileSync(captureName, JSON.stringify(capture) + '\n');
 
   // Separate process. The receiver is given only its two signed measurements,
@@ -212,12 +213,12 @@ function runFirstRoundTrip() {
   assert.ok(cancellingAtSum > 0 && cancellingAtDifference > 0);
 
   const digest = data => createHash('sha256').update(data).digest('hex');
-  const receivedNames = ['texte-reconstitue.txt', 'image-reconstituee.png'];
+  const receivedNames = ['recovered-text.txt', 'recovered-image.png'];
   const files = receivedNames.map((name, index) => {
     const original = fs.readFileSync(path.join(senderDir, sourceNames[index]));
     const received = fs.readFileSync(path.join(receiverDir, name));
     const byteForByte = received.equals(original);
-    assert.ok(byteForByte, `Le fichier ${name} a changé.`);
+    assert.ok(byteForByte, `The contents of ${name} changed.`);
     return { original: sourceNames[index], received: name, bytes: received.length,
       originalSHA256: digest(original), receivedSHA256: digest(received), byteForByte };
   });
@@ -225,7 +226,7 @@ function runFirstRoundTrip() {
     cancellingAtSum, cancellingAtDifference, maxCaptureResidual,
     initialWaveEnergy: 0, finalEnergy: transmission.stats.energy, measuredRelativeEnergyError: transmission.stats.relativeError };
   for (const name of receivedNames) fs.copyFileSync(path.join(receiverDir, name), path.join(outputs, `sphere-${name}`));
-  fs.writeFileSync(path.join(outputs, 'sphere-aller-retour-mesures.json'), JSON.stringify(detail, null, 2) + '\n');
+  fs.writeFileSync(path.join(outputs, 'sphere-roundtrip-measurements.json'), JSON.stringify(detail, null, 2) + '\n');
   console.log(JSON.stringify({ setup, calibration, files, totalTicks, bothTransmitting, cancellingAtSum,
     cancellingAtDifference, maxCaptureResidual, receiverLog, measuredRelativeEnergyError: transmission.stats.relativeError }, null, 2));
 }

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Run a waveform-based motif recognition experiment and inspect its propagation across a simulated 3D sphere.">
+  <meta name="theme-color" content="#0a0f1e">
+  <title>Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <a href="https://github.com/nicolashedoire/sphere-patterns">Source and documentation ↗</a>
+  </header>
+  <main>
+    <h1>Trace a pattern through the sphere</h1>
+    <div class="layout">
+      <section class="viewer panel" aria-label="3D simulation and playback">
+        <div class="stage">
+          <canvas id="sphere" tabindex="0" aria-label="3D sphere. Drag or use the arrow keys to rotate. Scroll to zoom."></canvas>
+          <div class="stage-label">
+            <div class="stage-title"><span class="status-light" aria-hidden="true"></span> Wave propagation</div>
+            <span id="network">1,000 nodes · 2,000 links</span>
+          </div>
+          <div id="run-status" class="run-status" role="status">Preparing simulation…</div>
+          <div class="stage-footer">
+            <ul class="legend" aria-label="Wave and probe legend">
+              <li class="positive">Positive amplitude</li>
+              <li class="negative">Negative amplitude</li>
+              <li class="probe">Probe</li>
+            </ul>
+            <span class="orbit-hint">Drag to orbit · Scroll to zoom</span>
+          </div>
+        </div>
+        <div class="playback">
+          <div class="phase-row">
+            <output id="phase" class="current-phase">Preparing simulation</output>
+            <output id="clock">Tick 0</output>
+          </div>
+          <input id="timeline" aria-label="Replay timeline" type="range" min="0" max="0" value="0" disabled>
+          <div class="transport">
+            <button id="play" class="primary-button" type="button" disabled>Play</button>
+            <button id="back" type="button" title="Previous sampled frame" disabled>Back</button>
+            <button id="next" type="button" title="Next sampled frame" disabled>Step</button>
+            <label class="speed-label">Speed
+              <select id="speed">
+                <option value="180">0.25×</option>
+                <option value="360">0.5×</option>
+                <option value="720" selected>1×</option>
+                <option value="1440">2×</option>
+                <option value="2880">4×</option>
+              </select>
+            </label>
+          </div>
+          <nav id="events" class="events" aria-label="Key simulation ticks"></nav>
+        </div>
+      </section>
+
+      <aside class="settings panel">
+        <form id="settings">
+          <h2>Experiment</h2>
+          <div class="form-row">
+            <label for="shape">Training motif</label>
+            <select id="shape" name="shape">
+              <option value="T">T bracket</option>
+              <option value="L">L bracket</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="search">Orientation search</label>
+            <select id="search" name="search">
+              <option value="dense">Every 15°</option>
+              <option value="quarters">Quarter-turns</option>
+            </select>
+          </div>
+          <fieldset>
+            <legend>Target position</legend>
+            <div class="range-row">
+              <label for="angle">Rotation</label>
+              <output for="angle" id="angle-value">58°</output>
+              <input id="angle" name="angle" type="range" min="0" max="359" value="58">
+            </div>
+            <div class="range-row">
+              <label for="x">Horizontal shift</label>
+              <output for="x" id="x-value">−3 cells</output>
+              <input id="x" name="x" type="range" min="-6" max="6" value="-3">
+            </div>
+            <div class="range-row">
+              <label for="y">Vertical shift</label>
+              <output for="y" id="y-value">−2 cells</output>
+              <input id="y" name="y" type="range" min="-6" max="6" value="-2">
+            </div>
+          </fieldset>
+          <label class="check"><input name="target" type="checkbox" checked> Include target in scene</label>
+          <label class="check"><input name="decoy" type="checkbox" checked> Include distractor</label>
+          <label class="check"><input name="cut" type="checkbox"> Disconnect returning reference</label>
+          <button id="run" class="primary-button run-button" type="submit">Run simulation</button>
+        </form>
+      </aside>
+
+      <section class="readings panel" aria-labelledby="readings-title">
+        <div class="readings-header">
+          <h2 id="readings-title">Probe readings</h2>
+          <span id="verdict">Waiting for a completed run</span>
+        </div>
+        <div class="masks">
+          <figure><canvas id="view-a"></canvas><figcaption>Training A</figcaption></figure>
+          <figure><canvas id="view-b"></canvas><figcaption>Training B</figcaption></figure>
+          <figure><canvas id="scene"></canvas><figcaption>Test scene</figcaption></figure>
+          <figure><canvas id="reference"></canvas><figcaption>Reference at probe</figcaption></figure>
+          <figure><canvas id="matched"></canvas><figcaption>Matching cells</figcaption></figure>
+        </div>
+        <dl class="metrics">
+          <div><dt>Reference loop</dt><dd id="loop">—</dd></div>
+          <div><dt>Reference overlap</dt><dd id="overlap">—</dd></div>
+          <div><dt>Estimated rotation</dt><dd id="detected-angle">—</dd></div>
+          <div><dt>Relative energy error</dt><dd id="energy">—</dd></div>
+        </dl>
+        <p class="fine-print">The browser runs the wave transport and alignment circuit. Replay frames sample the live link buffers every 12 ticks. The probe reports a match when at least 86% of the reference cells overlap and one alignment scores highest.</p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

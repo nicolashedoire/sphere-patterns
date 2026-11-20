@@ -75,4 +75,4 @@ assert.deepEqual(batched.junctionEchoes, individual.junctionEchoes);
 assert.deepEqual(batched.angles, individual.angles);
 assert.deepEqual(batched.getStats(), individual.getStats());
 assert.ok(batched.getStats().relativeError < 1e-12);
-console.log('Deux circuits vérifiés dans les deux sens, avec conservation de l’énergie et parité des pas groupés.');
+console.log('Both circuits passed bidirectional propagation, energy conservation, and batched-step equivalence checks.');

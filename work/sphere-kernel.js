@@ -41,14 +41,14 @@
       }
       if (tour.length === count && !forbidden.has(pairKey(tour[count - 1], tour[0]))) return tour;
     }
-    throw new Error('Impossible de construire les deux cycles spatiaux.');
+    throw new Error('Could not construct both spatial cycles.');
   }
 
   function createNetwork(options) {
     options = options || {};
     const nodeCount = options.nodeCount == null ? 1000 : options.nodeCount;
     if (!Number.isInteger(nodeCount) || nodeCount < 16 || nodeCount > 4000) {
-      throw new RangeError('nodeCount doit être un entier entre 16 et 4000.');
+      throw new RangeError('nodeCount must be an integer between 16 and 4,000.');
     }
     const seed = options.seed == null ? 260617 : options.seed >>> 0;
     const random = randomGenerator(seed);
@@ -101,7 +101,7 @@
       this.energyScale = options.energyScale == null ? 0.012 : options.energyScale;
       this.pulseAmplitude = options.pulseAmplitude == null ? 0.5 : options.pulseAmplitude;
       if (![this.theta0, this.alpha, this.energyScale, this.pulseAmplitude].every(Number.isFinite) || this.energyScale <= 0) {
-        throw new RangeError('Constantes de simulation invalides.');
+        throw new RangeError('Invalid simulation constants.');
       }
       const size = this.network.arcs.length;
       this.lastIncoming = new Float64Array(size);
@@ -124,12 +124,12 @@
 
     inject(pixels, label) {
       if (!pixels || !Number.isInteger(pixels.length) || pixels.length < 1 || pixels.length > 16384) {
-        throw new RangeError('L’image injectée doit contenir entre 1 et 16 384 luminances.');
+        throw new RangeError('The injected image must contain between 1 and 16,384 luminance values.');
       }
       const samples = new Float64Array(pixels.length * 2);
       for (let i = 0; i < pixels.length; i++) {
         const raw = Number(pixels[i]);
-        if (!Number.isFinite(raw)) throw new TypeError('Luminance non finie.');
+        if (!Number.isFinite(raw)) throw new TypeError('Non-finite luminance value.');
         const amplitude = Math.max(0, Math.min(1, raw)) * this.pulseAmplitude;
         // A positive and negative lobe, one tick each, for each raster-read pixel.
         samples[i * 2] = amplitude;
@@ -153,7 +153,7 @@
 
     step(count) {
       count = count == null ? 1 : Math.floor(count);
-      if (!Number.isFinite(count) || count < 0 || count > 1000000) throw new RangeError('Nombre de pas invalide.');
+      if (!Number.isFinite(count) || count < 0 || count > 1000000) throw new RangeError('Invalid step count.');
       const { arcs, nodePorts, sourcePort } = this.network;
       const incoming = this.lastIncoming, outgoing = this.lastOutgoing;
       const local = new Float64Array(4);

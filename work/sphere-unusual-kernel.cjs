@@ -9,11 +9,11 @@ const DEFAULTS = Object.freeze({ ...Deformable.DEFAULTS, ...HABIT });
 
 function ownedCalibration(input, length, name, minimum, maximum) {
   if (input === undefined) return new Float64Array(length);
-  if (!(input instanceof Float64Array)) throw new TypeError(name + ' doit être un Float64Array.');
-  if (input.length !== length) throw new RangeError(name + ' doit contenir une valeur par liaison.');
+  if (!(input instanceof Float64Array)) throw new TypeError(name + ' must be a Float64Array.');
+  if (input.length !== length) throw new RangeError(name + ' must contain one value per link.');
   for (const value of input) {
     if (!Number.isFinite(value) || value < minimum || value > maximum) {
-      throw new RangeError(name + ' contient une valeur non finie ou hors limites.');
+      throw new RangeError(name + ' contains a non-finite or out-of-range value.');
     }
   }
   return Float64Array.from(input);
@@ -23,11 +23,11 @@ class UnusualSimulation extends Deformable.Simulation {
   constructor(network, options) {
     const checked = options === undefined ? {} : options;
     if (checked === null || typeof checked !== 'object' || Array.isArray(checked)) {
-      throw new TypeError('Les options doivent être un objet.');
+      throw new TypeError('Options must be an object.');
     }
     for (const key of Object.keys(checked)) {
       if (!['writing', 'angles', 'meanCoherence', 'meanDeviation'].includes(key)) {
-        throw new TypeError('Option inconnue : ' + key);
+        throw new TypeError('Unknown option: ' + key);
       }
     }
     const resolved = network || Rules.createNetwork();
@@ -42,7 +42,7 @@ class UnusualSimulation extends Deformable.Simulation {
   step(count) {
     count = count == null ? 1 : Math.floor(count);
     if (!Number.isFinite(count) || count < 0 || count > 1000000) {
-      throw new RangeError('Nombre de pas invalide.');
+      throw new RangeError('Invalid step count.');
     }
     for (let tick = 0; tick < count; tick++) {
       // Bypass Deformable.step: perform the unchanged base transport exactly once,
