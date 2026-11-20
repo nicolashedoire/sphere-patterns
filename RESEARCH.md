@@ -117,3 +117,36 @@ cmp "$data/result/evaluation.json" outputs/sphere-tless-component-measurements.j
 ```
 
 Photos and CAD data are from the T-LESS authors under CC BY 4.0. Gallery photos were converted to JPEG. The figure also resizes photos and adds overlays. [T-LESS project and attribution](https://cmp.felk.cvut.cz/t-less/)
+
+## Active camera selection
+
+We tested three ideas on T-LESS RGB-D views. A virtual camera predicts which rays would distinguish two CAD poses. A targeted readout requests a subset of those pixels in the next real depth frame. A streaming decision combines the first score with new evidence when the second measurement arrives. Choosing a view for object recognition is an established active-perception problem. [Active object detection and pose estimation](https://erl.ucsd.edu/ref/Atanasov_ActiveObjectRecognition_TRO14.pdf)
+
+The panel contains 78 new photos, six poses in each of 13 T-LESS physical setups disjoint from the seven development setups. The camera poses were selected by calibration alone, starting at the most overhead view and spreading the remaining camera positions across the viewing hemisphere. Three starting views per setup produced three candidate regions each. The CAD catalogue has nine part IDs. Each pair of hypotheses uses the two strongest independently fitted part types at that location, with both poses estimated from the first depth image. The planner can read the alternative camera calibrations. It saves the camera choices and poses before measuring any second observation for that query.
+
+The active rule ranks cameras by projected depth and silhouette differences, accounting for foreground already measured in the first view. The fixed rule selects the angle closest to 45° relative to the first camera. The random rule uses one seeded choice per query. Each method gets one actual depth view. The sparse readout samples up to 128 projected differences. The dense control samples the visible projected footprint on the same actively selected camera. The decision rule and thresholds are shared across the view methods and were fixed before evaluating the panel. [Full per-query results](outputs/sphere-tless-active-vision-measurements.json)
+
+| Method | Correct | Wrong identity | Incorrect region | Abstained |
+| --- | ---: | ---: | ---: | ---: |
+| First view only | 4 | 7 | 35 | 71 |
+| Fixed second view, targeted probe | 6 | 11 | 59 | 41 |
+| Seeded random second view, targeted probe | 7 | 9 | 57 | 44 |
+| Actively selected second view, targeted probe | 5 | 13 | 57 | 42 |
+| Actively selected second view, dense probe | 6 | 11 | 50 | 50 |
+
+The evaluator matches the proposal from the first frame to a visible annotation with IoU ≥ 0.50 and visibility ≥ 0.20. A region below this matching threshold is scored as incorrect if the system commits to a part. Only 24 of the 117 proposals match eligible boxes, and only 12 include the true identity among their two hypotheses. These are per-proposal classification results. The active policy gains one correct identification over the first view and adds 28 errors. It falls short of both tested second-view controls in correct identifications. The real example in scene 07 resolves part 15 with any of the three selected camera policies. The lower example shows a spurious response on a fragment of a larger assembly. [See both real photo examples](https://nicolashedoire.github.io/sphere-patterns/active-vision.html)
+
+The targeted probe checks 12,650 depth pixels on the selected cameras. The dense probe checks 762,752. This measures requests to the depth array after decoding, and each method still loads a full depth frame and projects CAD models. The sparse readout gives one fewer correct result and nine additional errors on those same selected views.
+
+We injected the first score and the weighted second observation as separate streams in the existing 1,000-junction sphere. The far probe recovered the sum and reproduced the numerical verdict in all 117 cases, including 47 changes between initial and updated verdicts. A control omitting the second stream recovered the original score each time. The largest absolute margin error was 5.56 × 10⁻¹⁷. This test covers transport and summation. Candidate generation, pose fitting and angle choice are geometric computations outside the sphere. [Wave measurements](outputs/sphere-tless-active-vision-wave.json)
+
+### Reproduce the active-view trial
+
+Use the pinned T-LESS RGB-D archive, the CAD archive described in the [CAD notes](work/tless-cad/README.md), Python with NumPy, SciPy and Pillow 12, a C compiler, Node.js 24, Bash and curl. `TRAIN_JSON` points to the isolated target references prepared in the [preceding trial](#reproduce-the-confirmation). The recorded camera IDs restore the exact panel. The replay generates first-view hypotheses, saves plans, opens real second observations, fetches the evaluation annotations, and verifies the wave probe.
+
+```sh
+python3 work/tless-active/fetch.py views "$panel" --selection outputs/sphere-tless-active-vision-views.json
+bash scripts/replay-active-vision.sh "$train_json" "$panel" "$models_zip" "$run"
+cmp "$run/measurements.json" outputs/sphere-tless-active-vision-measurements.json
+cmp "$run/wave.json" outputs/sphere-tless-active-vision-wave.json
+```

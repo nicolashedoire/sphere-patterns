@@ -61,6 +61,10 @@ The full-frame detector now proposes its own boxes on 16 real T-LESS photos. Wit
 
 On 30 further T-LESS camera views, a new detector matches **5 of 33** eligible target instances across two physical setups and raises **zero false alarms**. The same frames yield 1 match and 1 false alarm with the published wave verification, and 4 matches and 2 false alarms with the original RGB-D detector. The new detector proposes connected regions from calibrated depth and checks the measured relief and edges against target and competitor views. [Compare the photos](https://nicolashedoire.github.io/sphere-patterns/real-photos.html?trial=components) · [Protocol and limitations](RESEARCH.md#depth-components-on-held-out-views)
 
+### Choosing a second view
+
+On 117 candidate regions in 13 T-LESS setups, choosing a view with projected CAD disagreement gives 5 correct identities and 70 errors. A fixed angular rule gives 6 correct identities and 70 errors at the same one-view budget. A targeted probe samples 60 times fewer depth pixels than a dense check on the chosen camera. The sphere's distant wave probe recovers the updated score in all 117 cases. [See a correct result and a false alarm](https://nicolashedoire.github.io/sphere-patterns/active-vision.html) · [Protocol and measurements](RESEARCH.md#active-camera-selection)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.

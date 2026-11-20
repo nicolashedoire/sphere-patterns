@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="See where the active vision experiment measured depth in a second real T-LESS view.">
+  <title>Choosing a second view · Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="real-photos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <nav aria-label="Lab navigation" class="photo-links">
+      <a href="index.html">Wave simulator</a>
+      <a href="real-photos.html?trial=components">Real-photo detector</a>
+      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/RESEARCH.md#active-camera-selection">Protocol and results ↗</a>
+    </nav>
+  </header>
+  <main class="photo-page">
+    <h1>Can choosing the next view identify a part?</h1>
+    <p class="photo-intro">On 117 candidate regions, the targeted camera gave 5 correct identities and 70 errors. An angle fixed by geometry gave 6 correct identities and 70 errors. Each method could reveal one extra depth image.</p>
+    <figure class="panel photo-panel">
+      <div class="active-photo-stage">
+        <img src="photo-data/active-vision.jpg" width="1240" height="1050" alt="Two real T-LESS examples. The planned probe resolves part 15 in the first example. In the second it reports part 4 on an incorrect region of a larger assembly.">
+      </div>
+      <figcaption class="photo-caption">The blue depth samples were planned before opening the selected image. The fixed-view control also resolved the first example.</figcaption>
+    </figure>
+    <p class="photo-credit">Photos by Tomáš Hodaň et al. from <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Resized images with experimental overlays. <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-tless-active-vision-measurements.json">View all 117 decisions</a>.</p>
+  </main>
+</body>
+</html>

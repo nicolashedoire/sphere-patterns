@@ -120,3 +120,4 @@
   .photo-layer label { width: 100%; }
   .photo-scenes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+.active-photo-stage img { display: block; width: 100%; height: auto; }
