@@ -1,0 +1,1905 @@
+{
+  "source": {
+    "title": "T-LESS",
+    "authors": "Tomas Hodan et al.",
+    "license": "CC BY 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "project": "https://cmp.felk.cvut.cz/t-less/",
+    "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1",
+    "archiveURLs": [
+      "https://huggingface.co/datasets/bop-benchmark/tless/resolve/5fd309a04476a842d93abfb584fba9ee7caecdf1/tless_train_primesense.zip",
+      "https://huggingface.co/datasets/bop-benchmark/tless/resolve/5fd309a04476a842d93abfb584fba9ee7caecdf1/tless_test_primesense_bop19.zip"
+    ]
+  },
+  "targetPart": 1,
+  "photos": 12,
+  "physicalScenes": 6,
+  "inputs": "The amodal bounding box for each proposed candidate is supplied by T-LESS. RGB and depth arms use only the camera crop at recognition time. The annotated-mask arm supplies the visible mask as an oracle comparison. This is fixed-candidate classification outside the wave network.",
+  "calibration": {
+    "rgbThreshold": {
+      "cutoff": 67,
+      "balanced": 0.9759856630824373
+    },
+    "depthToleranceMm": 25,
+    "acceptAt": 0.86,
+    "degrees": [
+      0,
+      15,
+      30,
+      45,
+      60,
+      75,
+      90,
+      105,
+      120,
+      135,
+      150,
+      165,
+      180,
+      195,
+      210,
+      225,
+      240,
+      255,
+      270,
+      285,
+      300,
+      315,
+      330,
+      345
+    ],
+    "shifts": [
+      -2,
+      -1,
+      0,
+      1,
+      2
+    ]
+  },
+  "reference": {
+    "mask": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "cells": 311,
+    "trainingViews": [
+      0,
+      12
+    ],
+    "trainingAgreement": 0.9628482972136223,
+    "orientationDegrees": 45
+  },
+  "summary": {
+    "rgb": {
+      "all": {
+        "positive": 12,
+        "matched": 0,
+        "negative": 12,
+        "falseAccepts": 1,
+        "medianTargetScore": 0.27722772277227725,
+        "medianTargetMaskIoU": 0.1016949152542373
+      },
+      "high": {
+        "positive": 6,
+        "matched": 0,
+        "negative": 6,
+        "falseAccepts": 1,
+        "medianTargetScore": 0.27722772277227725,
+        "medianTargetMaskIoU": 0.06944444444444445
+      },
+      "partial": {
+        "positive": 6,
+        "matched": 0,
+        "negative": 6,
+        "falseAccepts": 0,
+        "medianTargetScore": 0.17539267015706805,
+        "medianTargetMaskIoU": 0.10740740740740741
+      }
+    },
+    "depth": {
+      "all": {
+        "positive": 12,
+        "matched": 0,
+        "negative": 12,
+        "falseAccepts": 1,
+        "medianTargetScore": 0.5843373493975904,
+        "medianTargetMaskIoU": 0.36038961038961037
+      },
+      "high": {
+        "positive": 6,
+        "matched": 0,
+        "negative": 6,
+        "falseAccepts": 1,
+        "medianTargetScore": 0.5843373493975904,
+        "medianTargetMaskIoU": 0.569023569023569
+      },
+      "partial": {
+        "positive": 6,
+        "matched": 0,
+        "negative": 6,
+        "falseAccepts": 0,
+        "medianTargetScore": 0.5746478873239437,
+        "medianTargetMaskIoU": 0
+      }
+    },
+    "annotatedMask": {
+      "all": {
+        "positive": 12,
+        "matched": 2,
+        "negative": 12,
+        "falseAccepts": 3,
+        "medianTargetScore": 0.3786407766990291,
+        "medianTargetMaskIoU": 1
+      },
+      "high": {
+        "positive": 6,
+        "matched": 2,
+        "negative": 6,
+        "falseAccepts": 3,
+        "medianTargetScore": 0.5636942675159236,
+        "medianTargetMaskIoU": 1
+      },
+      "partial": {
+        "positive": 6,
+        "matched": 0,
+        "negative": 6,
+        "falseAccepts": 0,
+        "medianTargetScore": 0.28802588996763756,
+        "medianTargetMaskIoU": 1
+      }
+    }
+  },
+  "samples": [
+    {
+      "scene": 5,
+      "frame": 468,
+      "index": 0,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.91318,
+      "box": [
+        328,
+        141,
+        44,
+        78
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.1016949152542373,
+          "score": 0.294811320754717,
+          "accepted": false,
+          "pose": {
+            "angle": 285,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.6355555555555555,
+          "score": 0.5843373493975904,
+          "accepted": false,
+          "pose": {
+            "angle": 135,
+            "dx": -2,
+            "dy": -1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.4886731391585761,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -1,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "frame": 468,
+      "index": 1,
+      "part": 4,
+      "band": "high",
+      "visibility": 0.963558,
+      "box": [
+        253,
+        159,
+        61,
+        58
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.5868421052631579,
+          "score": 0.5959595959595959,
+          "accepted": false,
+          "pose": {
+            "angle": 135,
+            "dx": 0,
+            "dy": 0
+          }
+        },
+        "depth": {
+          "maskIoU": 0.7970149253731343,
+          "score": 0.8034188034188035,
+          "accepted": false,
+          "pose": {
+            "angle": 180,
+            "dx": 0,
+            "dy": 1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.8878205128205128,
+          "accepted": true,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "frame": 450,
+      "index": 0,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.508003,
+      "box": [
+        252,
+        143,
+        49,
+        86
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.2179930795847751,
+          "score": 0.5601092896174863,
+          "accepted": false,
+          "pose": {
+            "angle": 165,
+            "dx": -2,
+            "dy": -1
+          }
+        },
+        "depth": {
+          "maskIoU": 0,
+          "score": 0.6194225721784777,
+          "accepted": false,
+          "pose": {
+            "angle": 60,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.2912621359223301,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -1,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 5,
+      "frame": 450,
+      "index": 1,
+      "part": 4,
+      "band": "partial",
+      "visibility": 1,
+      "box": [
+        214,
+        169,
+        108,
+        68
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.1,
+          "score": 0.35279187817258884,
+          "accepted": false,
+          "pose": {
+            "angle": 135,
+            "dx": -2,
+            "dy": -1
+          }
+        },
+        "depth": {
+          "maskIoU": 0.5171339563862928,
+          "score": 0.6729222520107239,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5516129032258065,
+          "accepted": false,
+          "pose": {
+            "angle": 75,
+            "dx": 1,
+            "dy": 1
+          }
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "frame": 251,
+      "index": 0,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.917066,
+      "box": [
+        228,
+        172,
+        46,
+        78
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.5037593984962406,
+          "score": 0.525,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": 2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.8870056497175142,
+          "score": 0.5631067961165048,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.517799352750809,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "frame": 251,
+      "index": 2,
+      "part": 13,
+      "band": "high",
+      "visibility": 0.960292,
+      "box": [
+        432,
+        156,
+        51,
+        73
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.25,
+          "score": 0.3069053708439898,
+          "accepted": false,
+          "pose": {
+            "angle": 15,
+            "dx": 2,
+            "dy": -1
+          }
+        },
+        "depth": {
+          "maskIoU": 0.6952054794520548,
+          "score": 0.6714697406340058,
+          "accepted": false,
+          "pose": {
+            "angle": 225,
+            "dx": 0,
+            "dy": 1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.7138263665594855,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "frame": 393,
+      "index": 0,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.502332,
+      "box": [
+        218,
+        199,
+        46,
+        82
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.23367697594501718,
+          "score": 0.5128865979381443,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0,
+          "score": 0.6422018348623854,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.2686084142394822,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 7,
+      "frame": 393,
+      "index": 2,
+      "part": 13,
+      "band": "partial",
+      "visibility": 0.662599,
+      "box": [
+        406,
+        195,
+        48,
+        65
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.012861736334405145,
+          "score": 0.171875,
+          "accepted": false,
+          "pose": {
+            "angle": 330,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.5291666666666667,
+          "score": 0.49404761904761907,
+          "accepted": false,
+          "pose": {
+            "angle": 330,
+            "dx": 1,
+            "dy": -1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5348101265822784,
+          "accepted": false,
+          "pose": {
+            "angle": 60,
+            "dx": 0,
+            "dy": -1
+          }
+        }
+      }
+    },
+    {
+      "scene": 9,
+      "frame": 57,
+      "index": 2,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.919044,
+      "box": [
+        382,
+        195,
+        79,
+        70
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.13429752066115702,
+          "score": 0.4020618556701031,
+          "accepted": false,
+          "pose": {
+            "angle": 270,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.42349726775956287,
+          "score": 0.5305164319248826,
+          "accepted": false,
+          "pose": {
+            "angle": 30,
+            "dx": -2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5636942675159236,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": -1,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 9,
+      "frame": 57,
+      "index": 6,
+      "part": 3,
+      "band": "high",
+      "visibility": 0.946198,
+      "box": [
+        260,
+        192,
+        69,
+        71
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.9313725490196079,
+          "score": 0.903125,
+          "accepted": true,
+          "pose": {
+            "angle": 225,
+            "dx": 0,
+            "dy": 0
+          }
+        },
+        "depth": {
+          "maskIoU": 0.7799442896935933,
+          "score": 0.8882521489971347,
+          "accepted": true,
+          "pose": {
+            "angle": 180,
+            "dx": 0,
+            "dy": 1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.941747572815534,
+          "accepted": true,
+          "pose": {
+            "angle": 315,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 9,
+      "frame": 414,
+      "index": 0,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.525508,
+      "box": [
+        315,
+        193,
+        44,
+        80
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.022935779816513763,
+          "score": 0.17539267015706805,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": 0,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0,
+          "score": 0.3670520231213873,
+          "accepted": false,
+          "pose": {
+            "angle": 120,
+            "dx": -2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.2750809061488673,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 9,
+      "frame": 414,
+      "index": 7,
+      "part": 3,
+      "band": "partial",
+      "visibility": 0.689935,
+      "box": [
+        435,
+        206,
+        63,
+        84
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.22709163346613545,
+          "score": 0.30726256983240224,
+          "accepted": false,
+          "pose": {
+            "angle": 225,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.6611111111111111,
+          "score": 0.4525316455696203,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -1,
+            "dy": -2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.48220064724919093,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": -1
+          }
+        }
+      }
+    },
+    {
+      "scene": 17,
+      "frame": 189,
+      "index": 2,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.907848,
+      "box": [
+        449,
+        139,
+        48,
+        72
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.06944444444444445,
+          "score": 0.27722772277227725,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.569023569023569,
+          "score": 0.664804469273743,
+          "accepted": false,
+          "pose": {
+            "angle": 195,
+            "dx": -1,
+            "dy": 1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5774193548387097,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -1,
+            "dy": -1
+          }
+        }
+      }
+    },
+    {
+      "scene": 17,
+      "frame": 189,
+      "index": 3,
+      "part": 4,
+      "band": "high",
+      "visibility": 0.932844,
+      "box": [
+        319,
+        366,
+        65,
+        89
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.5137614678899083,
+          "score": 0.3709677419354839,
+          "accepted": false,
+          "pose": {
+            "angle": 225,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.8313253012048193,
+          "score": 0.7831715210355987,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": -1
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.6925566343042071,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 17,
+      "frame": 415,
+      "index": 2,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.531854,
+      "box": [
+        497,
+        220,
+        49,
+        87
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.10740740740740741,
+          "score": 0.3674540682414698,
+          "accepted": false,
+          "pose": {
+            "angle": 0,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.013157894736842105,
+          "score": 0.21035598705501618,
+          "accepted": false,
+          "pose": {
+            "angle": 135,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.28802588996763756,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 17,
+      "frame": 415,
+      "index": 3,
+      "part": 4,
+      "band": "partial",
+      "visibility": 0.999815,
+      "box": [
+        170,
+        234,
+        63,
+        112
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.04411764705882353,
+          "score": 0.23546511627906977,
+          "accepted": false,
+          "pose": {
+            "angle": 270,
+            "dx": 2,
+            "dy": 1
+          }
+        },
+        "depth": {
+          "maskIoU": 0.7149321266968326,
+          "score": 0.5146198830409356,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5401929260450161,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": -1
+          }
+        }
+      }
+    },
+    {
+      "scene": 18,
+      "frame": 49,
+      "index": 1,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.92065,
+      "box": [
+        496,
+        254,
+        51,
+        53
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.06865671641791045,
+          "score": 0.1411764705882353,
+          "accepted": false,
+          "pose": {
+            "angle": 255,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.5670886075949367,
+          "score": 0.7446236559139785,
+          "accepted": false,
+          "pose": {
+            "angle": 75,
+            "dx": 1,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.873015873015873,
+          "accepted": true,
+          "pose": {
+            "angle": 120,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 18,
+      "frame": 49,
+      "index": 4,
+      "part": 4,
+      "band": "high",
+      "visibility": 0.954518,
+      "box": [
+        386,
+        241,
+        60,
+        68
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.4402035623409669,
+          "score": 0.5050505050505051,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.6493827160493827,
+          "score": 0.74,
+          "accepted": false,
+          "pose": {
+            "angle": 135,
+            "dx": 1,
+            "dy": 0
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.8971061093247589,
+          "accepted": true,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 18,
+      "frame": 195,
+      "index": 1,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.538545,
+      "box": [
+        493,
+        264,
+        51,
+        72
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.025252525252525252,
+          "score": 0.15497076023391812,
+          "accepted": false,
+          "pose": {
+            "angle": 75,
+            "dx": -2,
+            "dy": 1
+          }
+        },
+        "depth": {
+          "maskIoU": 0.34191176470588236,
+          "score": 0.5746478873239437,
+          "accepted": false,
+          "pose": {
+            "angle": 180,
+            "dx": -2,
+            "dy": -2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.3786407766990291,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 18,
+      "frame": 195,
+      "index": 4,
+      "part": 4,
+      "band": "partial",
+      "visibility": 0.911723,
+      "box": [
+        381,
+        224,
+        60,
+        92
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.05714285714285714,
+          "score": 0.25757575757575757,
+          "accepted": false,
+          "pose": {
+            "angle": 15,
+            "dx": -2,
+            "dy": 2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.5775577557755776,
+          "score": 0.6767955801104972,
+          "accepted": false,
+          "pose": {
+            "angle": 90,
+            "dx": -2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.5889967637540453,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -2,
+            "dy": -2
+          }
+        }
+      }
+    },
+    {
+      "scene": 20,
+      "frame": 197,
+      "index": 2,
+      "part": 1,
+      "band": "high",
+      "visibility": 0.924303,
+      "box": [
+        401,
+        195,
+        51,
+        48
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.03546099290780142,
+          "score": 0.16120906801007556,
+          "accepted": false,
+          "pose": {
+            "angle": 285,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.5978021978021978,
+          "score": 0.6876404494382022,
+          "accepted": false,
+          "pose": {
+            "angle": 30,
+            "dx": 1,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.9288025889967637,
+          "accepted": true,
+          "pose": {
+            "angle": 315,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 20,
+      "frame": 197,
+      "index": 8,
+      "part": 2,
+      "band": "high",
+      "visibility": 0.803075,
+      "box": [
+        317,
+        144,
+        56,
+        59
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.2647058823529412,
+          "score": 0.3324175824175824,
+          "accepted": false,
+          "pose": {
+            "angle": 120,
+            "dx": -2,
+            "dy": 0
+          }
+        },
+        "depth": {
+          "maskIoU": 0.6032171581769437,
+          "score": 0.718421052631579,
+          "accepted": false,
+          "pose": {
+            "angle": 120,
+            "dx": -2,
+            "dy": 0
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.8284789644012945,
+          "accepted": false,
+          "pose": {
+            "angle": 225,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 20,
+      "frame": 217,
+      "index": 3,
+      "part": 1,
+      "band": "partial",
+      "visibility": 0.520756,
+      "box": [
+        412,
+        207,
+        48,
+        68
+      ],
+      "target": true,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.11351351351351352,
+          "score": 0.15804597701149425,
+          "accepted": false,
+          "pose": {
+            "angle": 165,
+            "dx": 1,
+            "dy": -2
+          }
+        },
+        "depth": {
+          "maskIoU": 0.36038961038961037,
+          "score": 0.5846153846153846,
+          "accepted": false,
+          "pose": {
+            "angle": 210,
+            "dx": 2,
+            "dy": -2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.36245954692556637,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": -1,
+            "dy": 0
+          }
+        }
+      }
+    },
+    {
+      "scene": 20,
+      "frame": 217,
+      "index": 13,
+      "part": 3,
+      "band": "partial",
+      "visibility": 0.5138,
+      "box": [
+        258,
+        164,
+        62,
+        63
+      ],
+      "target": false,
+      "methods": {
+        "rgb": {
+          "maskIoU": 0.2669683257918552,
+          "score": 0.33436532507739936,
+          "accepted": false,
+          "pose": {
+            "angle": 90,
+            "dx": -2,
+            "dy": 0
+          }
+        },
+        "depth": {
+          "maskIoU": 0.0967741935483871,
+          "score": 0.5028735632183908,
+          "accepted": false,
+          "pose": {
+            "angle": 345,
+            "dx": 2,
+            "dy": 2
+          }
+        },
+        "annotatedMask": {
+          "maskIoU": 1,
+          "score": 0.517799352750809,
+          "accepted": false,
+          "pose": {
+            "angle": 45,
+            "dx": 0,
+            "dy": 0
+          }
+        }
+      }
+    }
+  ]
+}

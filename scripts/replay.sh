@@ -59,7 +59,11 @@ replay sphere-angle-benchmark-run sphere-angle-benchmark-measurements.json
 replay sphere-occlusion-run sphere-occlusion-measurements.json
 rm -f -- outputs/sphere-occlusion-figure.svg
 node work/sphere-occlusion-plot.cjs
-figures=(sphere-angle-benchmark-figure.svg sphere-occlusion-figure.svg)
+replay sphere-stress-run sphere-stress-measurements.json
+rm -f -- outputs/sphere-stress-figure.svg
+node work/sphere-stress-plot.cjs
+replay sphere-tless-pilot sphere-tless-measurements.json
+figures=(sphere-angle-benchmark-figure.svg sphere-occlusion-figure.svg sphere-stress-figure.svg)
 for figure in "${figures[@]}"; do
   test -s "outputs/$figure"
 done

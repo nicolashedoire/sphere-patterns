@@ -4,6 +4,8 @@ A 3D wave simulator that extracts a reference from two examples and uses it to f
 
 **[Open the interactive 3D lab](https://nicolashedoire.github.io/sphere-patterns/)**
 
+**[Research protocol and latest results](RESEARCH.md)**
+
 ![Two views of a T-shaped part yield a shared template. The template locates the rotated part among a gear, an angle bracket, a washer and a bolt.](outputs/sphere-located-part.png)
 
 ## Run a simulation in your browser
@@ -44,6 +46,12 @@ The geometry benchmark runs outside the sphere and isolates the effect of angula
 The same returning reference is compared against three partially covered T brackets. The ordinary overlap score misses all three. Scoring only visible cells recovers **two of three**. The third scene has two equally good poses, so the comparator abstains. It also abstains on the heavily covered target and both negative scenes. Cutting the return of C removes the measured match in the 58° scene.
 
 The comparator receives a visibility mask supplied by the benchmark and requires at least 60% of the reference to remain visible. This tests recognition under known occlusion on fixed-scale synthetic silhouettes. [Occlusion figure](outputs/sphere-occlusion-figure.svg) · [Occlusion measurements](outputs/sphere-occlusion-measurements.json)
+
+### Scale, clutter and real camera views
+
+With a scale bank and local IoU, the wave comparator recovers **5 of 8 poses** in a fixed 12-scene stress test. It finds all five intact targets, misses all three occluded targets and raises no alarms in the four negative scenes. Using the cached probe reference directly reproduces the wave-return comparator's output. [Stress test](outputs/sphere-stress-figure.svg)
+
+In the separate T-LESS pilot, the same geometric search misses all 12 true targets on grayscale crops, even with candidate boxes supplied. Dataset silhouettes recover two targets and also accept three distractors. [Camera scene panel](outputs/sphere-tless-scenes.png) · [Pilot protocol and results](RESEARCH.md#first-real-image-pilot)
 
 ## Reproduce the results
 
