@@ -53,6 +53,10 @@ With a scale bank and local IoU, the wave comparator recovers **5 of 8 poses** i
 
 In the separate T-LESS pilot, the same geometric search misses all 12 true targets on grayscale crops, even with candidate boxes supplied. Dataset silhouettes recover two targets and also accept three distractors. [Camera scene panel](outputs/sphere-tless-scenes.png) · [Pilot protocol and results](RESEARCH.md#first-real-image-pilot)
 
+### Finding parts in full camera frames
+
+The full-frame detector now proposes its own boxes on 16 real T-LESS photos. With depth and returning-reference verification, it keeps two correct instances in one photo and two false boxes in a target-absent photo. The matching pulse at the distant probe disappears when the reference return is cut. [Inspect the photos in the lab](https://nicolashedoire.github.io/sphere-patterns/real-photos.html) · [Full protocol and results](RESEARCH.md#full-frame-real-photos)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.
@@ -73,3 +77,4 @@ python3 -m http.server 8000 --directory lab
 - [Simulation source, inputs and parameters](work/)
 - [Figures and measurements](outputs/)
 - [Replay script](scripts/replay.sh)
+- [Full-photo replay script](scripts/replay-photos.sh)

@@ -1,0 +1,773 @@
+{
+  "scope": "The wave comparator receives depth support from fixed full-frame detector proposals and their selected training view. It does not search the original photo or receive test annotations.",
+  "reference": "Two identical, prealigned copies of one training-visible mask form C. This checks transfer and shape verification, independently of learning across viewpoints.",
+  "protocol": "The fixed overlap threshold remains 0.86. The location-only variant accepts tied poses if the rectangle containing their centers has a diagonal of at most two cells. Pose is left ambiguous on those matches. This variant was evaluated on the same panel after observing tied poses in the initial run.",
+  "results": [
+    {
+      "id": "02-000003",
+      "box": [
+        289,
+        346,
+        71,
+        69
+      ],
+      "reference": "train-01-000000",
+      "detectorScore": 0.720686,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8201058201058201,
+          "tied": true,
+          "accepted": false,
+          "best": {
+            "center": [
+              12,
+              11
+            ],
+            "angle": 30,
+            "scale": 0.75,
+            "matches": 155,
+            "denominator": 189,
+            "templateCells": 187
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.391090091423873e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8201058201058201,
+          "tied": true,
+          "accepted": false,
+          "centerExtent": [
+            12,
+            11,
+            12,
+            11
+          ],
+          "poseAmbiguous": true,
+          "best": {
+            "center": [
+              12,
+              11
+            ],
+            "angle": 30,
+            "scale": 0.75,
+            "matches": 155,
+            "denominator": 189,
+            "templateCells": 187
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.391090091423873e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "02-000003",
+      "box": [
+        396,
+        135,
+        49,
+        87
+      ],
+      "reference": "train-01-000600",
+      "detectorScore": 0.707061,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8729281767955801,
+          "tied": false,
+          "accepted": true,
+          "best": {
+            "center": [
+              11,
+              13
+            ],
+            "angle": 180,
+            "scale": 1,
+            "matches": 158,
+            "denominator": 181,
+            "templateCells": 163
+          }
+        },
+        "referenceCells": 163,
+        "resultPulses": 158,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8729281767955801,
+          "tied": false,
+          "accepted": true,
+          "centerExtent": [
+            11,
+            13,
+            11,
+            13
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              11,
+              13
+            ],
+            "angle": 180,
+            "scale": 1,
+            "matches": 158,
+            "denominator": 181,
+            "templateCells": 163
+          }
+        },
+        "referenceCells": 163,
+        "resultPulses": 158,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "02-000003",
+      "box": [
+        332,
+        148,
+        97,
+        97
+      ],
+      "reference": "train-01-000720",
+      "detectorScore": 0.691066,
+      "strictPose": {
+        "verdict": {
+          "score": 0.853448275862069,
+          "tied": false,
+          "accepted": false,
+          "best": {
+            "center": [
+              20,
+              9
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 99,
+            "denominator": 116,
+            "templateCells": 99
+          }
+        },
+        "referenceCells": 163,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.853448275862069,
+          "tied": false,
+          "accepted": false,
+          "centerExtent": [
+            20,
+            9,
+            20,
+            9
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              20,
+              9
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 99,
+            "denominator": 116,
+            "templateCells": 99
+          }
+        },
+        "referenceCells": 163,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "02-000003",
+      "box": [
+        473,
+        298,
+        51,
+        93
+      ],
+      "reference": "train-01-000742",
+      "detectorScore": 0.667325,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8761061946902655,
+          "tied": false,
+          "accepted": true,
+          "best": {
+            "center": [
+              12,
+              14
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 99,
+            "denominator": 113,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 164,
+        "resultPulses": 99,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8761061946902655,
+          "tied": false,
+          "accepted": true,
+          "centerExtent": [
+            12,
+            14,
+            12,
+            14
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              12,
+              14
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 99,
+            "denominator": 113,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 164,
+        "resultPulses": 99,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "09-000057",
+      "box": [
+        432,
+        142,
+        61,
+        61
+      ],
+      "reference": "train-01-000000",
+      "detectorScore": 0.704016,
+      "strictPose": {
+        "verdict": {
+          "score": 0.9146919431279621,
+          "tied": true,
+          "accepted": false,
+          "best": {
+            "center": [
+              12,
+              12
+            ],
+            "angle": 45,
+            "scale": 0.75,
+            "matches": 193,
+            "denominator": 211,
+            "templateCells": 193
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.3660178758980596e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.9146919431279621,
+          "tied": true,
+          "accepted": true,
+          "centerExtent": [
+            12,
+            12,
+            12,
+            12
+          ],
+          "poseAmbiguous": true,
+          "best": {
+            "center": [
+              12,
+              12
+            ],
+            "angle": 45,
+            "scale": 0.75,
+            "matches": 193,
+            "denominator": 211,
+            "templateCells": 193
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 193,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.3660178758980596e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "09-000057",
+      "box": [
+        338,
+        142,
+        61,
+        61
+      ],
+      "reference": "train-01-000000",
+      "detectorScore": 0.697221,
+      "strictPose": {
+        "verdict": {
+          "score": 0.9368932038834952,
+          "tied": true,
+          "accepted": false,
+          "best": {
+            "center": [
+              11,
+              12
+            ],
+            "angle": 45,
+            "scale": 0.75,
+            "matches": 193,
+            "denominator": 206,
+            "templateCells": 193
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.38011335625634e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.9368932038834952,
+          "tied": true,
+          "accepted": true,
+          "centerExtent": [
+            11,
+            12,
+            11,
+            12
+          ],
+          "poseAmbiguous": true,
+          "best": {
+            "center": [
+              11,
+              12
+            ],
+            "angle": 45,
+            "scale": 0.75,
+            "matches": 193,
+            "denominator": 206,
+            "templateCells": 193
+          }
+        },
+        "referenceCells": 329,
+        "resultPulses": 193,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 1.38011335625634e-16,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "09-000057",
+      "box": [
+        367,
+        190,
+        99,
+        85
+      ],
+      "reference": "train-01-000507",
+      "detectorScore": 0.677861,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8130841121495327,
+          "tied": false,
+          "accepted": false,
+          "best": {
+            "center": [
+              15,
+              12
+            ],
+            "angle": 270,
+            "scale": 0.75,
+            "matches": 87,
+            "denominator": 107,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 161,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8130841121495327,
+          "tied": false,
+          "accepted": false,
+          "centerExtent": [
+            15,
+            12,
+            15,
+            12
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              15,
+              12
+            ],
+            "angle": 270,
+            "scale": 0.75,
+            "matches": 87,
+            "denominator": 107,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 161,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "12-000002",
+      "box": [
+        235,
+        139,
+        95,
+        83
+      ],
+      "reference": "train-01-000663",
+      "detectorScore": 0.675303,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8440366972477065,
+          "tied": false,
+          "accepted": false,
+          "best": {
+            "center": [
+              8,
+              9
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 92,
+            "denominator": 109,
+            "templateCells": 101
+          }
+        },
+        "referenceCells": 168,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8440366972477065,
+          "tied": false,
+          "accepted": false,
+          "centerExtent": [
+            8,
+            9,
+            8,
+            9
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              8,
+              9
+            ],
+            "angle": 0,
+            "scale": 0.75,
+            "matches": 92,
+            "denominator": 109,
+            "templateCells": 101
+          }
+        },
+        "referenceCells": 168,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "12-000002",
+      "box": [
+        462,
+        178,
+        97,
+        97
+      ],
+      "reference": "train-01-000742",
+      "detectorScore": 0.67011,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8558558558558559,
+          "tied": false,
+          "accepted": false,
+          "best": {
+            "center": [
+              9,
+              17
+            ],
+            "angle": 180,
+            "scale": 0.75,
+            "matches": 95,
+            "denominator": 111,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 164,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8558558558558559,
+          "tied": false,
+          "accepted": false,
+          "centerExtent": [
+            9,
+            17,
+            9,
+            17
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              9,
+              17
+            ],
+            "angle": 180,
+            "scale": 0.75,
+            "matches": 95,
+            "denominator": 111,
+            "templateCells": 100
+          }
+        },
+        "referenceCells": 164,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    },
+    {
+      "id": "16-000008",
+      "box": [
+        296,
+        83,
+        81,
+        95
+      ],
+      "reference": "train-01-000914",
+      "detectorScore": 0.669485,
+      "strictPose": {
+        "verdict": {
+          "score": 0.8252427184466019,
+          "tied": false,
+          "accepted": false,
+          "best": {
+            "center": [
+              15,
+              14
+            ],
+            "angle": 135,
+            "scale": 0.75,
+            "matches": 85,
+            "denominator": 103,
+            "templateCells": 86
+          }
+        },
+        "referenceCells": 160,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      },
+      "locationOnly": {
+        "verdict": {
+          "score": 0.8252427184466019,
+          "tied": false,
+          "accepted": false,
+          "centerExtent": [
+            15,
+            14,
+            15,
+            14
+          ],
+          "poseAmbiguous": false,
+          "best": {
+            "center": [
+              15,
+              14
+            ],
+            "angle": 135,
+            "scale": 0.75,
+            "matches": 85,
+            "denominator": 103,
+            "templateCells": 86
+          }
+        },
+        "referenceCells": 160,
+        "resultPulses": 0,
+        "directCacheParity": true,
+        "probe": {
+          "loopTicks": 8597,
+          "energyError": 0,
+          "referenceEmittedAt": 2412,
+          "referenceReturnedAt": 11009,
+          "resultObservedAt": 17066
+        }
+      }
+    }
+  ],
+  "cut": {
+    "id": "09-000057",
+    "box": [
+      338,
+      142,
+      61,
+      61
+    ],
+    "connected": 193,
+    "verdict": {
+      "score": 0,
+      "tied": false,
+      "accepted": false,
+      "best": null
+    },
+    "referenceCells": 329,
+    "resultPulses": 0,
+    "directCacheParity": false,
+    "probe": {
+      "loopTicks": 8597,
+      "energyError": 1.38011335625634e-16,
+      "referenceEmittedAt": 2412,
+      "referenceReturnedAt": 11009,
+      "resultObservedAt": 17066
+    }
+  }
+}

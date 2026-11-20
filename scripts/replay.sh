@@ -63,6 +63,7 @@ replay sphere-stress-run sphere-stress-measurements.json
 rm -f -- outputs/sphere-stress-figure.svg
 node work/sphere-stress-plot.cjs
 replay sphere-tless-pilot sphere-tless-measurements.json
+replay sphere-tless-wave-run sphere-tless-wave-measurements.json
 figures=(sphere-angle-benchmark-figure.svg sphere-occlusion-figure.svg sphere-stress-figure.svg)
 for figure in "${figures[@]}"; do
   test -s "outputs/$figure"

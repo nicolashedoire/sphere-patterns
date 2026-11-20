@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Inspect recorded detections from real T-LESS photos and compare them with dataset annotations.">
+  <meta name="theme-color" content="#0a0f1e">
+  <title>Real photos · Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="real-photos.css">
+  <script src="real-photos.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <nav aria-label="Lab navigation" class="photo-links">
+      <a href="index.html">Wave simulator</a>
+      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/RESEARCH.md">Method and results ↗</a>
+    </nav>
+  </header>
+  <main class="photo-page">
+    <h1>Find the part in real photos</h1>
+    <p class="photo-intro">Compare recorded detections for a known mechanical part in four full-frame T-LESS photos.</p>
+
+    <fieldset class="photo-controls">
+      <legend>Overlay</legend>
+      <div class="photo-layer" id="layers">
+        <label><input type="radio" name="layer" value="photo">Photo only</label>
+        <label><input type="radio" name="layer" value="rgbd">RGB-D predictions</label>
+        <label><input type="radio" name="layer" value="wave" checked>Returning-reference check</label>
+      </div>
+      <label class="photo-check"><input id="annotations" type="checkbox">Show annotations</label>
+    </fieldset>
+
+    <p id="photo-status" role="status">Loading experiment data…</p>
+    <div class="photo-layout" id="photo-content" hidden>
+      <div class="photo-primary">
+        <figure class="panel photo-panel">
+          <div class="photo-stage" id="photo-stage">
+            <img id="scene-photo" width="720" height="540" alt="">
+            <svg id="boxes" class="photo-boxes" aria-hidden="true" focusable="false"></svg>
+          </div>
+          <figcaption class="photo-caption">
+            <span id="scene-caption"></span>
+            <ul class="photo-legend" id="legend" aria-label="Box legend"></ul>
+          </figcaption>
+        </figure>
+        <nav id="scenes" class="photo-scenes" aria-label="Test photos"></nav>
+      </div>
+      <section class="panel photo-readout" aria-labelledby="readout-title">
+        <h2 id="readout-title">Returning-reference check</h2>
+        <p id="mode-detail" class="photo-muted"></p>
+        <p id="summary" class="photo-summary" role="status" aria-atomic="true"></p>
+        <ol id="results" class="photo-results"></ol>
+        <p id="annotation-note" class="photo-muted" hidden></p>
+      </section>
+    </div>
+
+    <footer class="photo-credit">
+      Photos by Tomáš Hodaň et al. from
+      <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a>
+      (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
+      Images were converted to JPEG. Overlays use the
+      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-tless-full-photo-measurements.json">recorded benchmark data</a>.
+    </footer>
+  </main>
+</body>
+</html>

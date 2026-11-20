@@ -1,0 +1,271 @@
+{
+  "overlapThreshold": 0.5,
+  "visibilityThreshold": 0.2,
+  "scenes": [
+    {
+      "scene": 9,
+      "frame": 57,
+      "image": "09-000057.jpg",
+      "width": 720,
+      "height": 540,
+      "targets": [
+        {
+          "box": [
+            340,
+            143,
+            49,
+            56
+          ],
+          "visibility": 0.9720342805593144
+        },
+        {
+          "box": [
+            437,
+            146,
+            49,
+            55
+          ],
+          "visibility": 0.9614349775784753
+        },
+        {
+          "box": [
+            382,
+            195,
+            74,
+            70
+          ],
+          "visibility": 0.9190444591904446
+        }
+      ],
+      "detections": {
+        "rgbd": [
+          {
+            "box": [
+              432,
+              142,
+              61,
+              61
+            ],
+            "score": 0.704016,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "overlap": 0.724268
+          },
+          {
+            "box": [
+              338,
+              142,
+              61,
+              61
+            ],
+            "score": 0.697221,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "overlap": 0.737436
+          },
+          {
+            "box": [
+              367,
+              190,
+              99,
+              85
+            ],
+            "score": 0.677861,
+            "reference": "train-01-000507",
+            "result": "hit",
+            "overlap": 0.615567
+          }
+        ],
+        "wave": [
+          {
+            "box": [
+              338,
+              142,
+              61,
+              61
+            ],
+            "score": 0.9368932038834952,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "overlap": 0.737436
+          },
+          {
+            "box": [
+              432,
+              142,
+              61,
+              61
+            ],
+            "score": 0.9146919431279621,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "overlap": 0.724268
+          }
+        ]
+      }
+    },
+    {
+      "scene": 2,
+      "frame": 3,
+      "image": "02-000003.jpg",
+      "width": 720,
+      "height": 540,
+      "targets": [],
+      "detections": {
+        "rgbd": [
+          {
+            "box": [
+              289,
+              346,
+              71,
+              69
+            ],
+            "score": 0.720686,
+            "reference": "train-01-000000",
+            "result": "false-alarm",
+            "overlap": 0
+          },
+          {
+            "box": [
+              396,
+              135,
+              49,
+              87
+            ],
+            "score": 0.707061,
+            "reference": "train-01-000600",
+            "result": "false-alarm",
+            "overlap": 0
+          },
+          {
+            "box": [
+              332,
+              148,
+              97,
+              97
+            ],
+            "score": 0.691066,
+            "reference": "train-01-000720",
+            "result": "false-alarm",
+            "overlap": 0
+          },
+          {
+            "box": [
+              473,
+              298,
+              51,
+              93
+            ],
+            "score": 0.667325,
+            "reference": "train-01-000742",
+            "result": "false-alarm",
+            "overlap": 0
+          }
+        ],
+        "wave": [
+          {
+            "box": [
+              473,
+              298,
+              51,
+              93
+            ],
+            "score": 0.8761061946902655,
+            "reference": "train-01-000742",
+            "result": "false-alarm",
+            "overlap": 0
+          },
+          {
+            "box": [
+              396,
+              135,
+              49,
+              87
+            ],
+            "score": 0.8729281767955801,
+            "reference": "train-01-000600",
+            "result": "false-alarm",
+            "overlap": 0
+          }
+        ]
+      }
+    },
+    {
+      "scene": 18,
+      "frame": 195,
+      "image": "18-000195.jpg",
+      "width": 720,
+      "height": 540,
+      "targets": [
+        {
+          "box": [
+            487,
+            300,
+            53,
+            73
+          ],
+          "visibility": 0.9563894523326572
+        },
+        {
+          "box": [
+            493,
+            264,
+            51,
+            53
+          ],
+          "visibility": 0.5385450597176982
+        },
+        {
+          "box": [
+            425,
+            260,
+            68,
+            73
+          ],
+          "visibility": 0.8844444444444445
+        }
+      ],
+      "detections": {
+        "rgbd": [],
+        "wave": []
+      }
+    },
+    {
+      "scene": 12,
+      "frame": 2,
+      "image": "12-000002.jpg",
+      "width": 720,
+      "height": 540,
+      "targets": [],
+      "detections": {
+        "rgbd": [
+          {
+            "box": [
+              235,
+              139,
+              95,
+              83
+            ],
+            "score": 0.675303,
+            "reference": "train-01-000663",
+            "result": "false-alarm",
+            "overlap": 0
+          },
+          {
+            "box": [
+              462,
+              178,
+              97,
+              97
+            ],
+            "score": 0.67011,
+            "reference": "train-01-000742",
+            "result": "false-alarm",
+            "overlap": 0
+          }
+        ],
+        "wave": []
+      }
+    }
+  ]
+}

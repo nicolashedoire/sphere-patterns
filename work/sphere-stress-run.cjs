@@ -132,29 +132,44 @@ function foregroundSum(pixels) {
     sums[top * pitch + right + 1] - sums[(bottom + 1) * pitch + left] + sums[top * pitch + left];
 }
 
-function choose(best, candidate) {
-  if (best === null) return { candidate, tied: false };
-  const order = candidate.matches * best.candidate.denominator - best.candidate.matches * candidate.denominator;
-  if (order > 0) return { candidate, tied: false };
-  if (order === 0) return { ...best, tied: true };
+function choose(best, candidate, trackCenters = false) {
+  const order = best ? candidate.matches * best.candidate.denominator - best.candidate.matches * candidate.denominator : 1;
+  if (order > 0) {
+    if (!trackCenters) return { candidate, tied: false };
+    const { x, y } = candidate;
+    return { candidate, tied: false, extent: [x, y, x, y] };
+  }
+  if (order === 0) {
+    if (!trackCenters) return { ...best, tied: true };
+    const { x, y } = candidate;
+    const [left, top, right, bottom] = best.extent;
+    return { ...best, tied: true, extent: [Math.min(x, left), Math.min(y, top), Math.max(x, right), Math.max(y, bottom)] };
+  }
   return best;
 }
 
-function summarize(best) {
+function summarize(best, locationOnly = false) {
   if (best === null) return { score: 0, tied: false, accepted: false, best: null };
   const { candidate, tied } = best;
   const { template, x, y, matches, denominator } = candidate;
   const score = matches / denominator;
-  return { score, tied, accepted: !tied && score >= THRESHOLD,
+  let nearby = false;
+  if (locationOnly && tied) {
+    const [left, top, right, bottom] = best.extent;
+    nearby = Math.hypot(right - left, bottom - top) <= TOLERANCES.centerCells;
+  }
+  return { score, tied, accepted: (!tied || nearby) && score >= THRESHOLD,
+    ...(locationOnly ? { centerExtent: best.extent, poseAmbiguous: tied } : {}),
     best: { center: [x, y], angle: template.angle, scale: template.scale,
       matches, denominator, templateCells: template.cells.length } };
 }
 
 class StressComparator {
-  constructor(start, emitAt, knownVisibility) {
+  constructor(start, emitAt, knownVisibility, locationOnly = false) {
     this.start = start;
     this.emitAt = emitAt;
     this.knownVisibility = knownVisibility;
+    this.locationOnly = locationOnly;
     this.reference = new Float64Array(SPAN);
     this.scene = new Float64Array(SPAN);
     this.outgoing = new Float64Array(SPAN);
@@ -183,7 +198,7 @@ class StressComparator {
           if (scale === 1) winners.fixed = choose(winners.fixed, candidate);
           winners.scaled = choose(winners.scaled, candidate);
           const localForeground = rectangle(x + left, y + top, x + right, y + bottom);
-          winners.iou = choose(winners.iou, { ...candidate, denominator: area + localForeground - matches });
+          winners.iou = choose(winners.iou, { ...candidate, denominator: area + localForeground - matches }, this.locationOnly);
           if (visible >= Math.ceil(area * MIN_VISIBLE)) {
             winners.knownMask = choose(winners.knownMask, { ...candidate, denominator: visible });
           }
@@ -191,7 +206,8 @@ class StressComparator {
       }
     }
 
-    this.assessments = Object.fromEntries(Object.entries(winners).map(([method, best]) => [method, summarize(best)]));
+    this.assessments = Object.fromEntries(Object.entries(winners).map(([method, best]) =>
+      [method, summarize(best, this.locationOnly && method === 'iou')]));
     if (!this.assessments.iou.accepted) return;
     const { template, x, y } = winners.iou.candidate;
     for (const cell of template.cells) {
@@ -216,12 +232,12 @@ class StressComparator {
 }
 
 class StressSimulation extends FileSimulation {
-  constructor(visibility, disconnected) {
+  constructor(visibility, disconnected, prealigned = false, locationOnly = false) {
     super(createNetwork({ seed: setup.seed }), { writing: false });
-    this.learning = new AlignmentCircuit(true, START, { size: SIZE });
+    this.learning = new AlignmentCircuit(!prealigned, START, { size: SIZE });
     this.referenceEmittedAt = START + this.learning.emitAt;
     this.referenceReturnedAt = this.referenceEmittedAt + setup.loopDelays[1];
-    this.comparison = new StressComparator(this.referenceReturnedAt, this.learning.emitAt, visibility);
+    this.comparison = new StressComparator(this.referenceReturnedAt, this.learning.emitAt, visibility, locationOnly);
     this.disconnected = disconnected;
   }
 
@@ -243,25 +259,26 @@ class StressSimulation extends FileSimulation {
   }
 }
 
-function compareCached(referenceWave, scene, visibility) {
-  const comparator = new StressComparator(0, SPAN, visibility);
+function compareCached(referenceWave, scene, visibility, locationOnly) {
+  const comparator = new StressComparator(0, SPAN, visibility, locationOnly);
   comparator.reference.set(referenceWave);
   comparator.scene.set(encode(scene));
   comparator.latch();
   return comparator;
 }
 
-function simulate(scene, visibility, disconnected = false) {
-  const sim = new StressSimulation(visibility, disconnected);
+function simulate(scene, visibility, disconnected = false, alignedExamples, { locationOnly = false } = {}) {
+  const sim = new StressSimulation(visibility, disconnected, !!alignedExamples, locationOnly);
   const { arcs, nodePorts } = sim.network;
   const carrier = arcs[nodePorts[setup.mixer][sim.lanePorts[setup.mixer][0]]].reverse;
   const probe = nodePorts[setup.station.node][sim.lanePorts[setup.station.node][2]];
   const loopTicks = setup.loopDelays[1];
   const probeDelay = loopTicks - setup.station.probes[1].delay;
   const resultEmittedAt = sim.referenceReturnedAt + sim.comparison.emitAt;
+  const examples = alignedExamples ?? [silhouette(['T', CENTER, CENTER, 0, 1]), silhouette(['T', CENTER, CENTER, 90, 1])];
   const inputs = [
-    [setup.sourceArcs[0], START, encode(silhouette(['T', CENTER, CENTER, 0, 1]))],
-    [setup.sourceArcs[1], START, encode(silhouette(['T', CENTER, CENTER, 90, 1]))],
+    [setup.sourceArcs[0], START, encode(examples[0])],
+    [setup.sourceArcs[1], START, encode(examples[1])],
     [carrier, sim.referenceEmittedAt, new Float64Array(SPAN).fill(AMPLITUDE)],
     [setup.sourceArcs[1], sim.referenceReturnedAt, encode(scene)],
     [carrier, resultEmittedAt, new Float64Array(SPAN).fill(AMPLITUDE)]
@@ -291,11 +308,11 @@ function simulate(scene, visibility, disconnected = false) {
   assert.equal(matchedScene.length, assessments.iou.accepted ? assessments.iou.best.matches : 0);
   const directCacheParity = !disconnected;
   if (directCacheParity) {
-    const cached = compareCached(referenceWave, scene, visibility);
+    const cached = compareCached(referenceWave, scene, visibility, locationOnly);
     assert.deepEqual(cached.assessments, assessments);
     assert.deepEqual(cached.outgoing, outgoing);
     if (visibility.some(bit => !bit)) {
-      const cacheWithoutMask = compareCached(referenceWave, scene, visibility.map(() => 1));
+      const cacheWithoutMask = compareCached(referenceWave, scene, visibility.map(() => 1), locationOnly);
       for (const method of ['fixed', 'scaled', 'iou']) {
         assert.deepEqual(cacheWithoutMask.assessments[method], assessments[method]);
       }
@@ -325,50 +342,56 @@ function judge(assessment, target) {
   return { status: correct ? 'true-positive' : 'wrong-pose', errors };
 }
 
-const results = SCENES.map(fixture => {
-  const { image, target, visible } = render(fixture);
-  const measured = simulate(image, visible);
-  const outcomes = Object.fromEntries(Object.entries(measured.assessments)
-    .map(([name, assessment]) => [name, judge(assessment, fixture.target)]));
-  return { fixture, image, target, visible, visibleTargetCells: target.filter((bit, index) => bit && visible[index]).length,
-    targetCells: target.filter(Boolean).length, ...measured, outcomes };
-});
-for (const result of results) assert.deepEqual(result.reference, results[0].reference);
-const selected = results.filter(result => result.outcomes.iou.status === 'true-positive').at(-1);
-assert.ok(selected, 'The physical cut must have an accepted counterpart.');
-const cut = simulate(selected.image, selected.visible, true);
-assert.deepEqual(cut.reference, selected.reference);
-assert.ok(Object.values(cut.assessments).every(assessment => !assessment.accepted));
-assert.equal(cut.matchAtProbe.filter(Boolean).length, 0);
-assert.ok(selected.matchAtProbe.some(Boolean));
+function main() {
+  const results = SCENES.map(fixture => {
+    const { image, target, visible } = render(fixture);
+    const measured = simulate(image, visible);
+    const outcomes = Object.fromEntries(Object.entries(measured.assessments)
+      .map(([name, assessment]) => [name, judge(assessment, fixture.target)]));
+    return { fixture, image, target, visible, visibleTargetCells: target.filter((bit, index) => bit && visible[index]).length,
+      targetCells: target.filter(Boolean).length, ...measured, outcomes };
+  });
+  for (const result of results) assert.deepEqual(result.reference, results[0].reference);
+  const selected = results.filter(result => result.outcomes.iou.status === 'true-positive').at(-1);
+  assert.ok(selected, 'The physical cut must have an accepted counterpart.');
+  const cut = simulate(selected.image, selected.visible, true);
+  assert.deepEqual(cut.reference, selected.reference);
+  assert.ok(Object.values(cut.assessments).every(assessment => !assessment.accepted));
+  assert.equal(cut.matchAtProbe.filter(Boolean).length, 0);
+  assert.ok(selected.matchAtProbe.some(Boolean));
 
-const totals = Object.fromEntries(Object.keys(results[0].outcomes).map(method => {
-  const counts = { 'true-positive': 0, 'wrong-pose': 0, miss: 0, 'false-positive': 0, 'correct-abstention': 0 };
-  for (const result of results) counts[result.outcomes[method].status]++;
-  return [method, counts];
-}));
-const report = {
-  protocol: {
-    size: SIZE, angles: ANGLES, scales: SCALES, threshold: THRESHOLD,
-    minVisibleFraction: MIN_VISIBLE, tolerances: TOLERANCES,
-    format: 'Controlled synthetic binary raster silhouettes at fixed lighting and view. No real photos or automatic segmentation.',
-    trainedReference: 'Two intact, unit-scale T masks at 0 and 90 degrees. Each scene uses an independent run with the same seed and training input.',
-    baseline: 'Fixed scale of 1. Score is the fraction of projected template cells occupied in the scene.',
-    scaled: 'Identical foreground score, with all three scales available. The top alignment must be unique.',
-    iou: 'Junction compares foreground intersection over union inside the tight bounding box of each projected template, without supplied visibility. Only this arm drives the downstream result probe.',
-    knownMask: 'Separate oracle diagnostic. Uses foreground overlap on visible projected template cells with at least 60% of the template visible. The known mask is not used by any other arm.',
-    cut: 'Pick the last correctly localized IoU-arm scene. Disable only the comparator input carrying C. The reference still travels and its energy is conserved.',
-    cachedControl: 'Run the same comparator directly on the cached C measured at the distant probe and the exact input raster. Scores, selections, and the pulse drive are identical in every connected trial. For occluded scenes, replacing the oracle mask with an all-visible mask also leaves the three primary scores and the pulse drive identical.',
-    judgment: 'A positive requires correct center, orientation, and scale. Accepted wrong poses are separate from negative-scene false positives.'
-  },
-  totals,
-  results,
-  disconnected: { scene: selected.fixture.id, ...cut }
-};
-const output = process.argv[2] ?? path.join(__dirname, '../outputs/sphere-stress-measurements.json');
-fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
-for (const { fixture, assessments, outcomes } of results) {
-  const row = Object.entries(outcomes).map(([method, { status }]) => `${method} ${status} ${assessments[method].score.toFixed(3)}`);
-  console.log(`${fixture.id}: ${row.join(' | ')}`);
+  const totals = Object.fromEntries(Object.keys(results[0].outcomes).map(method => {
+    const counts = { 'true-positive': 0, 'wrong-pose': 0, miss: 0, 'false-positive': 0, 'correct-abstention': 0 };
+    for (const result of results) counts[result.outcomes[method].status]++;
+    return [method, counts];
+  }));
+  const report = {
+    protocol: {
+      size: SIZE, angles: ANGLES, scales: SCALES, threshold: THRESHOLD,
+      minVisibleFraction: MIN_VISIBLE, tolerances: TOLERANCES,
+      format: 'Controlled synthetic binary raster silhouettes at fixed lighting and view. No real photos or automatic segmentation.',
+      trainedReference: 'Two intact, unit-scale T masks at 0 and 90 degrees. Each scene uses an independent run with the same seed and training input.',
+      baseline: 'Fixed scale of 1. Score is the fraction of projected template cells occupied in the scene.',
+      scaled: 'Identical foreground score, with all three scales available. The top alignment must be unique.',
+      iou: 'Junction compares foreground intersection over union inside the tight bounding box of each projected template, without supplied visibility. Only this arm drives the downstream result probe.',
+      knownMask: 'Separate oracle diagnostic. Uses foreground overlap on visible projected template cells with at least 60% of the template visible. The known mask is not used by any other arm.',
+      cut: 'Pick the last correctly localized IoU-arm scene. Disable only the comparator input carrying C. The reference still travels and its energy is conserved.',
+      cachedControl: 'Run the same comparator directly on the cached C measured at the distant probe and the exact input raster. Scores, selections, and the pulse drive are identical in every connected trial. For occluded scenes, replacing the oracle mask with an all-visible mask also leaves the three primary scores and the pulse drive identical.',
+      judgment: 'A positive requires correct center, orientation, and scale. Accepted wrong poses are separate from negative-scene false positives.'
+    },
+    totals,
+    results,
+    disconnected: { scene: selected.fixture.id, ...cut }
+  };
+  const output = process.argv[2] ?? path.join(__dirname, '../outputs/sphere-stress-measurements.json');
+  fs.writeFileSync(output, JSON.stringify(report, null, 2) + '\n');
+  for (const { fixture, assessments, outcomes } of results) {
+    const row = Object.entries(outcomes).map(([method, { status }]) => `${method} ${status} ${assessments[method].score.toFixed(3)}`);
+    console.log(`${fixture.id}: ${row.join(' | ')}`);
+  }
+  console.log(JSON.stringify({ totals, cut: selected.fixture.id }));
 }
-console.log(JSON.stringify({ totals, cut: selected.fixture.id }));
+
+if (require.main === module) main();
+
+module.exports = { simulate };
