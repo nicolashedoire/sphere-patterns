@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1480 864" width="1480" height="864" role="img" aria-labelledby="title description">
+  <title id="title">Locating a pattern with waves</title>
+  <desc id="description">In the full-frame test, the pixel samples of two isolated training views are encoded as pulses. They cross in the simulated sphere to form a shared pattern C, which circulates and returns to the comparison junction. The luminance of the uniformly resized full photo is encoded as pulses and routed to that junction. It searches for the motif across positions, angles and scales. The probe reads candidate positions and match scores. The experiment repeats with the return of C cut. A separate dashed lane shows the earlier RGB-D detector that proposed boxes for a wave verifier.</desc>
+  <defs>
+    <marker id="purple-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="#6541ab"/>
+    </marker>
+    <marker id="teal-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="#087d82"/>
+    </marker>
+    <marker id="gray-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="10" markerHeight="10" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M1 1L9 5L1 9Z" fill="#5a6d80"/>
+    </marker>
+    <clipPath id="sphere-rim"><circle cx="887" cy="421" r="212"/></clipPath>
+    <style>
+      text { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #142c43; }
+      .heading { font-size: 40px; font-weight: 730; letter-spacing: -1.2px; }
+      .subtitle { font-size: 21px; font-weight: 480; fill: #4a6276; }
+      .group { font-size: 18px; font-weight: 720; letter-spacing: 1.35px; fill: #496176; }
+      .label { font-size: 24px; font-weight: 720; }
+      .text { font-size: 17px; font-weight: 470; fill: #435b71; }
+      .small { font-size: 15px; font-weight: 600; fill: #435b71; }
+      .purple-text { fill: #583790; }
+      .teal-text { fill: #076a70; }
+      .card { fill: #fff; stroke: #cbdbe5; stroke-width: 1.5; }
+      .purple { fill: none; stroke: #6541ab; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .teal { fill: none; stroke: #087d82; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+      .legacy { fill: none; stroke: #5a6d80; stroke-width: 2; stroke-dasharray: 5 5; }
+    </style>
+  </defs>
+
+  <rect width="1480" height="864" rx="24" fill="#f5f9fc"/>
+  <text x="42" y="63" class="heading">Locating a pattern with waves</text>
+  <text x="43" y="99" class="subtitle">Full-frame test with a returning reference C</text>
+  <line x1="42" y1="126" x2="1438" y2="126" stroke="#d2dfe9"/>
+  <text x="42" y="166" class="group">IMAGE INPUTS</text>
+  <text x="308" y="166" class="group">PIXELS TO PULSES</text>
+  <text x="1239" y="166" class="group">OUTPUT</text>
+
+  <!-- Two visual examples. Each image keeps its own sample sequence. -->
+  <rect x="42" y="214" width="228" height="183" rx="14" class="card"/>
+  <text x="59" y="249" class="label">Training views</text>
+  <rect x="60" y="267" width="85" height="80" rx="8" fill="#f2ecfb" stroke="#d9cbe9"/>
+  <rect x="165" y="267" width="85" height="80" rx="8" fill="#f2ecfb" stroke="#d9cbe9"/>
+  <path d="M76 285h48v11h-17v30H93v-30H76Z" fill="#7450b9"/>
+  <path d="M181 287h52v11h-19v28h-14v-28h-19Z" fill="#7450b9"/>
+  <text x="102" y="373" text-anchor="middle" class="small purple-text">Isolated A</text>
+  <text x="208" y="373" text-anchor="middle" class="small purple-text">Isolated B</text>
+
+  <rect x="308" y="244" width="220" height="119" rx="14" class="card"/>
+  <text x="326" y="277" class="label">Encode A and B</text>
+  <path d="M327 308h16v-15h13v15h14v-10h12v10h14v-22h13v22h15v-13h12v13h15v-7h14v7h17v-17h16v17h9" class="purple"/>
+  <text x="326" y="342" class="text">One pulse slot per pixel</text>
+  <path d="M270 302H305" class="purple" marker-end="url(#purple-arrow)"/>
+
+  <!-- The complete scene is encoded with a fixed ordering and amplitude mapping. -->
+  <rect x="42" y="441" width="228" height="196" rx="14" class="card"/>
+  <text x="59" y="475" class="label">Whole scene</text>
+  <rect x="60" y="492" width="190" height="91" rx="8" fill="#e8f4f5" stroke="#bad9dd"/>
+  <path d="M80 515l8-6 7 2 7-4 11 6 3 8-4 6v10l-11 7-8-3-8 3-9-8 2-8-4-7Z" fill="#7ba8aa"/>
+  <circle cx="95" cy="525" r="5" fill="#e8f4f5"/>
+  <path d="M133 511h47v12h-16v34h-15v-34h-16Z" fill="#087d82"/>
+  <path d="M195 530l28-22 13 17-28 22Z" fill="#8b9bc2"/>
+  <circle cx="214" cy="528" r="4" fill="#e8f4f5"/>
+  <path d="M91 560h27v13H91Z" fill="#aaa6c4" transform="rotate(-8 105 567)"/>
+  <circle cx="209" cy="565" r="8" fill="#7ba8aa"/>
+  <text x="59" y="609" class="text">Uniformly resized photo</text>
+
+  <rect x="308" y="477" width="220" height="117" rx="14" class="card"/>
+  <text x="326" y="509" class="label">Encode all pixels</text>
+  <path d="M327 540h15v-16h12v16h15v-10h14v10h14v-7h15v7h14v-20h13v20h15v-12h15v12h14v-5h14v5h9" class="teal"/>
+  <text x="326" y="575" class="text">Luminance → amplitude</text>
+  <path d="M270 535H305" class="teal" marker-end="url(#teal-arrow)"/>
+
+  <!-- Both streams and the comparison junction belong to the simulated network. -->
+  <rect x="566" y="144" width="630" height="509" rx="20" fill="#edf3fa" stroke="#b9cddd" stroke-width="2"/>
+  <text x="591" y="181" class="group">SIMULATED SPHERE</text>
+  <g aria-hidden="true" clip-path="url(#sphere-rim)" fill="none" stroke="#a6bdd4" opacity=".30" stroke-width="1.4">
+    <circle cx="887" cy="421" r="211"/>
+    <ellipse cx="887" cy="421" rx="154" ry="211" transform="rotate(31 887 421)"/>
+    <ellipse cx="887" cy="421" rx="86" ry="211" transform="rotate(31 887 421)"/>
+    <ellipse cx="887" cy="421" rx="210" ry="106" transform="rotate(-17 887 421)"/>
+    <path d="M664 391L741 339L822 417L904 393L1001 442L1086 403M720 544L796 510L904 393L965 526L1069 575M851 237L892 310L904 393L1019 331"/>
+  </g>
+  <g fill="#a6bdd4" opacity=".48" aria-hidden="true">
+    <circle cx="741" cy="339" r="4"/><circle cx="822" cy="417" r="4"/><circle cx="904" cy="393" r="4"/>
+    <circle cx="1001" cy="442" r="4"/><circle cx="1086" cy="403" r="4"/><circle cx="796" cy="510" r="4"/>
+    <circle cx="965" cy="526" r="4"/><circle cx="892" cy="310" r="4"/><circle cx="1019" cy="331" r="4"/>
+  </g>
+  <rect x="599" y="249" width="199" height="112" rx="12" fill="#fff" stroke="#bcacd9" stroke-width="2"/>
+  <text x="618" y="286" class="label purple-text">Cross A and B</text>
+  <text x="618" y="316" class="text">Combine aligned pixels</text>
+  <text x="618" y="339" class="text">and emit reference C</text>
+  <path d="M528 302H596" class="purple" marker-end="url(#purple-arrow)"/>
+
+  <text x="933" y="230" text-anchor="middle" class="small purple-text">C circulates and returns</text>
+  <path d="M798 303h25c11 0 15-7 18-16 10-32 65-45 118-34 59 12 93 49 72 79-7 11-20 17-32 22v44" class="purple" marker-end="url(#purple-arrow)"/>
+  <circle cx="932" cy="305" r="27" fill="#e8def8" stroke="#baa5dc" stroke-width="2"/>
+  <text x="932" y="314" text-anchor="middle" class="label purple-text">C</text>
+
+  <circle cx="999" cy="411" r="4.5" fill="#fff" stroke="#6541ab" stroke-width="2"/>
+  <circle cx="999" cy="434" r="4.5" fill="#fff" stroke="#6541ab" stroke-width="2"/>
+  <path d="M1002 413l14 14" stroke="#a75c15" stroke-width="3" stroke-linecap="round"/>
+  <path d="M999 441v29" class="purple" marker-end="url(#purple-arrow)"/>
+  <rect x="1024" y="393" width="150" height="54" rx="8" fill="#fff2dd" stroke="#e7bd87"/>
+  <text x="1035" y="416" class="small" style="fill:#794716">Return switch</text>
+  <text x="1035" y="435" class="small" style="fill:#794716">Open for control</text>
+
+  <path d="M528 534H887" class="teal" marker-end="url(#teal-arrow)"/>
+  <rect x="601" y="507" width="245" height="52" rx="10" fill="#e3f3f4" stroke="#a4cdd0" stroke-width="1.5"/>
+  <text x="619" y="540" class="text teal-text" style="font-weight:650">Full-scene pulse route</text>
+
+  <rect x="888" y="472" width="287" height="140" rx="12" fill="#fff" stroke="#a9c5d4" stroke-width="2"/>
+  <text x="907" y="506" class="label">Comparison junction</text>
+  <text x="907" y="534" class="text">Decode the arriving raster</text>
+  <text x="907" y="559" class="text">Use C as a contrast template</text>
+  <text x="907" y="584" class="text">Scan position, angle and scale</text>
+  <path d="M1176 534H1237" class="teal" marker-end="url(#teal-arrow)"/>
+
+  <rect x="1240" y="474" width="198" height="118" rx="14" class="card"/>
+  <text x="1257" y="509" class="label">Distant probe</text>
+  <text x="1257" y="543" class="text">Position (x, y)</text>
+  <text x="1257" y="569" class="text">Match score</text>
+
+  <!-- A separate earlier pipeline makes the detector's placement explicit. -->
+  <rect x="42" y="693" width="1396" height="126" rx="14" fill="#eef3f7" stroke="#b5c6d5" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text x="60" y="734" class="label">Earlier RGB-D pipeline</text>
+  <text x="60" y="767" class="text">The detector proposes boxes</text>
+  <text x="60" y="790" class="text">before wave verification.</text>
+
+  <rect x="375" y="727" width="183" height="56" rx="9" class="card"/>
+  <text x="466" y="762" text-anchor="middle" class="text">Color and depth</text>
+  <path d="M558 755H594" class="legacy" marker-end="url(#gray-arrow)"/>
+  <rect x="597" y="727" width="225" height="56" rx="9" class="card"/>
+  <text x="709" y="762" text-anchor="middle" class="text">RGB-D detector</text>
+  <path d="M822 755H858" class="legacy" marker-end="url(#gray-arrow)"/>
+  <rect x="861" y="727" width="183" height="56" rx="9" class="card"/>
+  <text x="952" y="762" text-anchor="middle" class="text">Candidate boxes</text>
+  <path d="M1044 755H1080" class="legacy" marker-end="url(#gray-arrow)"/>
+  <rect x="1083" y="727" width="329" height="56" rx="9" class="card"/>
+  <text x="1248" y="762" text-anchor="middle" class="text">Wave verification within each box</text>
+</svg>

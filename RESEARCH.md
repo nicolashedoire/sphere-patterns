@@ -150,3 +150,23 @@ bash scripts/replay-active-vision.sh "$train_json" "$panel" "$models_zip" "$run"
 cmp "$run/measurements.json" outputs/sphere-tless-active-vision-measurements.json
 cmp "$run/wave.json" outputs/sphere-tless-active-vision-wave.json
 ```
+
+## Full-frame wave search
+
+The full scene is converted to grayscale and uniformly downsampled from 720 × 540 to 144 × 108. An amplitude therefore carries luminance and its time slot fixes its row and column. Twelve pairs of distinct isolated T-LESS training photos are centered from their training boxes. Each pair overlaps at the simulation's coincidence junction, producing one luminance reference in C. The complete bank travels around the return circuit. The original 1,000-junction topology is preserved and the link delays are tripled so that the larger input fits between its earliest echoes. [Signal diagram and photos](https://nicolashedoire.github.io/sphere-patterns/full-wave.html)
+
+A programmed comparator at the junction buffers the received scene and the physically returned C. It scans the scene on a two-pixel grid, with local one-pixel refinement, seven scales and 24 in-plane angles per reference. Its score combines normalized luminance correlation (70%) and signed image gradient correlation (30%). Five locations, scores and reference indices are emitted on a carrier and decoded at the remote probe. The prediction stage gets no region proposals or test annotations. The rotation bank handles in-plane rotations. The distinct training pairs supply several appearances.
+
+The separate evaluator matches visible boxes one to one at IoU ≥ 0.50 with visibility ≥ 0.20. The score cutoff maximizes the number of development hits with at most two false boxes and at most one target-absent frame with an alarm. The 24 development photos and 30 held-out photos use disjoint setups and come from existing study panels. Every cutoff that kept a development hit exceeded the false-alarm budget, so the calibration selected abstention. The top-five rows show what was available before that cutoff.
+
+| Raw ranking and final decisions | Eligible instances | Rank-one matches | Top-five matches | False top-five boxes | Accepted matches |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Seven isolated real photos | 3 | 2 | 3 | 32 | — |
+| 24 development photos | 24 | 0 | 1 | 119 | 0 |
+| 30 held-out cluttered photos | 29 | 1 | 2 | 148 | 0 |
+
+The isolated control includes three target photos outside the C pairs and four photos of other isolated parts. All photos in this control receive the same black padding before resizing to preserve aspect ratio. The synthetic control places a copy of the paired reference away from the center and includes a second shape. The remote probe localizes it first at score 0.999988. The two held-out matches occur in two views of a single physical setup. A target-absent photo has a higher-scoring region than either match.
+
+An exact transport check verifies all 15,552 scene amplitudes at the junction in each run. The physical C trace is identical in the connected and cut runs. The cut suppresses the comparator's access to C while the reference wave continues to circulate. It reduces raw probe output from 30 of 30 cluttered photos to zero. The recognition rule is programmed at the junction. The result tests signal-dependent localization and its accuracy under clutter. [All measurements](outputs/sphere-full-wave-measurements.json)
+
+Run `bash scripts/replay-full-wave.sh MULTIVIEW_PANEL_DIR PHOTO_TRAINING_DIR OUTPUT_DIR` with Node.js 24, Python and Pillow 12. Prepare the two dataset directories using `work/sphere-tless-multiview-fetch.py` and `work/sphere-tless-photos-fetch.py`. Inspect `measurements.json` in the output directory. T-LESS photos are credited under CC BY 4.0. [Dataset and licence](https://cmp.felk.cvut.cz/t-less/)

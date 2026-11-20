@@ -1,0 +1,7247 @@
+{
+  "source": {
+    "title": "T-LESS",
+    "authors": "Tomas Hodan et al.",
+    "license": "CC BY 4.0",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "project": "https://cmp.felk.cvut.cz/t-less/",
+    "revision": "5fd309a04476a842d93abfb584fba9ee7caecdf1",
+    "archiveURLs": [
+      "https://huggingface.co/datasets/bop-benchmark/tless/resolve/5fd309a04476a842d93abfb584fba9ee7caecdf1/tless_train_primesense.zip",
+      "https://huggingface.co/datasets/bop-benchmark/tless/resolve/5fd309a04476a842d93abfb584fba9ee7caecdf1/tless_test_primesense_bop19.zip"
+    ]
+  },
+  "part": 1,
+  "localizationIoU": 0.5,
+  "minimumVisibility": 0.2,
+  "threshold": 1.01,
+  "development": {
+    "fixed": {
+      "summary": {
+        "positivePhotos": 12,
+        "rankOneHits": 0,
+        "photosWithAcceptedHit": 0,
+        "eligibleInstances": 24,
+        "hits": 0,
+        "falseAlarms": 0,
+        "ignored": 0,
+        "absentPhotos": 12,
+        "absentPhotosWithAlarm": 0,
+        "bands": {
+          "high": {
+            "photos": 6,
+            "rankOneHits": 0,
+            "eligible": 12,
+            "hits": 0
+          },
+          "partial": {
+            "photos": 6,
+            "rankOneHits": 0,
+            "eligible": 12,
+            "hits": 0
+          }
+        }
+      },
+      "frames": [
+        {
+          "id": "04-000115",
+          "scene": 4,
+          "frame": 115,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              10,
+              470,
+              20,
+              30
+            ],
+            "score": 0.741679,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "04-000252",
+          "scene": 4,
+          "frame": 252,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              325,
+              5,
+              20,
+              35
+            ],
+            "score": 0.757209,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "04-000411",
+          "scene": 4,
+          "frame": 411,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              30,
+              25
+            ],
+            "score": 0.780328,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "05-000056",
+          "scene": 5,
+          "frame": 56,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                429,
+                217,
+                54,
+                59
+              ],
+              "amodalBox": [
+                428,
+                217,
+                55,
+                60
+              ],
+              "visibility": 0.9411986430456087
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              330,
+              235,
+              25,
+              45
+            ],
+            "score": 0.701088,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "05-000306",
+          "scene": 5,
+          "frame": 306,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                246,
+                152,
+                51,
+                68
+              ],
+              "amodalBox": [
+                246,
+                152,
+                51,
+                90
+              ],
+              "visibility": 0.8503521126760564
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              425,
+              5,
+              35,
+              20
+            ],
+            "score": 0.844582,
+            "accepted": false,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "05-000377",
+          "scene": 5,
+          "frame": 377,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                250,
+                146,
+                50,
+                53
+              ],
+              "amodalBox": [
+                250,
+                146,
+                50,
+                89
+              ],
+              "visibility": 0.7138572285542891
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              145,
+              55,
+              35,
+              20
+            ],
+            "score": 0.785073,
+            "accepted": false,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "05-000450",
+          "scene": 5,
+          "frame": 450,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                252,
+                143,
+                49,
+                42
+              ],
+              "amodalBox": [
+                252,
+                143,
+                49,
+                86
+              ],
+              "visibility": 0.5080025608194623
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              475,
+              45,
+              30,
+              30
+            ],
+            "score": 0.849905,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "08-000100",
+          "scene": 8,
+          "frame": 100,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              460,
+              165,
+              70,
+              100
+            ],
+            "score": 0.774642,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "08-000272",
+          "scene": 8,
+          "frame": 272,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              215,
+              240,
+              30,
+              30
+            ],
+            "score": 0.743778,
+            "accepted": false,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "08-000425",
+          "scene": 8,
+          "frame": 425,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              35,
+              20
+            ],
+            "score": 0.786167,
+            "accepted": false,
+            "reference": 5,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "09-000356",
+          "scene": 9,
+          "frame": 356,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                410,
+                194,
+                46,
+                79
+              ],
+              "amodalBox": [
+                410,
+                194,
+                46,
+                80
+              ],
+              "visibility": 0.9282382490132759
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                473,
+                229,
+                50,
+                85
+              ],
+              "amodalBox": [
+                473,
+                229,
+                50,
+                85
+              ],
+              "visibility": 0.8793985924504159
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                411,
+                264,
+                17,
+                57
+              ],
+              "amodalBox": [
+                411,
+                262,
+                49,
+                62
+              ],
+              "visibility": 0.11482254697286012
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              15,
+              35,
+              25
+            ],
+            "score": 0.794064,
+            "accepted": false,
+            "reference": 10,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "09-000402",
+          "scene": 9,
+          "frame": 402,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                248,
+                210,
+                46,
+                84
+              ],
+              "amodalBox": [
+                248,
+                210,
+                46,
+                84
+              ],
+              "visibility": 0.876598686484618
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                277,
+                187,
+                43,
+                47
+              ],
+              "amodalBox": [
+                277,
+                187,
+                43,
+                77
+              ],
+              "visibility": 0.6586248492159228
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                350,
+                234,
+                15,
+                34
+              ],
+              "amodalBox": [
+                290,
+                230,
+                77,
+                48
+              ],
+              "visibility": 0.08238969152674737
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              35,
+              25
+            ],
+            "score": 0.785031,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "09-000417",
+          "scene": 9,
+          "frame": 417,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                338,
+                192,
+                44,
+                60
+              ],
+              "amodalBox": [
+                338,
+                192,
+                44,
+                80
+              ],
+              "visibility": 0.6575920245398773
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                426,
+                194,
+                44,
+                79
+              ],
+              "amodalBox": [
+                426,
+                194,
+                44,
+                79
+              ],
+              "visibility": 0.7018083878414775
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                384,
+                243,
+                70,
+                37
+              ],
+              "amodalBox": [
+                377,
+                243,
+                77,
+                48
+              ],
+              "visibility": 0.21228203184230476
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              30,
+              25
+            ],
+            "score": 0.787732,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "09-000484",
+          "scene": 9,
+          "frame": 484,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                299,
+                210,
+                43,
+                79
+              ],
+              "amodalBox": [
+                298,
+                210,
+                44,
+                79
+              ],
+              "visibility": 0.3956301209520094
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                375,
+                208,
+                41,
+                43
+              ],
+              "amodalBox": [
+                375,
+                208,
+                41,
+                75
+              ],
+              "visibility": 0.5614109647258818
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                397,
+                248,
+                16,
+                3
+              ],
+              "amodalBox": [
+                344,
+                248,
+                79,
+                44
+              ],
+              "visibility": 0.010899182561307902
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              385,
+              85,
+              25,
+              45
+            ],
+            "score": 0.825596,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "11-000099",
+          "scene": 11,
+          "frame": 99,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              455,
+              195,
+              40,
+              30
+            ],
+            "score": 0.771006,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "11-000281",
+          "scene": 11,
+          "frame": 281,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              530,
+              225,
+              25,
+              45
+            ],
+            "score": 0.76729,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "11-000412",
+          "scene": 11,
+          "frame": 412,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              435,
+              70,
+              45,
+              25
+            ],
+            "score": 0.787876,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "15-000112",
+          "scene": 15,
+          "frame": 112,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              445,
+              125,
+              30,
+              20
+            ],
+            "score": 0.759438,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "15-000253",
+          "scene": 15,
+          "frame": 253,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              445,
+              150,
+              105,
+              65
+            ],
+            "score": 0.741707,
+            "accepted": false,
+            "reference": 11,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "15-000420",
+          "scene": 15,
+          "frame": 420,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              460,
+              265,
+              25,
+              45
+            ],
+            "score": 0.794283,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "17-000411",
+          "scene": 17,
+          "frame": 411,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                206,
+                193,
+                59,
+                49
+              ],
+              "amodalBox": [
+                201,
+                193,
+                64,
+                51
+              ],
+              "visibility": 0.838871187983614
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                220,
+                245,
+                39,
+                17
+              ],
+              "amodalBox": [
+                212,
+                245,
+                50,
+                47
+              ],
+              "visibility": 0.24123711340206186
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                487,
+                205,
+                46,
+                29
+              ],
+              "amodalBox": [
+                486,
+                205,
+                47,
+                82
+              ],
+              "visibility": 0.4134917860887801
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              175,
+              35,
+              20
+            ],
+            "score": 0.800644,
+            "accepted": false,
+            "reference": 5,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "17-000453",
+          "scene": 17,
+          "frame": 453,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                369,
+                280,
+                93,
+                57
+              ],
+              "amodalBox": [
+                369,
+                280,
+                99,
+                58
+              ],
+              "visibility": 0.9445097578180108
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                439,
+                251,
+                60,
+                68
+              ],
+              "amodalBox": [
+                437,
+                251,
+                62,
+                69
+              ],
+              "visibility": 0.6604810996563574
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                191,
+                205,
+                45,
+                81
+              ],
+              "amodalBox": [
+                191,
+                205,
+                46,
+                81
+              ],
+              "visibility": 0.6857962697274032
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              155,
+              95,
+              35,
+              25
+            ],
+            "score": 0.848163,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "17-000462",
+          "scene": 17,
+          "frame": 462,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                191,
+                267,
+                83,
+                42
+              ],
+              "amodalBox": [
+                185,
+                267,
+                101,
+                61
+              ],
+              "visibility": 0.25356538554508096
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                338,
+                266,
+                68,
+                57
+              ],
+              "amodalBox": [
+                338,
+                262,
+                94,
+                63
+              ],
+              "visibility": 0.5022172949002217
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                274,
+                198,
+                39,
+                65
+              ],
+              "amodalBox": [
+                273,
+                198,
+                42,
+                75
+              ],
+              "visibility": 0.47051226861816614
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              55,
+              35,
+              20
+            ],
+            "score": 0.831035,
+            "accepted": false,
+            "reference": 11,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "17-000485",
+          "scene": 17,
+          "frame": 485,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                251,
+                218,
+                43,
+                43
+              ],
+              "amodalBox": [
+                227,
+                218,
+                67,
+                44
+              ],
+              "visibility": 0.5956127801621364
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                249,
+                259,
+                19,
+                26
+              ],
+              "amodalBox": [
+                216,
+                238,
+                52,
+                51
+              ],
+              "visibility": 0.13054067218704335
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                493,
+                216,
+                47,
+                24
+              ],
+              "amodalBox": [
+                493,
+                216,
+                47,
+                84
+              ],
+              "visibility": 0.2919254658385093
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              145,
+              95,
+              35,
+              25
+            ],
+            "score": 0.849372,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        }
+      ]
+    },
+    "topFive": {
+      "positivePhotos": 12,
+      "rankOneHits": 0,
+      "photosWithAcceptedHit": 1,
+      "eligibleInstances": 24,
+      "hits": 1,
+      "falseAlarms": 119,
+      "ignored": 0,
+      "absentPhotos": 12,
+      "absentPhotosWithAlarm": 12,
+      "bands": {
+        "high": {
+          "photos": 6,
+          "rankOneHits": 0,
+          "eligible": 12,
+          "hits": 1
+        },
+        "partial": {
+          "photos": 6,
+          "rankOneHits": 0,
+          "eligible": 12,
+          "hits": 0
+        }
+      }
+    }
+  },
+  "heldout": {
+    "fixed": {
+      "summary": {
+        "positivePhotos": 12,
+        "rankOneHits": 1,
+        "photosWithAcceptedHit": 0,
+        "eligibleInstances": 29,
+        "hits": 0,
+        "falseAlarms": 0,
+        "ignored": 0,
+        "absentPhotos": 18,
+        "absentPhotosWithAlarm": 0,
+        "bands": {
+          "high": {
+            "photos": 6,
+            "rankOneHits": 1,
+            "eligible": 18,
+            "hits": 0
+          },
+          "partial": {
+            "photos": 6,
+            "rankOneHits": 0,
+            "eligible": 11,
+            "hits": 0
+          }
+        }
+      },
+      "frames": [
+        {
+          "id": "01-000157",
+          "scene": 1,
+          "frame": 157,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              235,
+              290,
+              125,
+              125
+            ],
+            "score": 0.854439,
+            "accepted": false,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "01-000308",
+          "scene": 1,
+          "frame": 308,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              525,
+              35,
+              35,
+              20
+            ],
+            "score": 0.772656,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "01-000418",
+          "scene": 1,
+          "frame": 418,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              35,
+              20
+            ],
+            "score": 0.831729,
+            "accepted": false,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "02-000145",
+          "scene": 2,
+          "frame": 145,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              220,
+              45,
+              25
+            ],
+            "score": 0.754633,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "02-000295",
+          "scene": 2,
+          "frame": 295,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              35,
+              75,
+              25,
+              35
+            ],
+            "score": 0.812492,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "02-000434",
+          "scene": 2,
+          "frame": 434,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              45,
+              35,
+              30
+            ],
+            "score": 0.82012,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "03-000101",
+          "scene": 3,
+          "frame": 101,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              35,
+              465,
+              30,
+              20
+            ],
+            "score": 0.744633,
+            "accepted": false,
+            "reference": 5,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "03-000269",
+          "scene": 3,
+          "frame": 269,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              170,
+              280,
+              80,
+              120
+            ],
+            "score": 0.748596,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "03-000416",
+          "scene": 3,
+          "frame": 416,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              30,
+              25
+            ],
+            "score": 0.795607,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "06-000096",
+          "scene": 6,
+          "frame": 96,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              225,
+              165,
+              75,
+              70
+            ],
+            "score": 0.801087,
+            "accepted": false,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "06-000259",
+          "scene": 6,
+          "frame": 259,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              400,
+              285,
+              30,
+              45
+            ],
+            "score": 0.760965,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "06-000409",
+          "scene": 6,
+          "frame": 409,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              365,
+              230,
+              35,
+              35
+            ],
+            "score": 0.819346,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "07-000198",
+          "scene": 7,
+          "frame": 198,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                425,
+                148,
+                47,
+                72
+              ],
+              "amodalBox": [
+                425,
+                148,
+                47,
+                72
+              ],
+              "visibility": 0.92734375
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              320,
+              125,
+              70,
+              70
+            ],
+            "score": 0.866451,
+            "accepted": false,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "07-000342",
+          "scene": 7,
+          "frame": 342,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                423,
+                175,
+                45,
+                67
+              ],
+              "amodalBox": [
+                423,
+                175,
+                45,
+                79
+              ],
+              "visibility": 0.9135987978963186
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": true,
+          "rankOne": {
+            "box": [
+              425,
+              175,
+              45,
+              45
+            ],
+            "score": 0.785279,
+            "accepted": false,
+            "reference": 0,
+            "result": "hit",
+            "nearestTargetIoU": 0.623188,
+            "targetIndex": 0
+          },
+          "accepted": []
+        },
+        {
+          "id": "07-000478",
+          "scene": 7,
+          "frame": 478,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                332,
+                205,
+                42,
+                42
+              ],
+              "amodalBox": [
+                332,
+                205,
+                42,
+                75
+              ],
+              "visibility": 0.6762806715454154
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              460,
+              50,
+              35,
+              30
+            ],
+            "score": 0.829711,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "07-000493",
+          "scene": 7,
+          "frame": 493,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                460,
+                218,
+                46,
+                80
+              ],
+              "amodalBox": [
+                460,
+                218,
+                46,
+                81
+              ],
+              "visibility": 0.6867250182348651
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              475,
+              55,
+              30,
+              20
+            ],
+            "score": 0.79364,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "12-000130",
+          "scene": 12,
+          "frame": 130,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              375,
+              330,
+              25,
+              35
+            ],
+            "score": 0.840068,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "12-000260",
+          "scene": 12,
+          "frame": 260,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              265,
+              30,
+              20
+            ],
+            "score": 0.753824,
+            "accepted": false,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "12-000387",
+          "scene": 12,
+          "frame": 387,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              320,
+              305,
+              35,
+              25
+            ],
+            "score": 0.804076,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "16-000153",
+          "scene": 16,
+          "frame": 153,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              625,
+              505,
+              30,
+              30
+            ],
+            "score": 0.825956,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "16-000298",
+          "scene": 16,
+          "frame": 298,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              475,
+              5,
+              25,
+              35
+            ],
+            "score": 0.785278,
+            "accepted": false,
+            "reference": 10,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "16-000418",
+          "scene": 16,
+          "frame": 418,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              15,
+              30,
+              45
+            ],
+            "score": 0.823125,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "18-000151",
+          "scene": 18,
+          "frame": 151,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                158,
+                240,
+                52,
+                66
+              ],
+              "amodalBox": [
+                158,
+                240,
+                53,
+                73
+              ],
+              "visibility": 0.9271523178807947
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                183,
+                292,
+                44,
+                74
+              ],
+              "amodalBox": [
+                183,
+                292,
+                53,
+                74
+              ],
+              "visibility": 0.7229634831460674
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                257,
+                271,
+                36,
+                78
+              ],
+              "amodalBox": [
+                242,
+                270,
+                51,
+                79
+              ],
+              "visibility": 0.3218697829716194
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              495,
+              275,
+              25,
+              35
+            ],
+            "score": 0.788424,
+            "accepted": false,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "18-000336",
+          "scene": 18,
+          "frame": 336,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                504,
+                247,
+                50,
+                66
+              ],
+              "amodalBox": [
+                502,
+                247,
+                52,
+                86
+              ],
+              "visibility": 0.699816961561928
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                495,
+                223,
+                42,
+                49
+              ],
+              "amodalBox": [
+                493,
+                223,
+                48,
+                85
+              ],
+              "visibility": 0.2886874790198053
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                440,
+                243,
+                48,
+                37
+              ],
+              "amodalBox": [
+                428,
+                243,
+                60,
+                68
+              ],
+              "visibility": 0.46629422718808194
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              25,
+              80,
+              30,
+              45
+            ],
+            "score": 0.762314,
+            "accepted": false,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "18-000452",
+          "scene": 18,
+          "frame": 452,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                266,
+                204,
+                30,
+                59
+              ],
+              "amodalBox": [
+                254,
+                203,
+                42,
+                75
+              ],
+              "visibility": 0.1749893299189074
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                232,
+                263,
+                25,
+                23
+              ],
+              "amodalBox": [
+                220,
+                208,
+                43,
+                78
+              ],
+              "visibility": 0.15552903739061258
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                249,
+                243,
+                54,
+                45
+              ],
+              "amodalBox": [
+                249,
+                243,
+                80,
+                45
+              ],
+              "visibility": 0.5372740963855421
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              155,
+              95,
+              35,
+              25
+            ],
+            "score": 0.820991,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "18-000487",
+          "scene": 18,
+          "frame": 487,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                456,
+                240,
+                53,
+                95
+              ],
+              "amodalBox": [
+                456,
+                240,
+                53,
+                95
+              ],
+              "visibility": 0.8728768577494692
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                479,
+                235,
+                51,
+                89
+              ],
+              "amodalBox": [
+                479,
+                235,
+                51,
+                92
+              ],
+              "visibility": 0.20499419279907086
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                420,
+                262,
+                62,
+                49
+              ],
+              "amodalBox": [
+                400,
+                261,
+                86,
+                52
+              ],
+              "visibility": 0.41152
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              45,
+              25,
+              30
+            ],
+            "score": 0.820186,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "20-000327",
+          "scene": 20,
+          "frame": 327,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                452,
+                282,
+                52,
+                78
+              ],
+              "amodalBox": [
+                447,
+                282,
+                57,
+                83
+              ],
+              "visibility": 0.8214607754733995
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                370,
+                187,
+                33,
+                23
+              ],
+              "amodalBox": [
+                358,
+                187,
+                48,
+                60
+              ],
+              "visibility": 0.2704841713221601
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "amodalBox": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "visibility": 0.0
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                247,
+                259,
+                44,
+                71
+              ],
+              "amodalBox": [
+                247,
+                259,
+                51,
+                71
+              ],
+              "visibility": 0.7433793360686312
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                382,
+                244,
+                60,
+                37
+              ],
+              "amodalBox": [
+                382,
+                243,
+                82,
+                49
+              ],
+              "visibility": 0.04509466437177281
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                459,
+                218,
+                59,
+                32
+              ],
+              "amodalBox": [
+                459,
+                218,
+                59,
+                61
+              ],
+              "visibility": 0.3738132911392405
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                345,
+                287,
+                51,
+                55
+              ],
+              "amodalBox": [
+                345,
+                284,
+                53,
+                62
+              ],
+              "visibility": 0.8615444617784711
+            }
+          ],
+          "eligible": 5,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              410,
+              255,
+              35,
+              35
+            ],
+            "score": 0.783805,
+            "accepted": false,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "20-000378",
+          "scene": 20,
+          "frame": 378,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                429,
+                226,
+                31,
+                29
+              ],
+              "amodalBox": [
+                385,
+                206,
+                78,
+                49
+              ],
+              "visibility": 0.027049521431543905
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                243,
+                225,
+                75,
+                48
+              ],
+              "amodalBox": [
+                243,
+                225,
+                86,
+                49
+              ],
+              "visibility": 0.4170255051341504
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                258,
+                232,
+                56,
+                79
+              ],
+              "amodalBox": [
+                258,
+                232,
+                56,
+                90
+              ],
+              "visibility": 0.6993049259595043
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                397,
+                296,
+                76,
+                32
+              ],
+              "amodalBox": [
+                382,
+                278,
+                91,
+                50
+              ],
+              "visibility": 0.06497341996455995
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                311,
+                240,
+                7,
+                15
+              ],
+              "amodalBox": [
+                309,
+                222,
+                49,
+                58
+              ],
+              "visibility": 0.019471488178025034
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                290,
+                189,
+                44,
+                58
+              ],
+              "amodalBox": [
+                282,
+                189,
+                58,
+                62
+              ],
+              "visibility": 0.3074588031222897
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                445,
+                238,
+                17,
+                37
+              ],
+              "amodalBox": [
+                379,
+                238,
+                83,
+                47
+              ],
+              "visibility": 0.10919540229885058
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              140,
+              55,
+              30,
+              25
+            ],
+            "score": 0.771851,
+            "accepted": false,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "20-000407",
+          "scene": 20,
+          "frame": 407,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                326,
+                290,
+                96,
+                64
+              ],
+              "amodalBox": [
+                326,
+                290,
+                96,
+                64
+              ],
+              "visibility": 0.9296286678784731
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                403,
+                214,
+                56,
+                41
+              ],
+              "amodalBox": [
+                398,
+                214,
+                61,
+                51
+              ],
+              "visibility": 0.7796684118673648
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                385,
+                201,
+                30,
+                48
+              ],
+              "amodalBox": [
+                369,
+                201,
+                46,
+                62
+              ],
+              "visibility": 0.320902394106814
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                230,
+                244,
+                60,
+                43
+              ],
+              "amodalBox": [
+                230,
+                237,
+                78,
+                50
+              ],
+              "visibility": 0.4117005813953488
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                398,
+                280,
+                4,
+                9
+              ],
+              "amodalBox": [
+                398,
+                264,
+                56,
+                52
+              ],
+              "visibility": 0.017895185342991053
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                441,
+                241,
+                77,
+                78
+              ],
+              "amodalBox": [
+                441,
+                241,
+                77,
+                82
+              ],
+              "visibility": 0.752989209682123
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                278,
+                270,
+                28,
+                25
+              ],
+              "amodalBox": [
+                278,
+                270,
+                84,
+                50
+              ],
+              "visibility": 0.07035647279549719
+            }
+          ],
+          "eligible": 5,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              390,
+              30,
+              55,
+              30
+            ],
+            "score": 0.76117,
+            "accepted": false,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        },
+        {
+          "id": "20-000450",
+          "scene": 20,
+          "frame": 450,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                392,
+                227,
+                69,
+                39
+              ],
+              "amodalBox": [
+                384,
+                227,
+                77,
+                48
+              ],
+              "visibility": 0.13019508057675996
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                244,
+                227,
+                43,
+                46
+              ],
+              "amodalBox": [
+                244,
+                227,
+                85,
+                46
+              ],
+              "visibility": 0.2604871447902571
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                258,
+                224,
+                56,
+                61
+              ],
+              "amodalBox": [
+                258,
+                224,
+                56,
+                87
+              ],
+              "visibility": 0.5937211449676824
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                462,
+                285,
+                10,
+                16
+              ],
+              "amodalBox": [
+                382,
+                265,
+                90,
+                50
+              ],
+              "visibility": 0.0380952380952381
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                350,
+                254,
+                1,
+                1
+              ],
+              "amodalBox": [
+                309,
+                237,
+                49,
+                49
+              ],
+              "visibility": 0.0020607934054611026
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                296,
+                215,
+                21,
+                22
+              ],
+              "amodalBox": [
+                282,
+                206,
+                58,
+                65
+              ],
+              "visibility": 0.11762171477811288
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                456,
+                247,
+                5,
+                36
+              ],
+              "amodalBox": [
+                379,
+                244,
+                82,
+                47
+              ],
+              "visibility": 0.013105205678922462
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              155,
+              95,
+              35,
+              25
+            ],
+            "score": 0.822228,
+            "accepted": false,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": []
+        }
+      ]
+    },
+    "topFive": {
+      "summary": {
+        "positivePhotos": 12,
+        "rankOneHits": 1,
+        "photosWithAcceptedHit": 2,
+        "eligibleInstances": 29,
+        "hits": 2,
+        "falseAlarms": 148,
+        "ignored": 0,
+        "absentPhotos": 18,
+        "absentPhotosWithAlarm": 18,
+        "bands": {
+          "high": {
+            "photos": 6,
+            "rankOneHits": 1,
+            "eligible": 18,
+            "hits": 2
+          },
+          "partial": {
+            "photos": 6,
+            "rankOneHits": 0,
+            "eligible": 11,
+            "hits": 0
+          }
+        }
+      },
+      "frames": [
+        {
+          "id": "01-000157",
+          "scene": 1,
+          "frame": 157,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              235,
+              290,
+              125,
+              125
+            ],
+            "score": 0.854439,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                235,
+                290,
+                125,
+                125
+              ],
+              "score": 0.854439,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                195,
+                220,
+                70,
+                70
+              ],
+              "score": 0.851001,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                445,
+                265,
+                25,
+                35
+              ],
+              "score": 0.724636,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                295,
+                130,
+                120,
+                85
+              ],
+              "score": 0.711977,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                445,
+                215,
+                30,
+                45
+              ],
+              "score": 0.667978,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "01-000308",
+          "scene": 1,
+          "frame": 308,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              525,
+              35,
+              35,
+              20
+            ],
+            "score": 0.772656,
+            "accepted": true,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                525,
+                35,
+                35,
+                20
+              ],
+              "score": 0.772656,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                235,
+                185,
+                70,
+                45
+              ],
+              "score": 0.764419,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                20,
+                35,
+                30
+              ],
+              "score": 0.75706,
+              "accepted": true,
+              "reference": 2,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                190,
+                235,
+                120,
+                80
+              ],
+              "score": 0.735392,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                505,
+                55,
+                80,
+                50
+              ],
+              "score": 0.723102,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "01-000418",
+          "scene": 1,
+          "frame": 418,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              35,
+              20
+            ],
+            "score": 0.831729,
+            "accepted": true,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                135,
+                55,
+                35,
+                20
+              ],
+              "score": 0.831729,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                400,
+                35,
+                45,
+                25
+              ],
+              "score": 0.766312,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                445,
+                315,
+                30,
+                30
+              ],
+              "score": 0.742999,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                440,
+                75,
+                45,
+                25
+              ],
+              "score": 0.742547,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                555,
+                50,
+                35,
+                25
+              ],
+              "score": 0.724597,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "02-000145",
+          "scene": 2,
+          "frame": 145,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              220,
+              45,
+              25
+            ],
+            "score": 0.754633,
+            "accepted": true,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                440,
+                220,
+                45,
+                25
+              ],
+              "score": 0.754633,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                170,
+                195,
+                45,
+                70
+              ],
+              "score": 0.720428,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                355,
+                175,
+                65,
+                45
+              ],
+              "score": 0.710197,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                300,
+                120,
+                50,
+                50
+              ],
+              "score": 0.710036,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                265,
+                210,
+                50,
+                65
+              ],
+              "score": 0.70111,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "02-000295",
+          "scene": 2,
+          "frame": 295,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              35,
+              75,
+              25,
+              35
+            ],
+            "score": 0.812492,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                35,
+                75,
+                25,
+                35
+              ],
+              "score": 0.812492,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                480,
+                15,
+                25,
+                30
+              ],
+              "score": 0.764498,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                220,
+                185,
+                30,
+                30
+              ],
+              "score": 0.753722,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                500,
+                55,
+                80,
+                45
+              ],
+              "score": 0.729609,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                420,
+                5,
+                35,
+                20
+              ],
+              "score": 0.729199,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "02-000434",
+          "scene": 2,
+          "frame": 434,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              45,
+              35,
+              30
+            ],
+            "score": 0.82012,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                465,
+                45,
+                35,
+                30
+              ],
+              "score": 0.82012,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                385,
+                85,
+                30,
+                45
+              ],
+              "score": 0.783192,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                670,
+                165,
+                30,
+                30
+              ],
+              "score": 0.778908,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                390,
+                210,
+                35,
+                20
+              ],
+              "score": 0.769249,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                485,
+                115,
+                25,
+                35
+              ],
+              "score": 0.766202,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "03-000101",
+          "scene": 3,
+          "frame": 101,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              35,
+              465,
+              30,
+              20
+            ],
+            "score": 0.744633,
+            "accepted": true,
+            "reference": 5,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                35,
+                465,
+                30,
+                20
+              ],
+              "score": 0.744633,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                315,
+                45,
+                25
+              ],
+              "score": 0.718413,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                455,
+                295,
+                105,
+                105
+              ],
+              "score": 0.706915,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                530,
+                315,
+                25,
+                45
+              ],
+              "score": 0.690694,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                160,
+                245,
+                130,
+                125
+              ],
+              "score": 0.679676,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "03-000269",
+          "scene": 3,
+          "frame": 269,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              170,
+              280,
+              80,
+              120
+            ],
+            "score": 0.748596,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                170,
+                280,
+                80,
+                120
+              ],
+              "score": 0.748596,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                20,
+                15,
+                35,
+                20
+              ],
+              "score": 0.737733,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                195,
+                355,
+                45,
+                25
+              ],
+              "score": 0.716833,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                290,
+                290,
+                40,
+                35
+              ],
+              "score": 0.712569,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                450,
+                210,
+                125,
+                125
+              ],
+              "score": 0.708873,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "03-000416",
+          "scene": 3,
+          "frame": 416,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              135,
+              55,
+              30,
+              25
+            ],
+            "score": 0.795607,
+            "accepted": true,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                135,
+                55,
+                30,
+                25
+              ],
+              "score": 0.795607,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                400,
+                35,
+                45,
+                25
+              ],
+              "score": 0.751651,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                285,
+                345,
+                30,
+                20
+              ],
+              "score": 0.750324,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                435,
+                70,
+                35,
+                25
+              ],
+              "score": 0.736217,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                160,
+                300,
+                30,
+                20
+              ],
+              "score": 0.732331,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "06-000096",
+          "scene": 6,
+          "frame": 96,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              225,
+              165,
+              75,
+              70
+            ],
+            "score": 0.801087,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                225,
+                165,
+                75,
+                70
+              ],
+              "score": 0.801087,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                310,
+                110,
+                75,
+                60
+              ],
+              "score": 0.741668,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                440,
+                315,
+                35,
+                25
+              ],
+              "score": 0.73288,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                200,
+                275,
+                110,
+                105
+              ],
+              "score": 0.711733,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                315,
+                125,
+                25,
+                45
+              ],
+              "score": 0.693619,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "06-000259",
+          "scene": 6,
+          "frame": 259,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              400,
+              285,
+              30,
+              45
+            ],
+            "score": 0.760965,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                400,
+                285,
+                30,
+                45
+              ],
+              "score": 0.760965,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                390,
+                300,
+                35,
+                20
+              ],
+              "score": 0.753765,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                455,
+                275,
+                20,
+                35
+              ],
+              "score": 0.752499,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                585,
+                5,
+                35,
+                20
+              ],
+              "score": 0.732357,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                455,
+                220,
+                65,
+                50
+              ],
+              "score": 0.720416,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "06-000409",
+          "scene": 6,
+          "frame": 409,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              365,
+              230,
+              35,
+              35
+            ],
+            "score": 0.819346,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                365,
+                230,
+                35,
+                35
+              ],
+              "score": 0.819346,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                435,
+                65,
+                55,
+                30
+              ],
+              "score": 0.774601,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                315,
+                260,
+                35,
+                20
+              ],
+              "score": 0.767892,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                25,
+                20,
+                35
+              ],
+              "score": 0.75345,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                130,
+                55,
+                35,
+                25
+              ],
+              "score": 0.750491,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "07-000198",
+          "scene": 7,
+          "frame": 198,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                425,
+                148,
+                47,
+                72
+              ],
+              "amodalBox": [
+                425,
+                148,
+                47,
+                72
+              ],
+              "visibility": 0.92734375
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              320,
+              125,
+              70,
+              70
+            ],
+            "score": 0.866451,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                320,
+                125,
+                70,
+                70
+              ],
+              "score": 0.866451,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                425,
+                150,
+                50,
+                65
+              ],
+              "score": 0.841188,
+              "accepted": true,
+              "reference": 7,
+              "result": "hit",
+              "nearestTargetIoU": 0.85359,
+              "targetIndex": 0
+            },
+            {
+              "box": [
+                480,
+                215,
+                85,
+                120
+              ],
+              "score": 0.770453,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                455,
+                330,
+                70,
+                70
+              ],
+              "score": 0.758718,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                165,
+                225,
+                35,
+                20
+              ],
+              "score": 0.701149,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "07-000342",
+          "scene": 7,
+          "frame": 342,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                423,
+                175,
+                45,
+                67
+              ],
+              "amodalBox": [
+                423,
+                175,
+                45,
+                79
+              ],
+              "visibility": 0.9135987978963186
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": true,
+          "rankOne": {
+            "box": [
+              425,
+              175,
+              45,
+              45
+            ],
+            "score": 0.785279,
+            "accepted": true,
+            "reference": 0,
+            "result": "hit",
+            "nearestTargetIoU": 0.623188,
+            "targetIndex": 0
+          },
+          "accepted": [
+            {
+              "box": [
+                425,
+                175,
+                45,
+                45
+              ],
+              "score": 0.785279,
+              "accepted": true,
+              "reference": 0,
+              "result": "hit",
+              "nearestTargetIoU": 0.623188,
+              "targetIndex": 0
+            },
+            {
+              "box": [
+                465,
+                5,
+                25,
+                35
+              ],
+              "score": 0.777356,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                495,
+                50,
+                65,
+                45
+              ],
+              "score": 0.7379,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                415,
+                5,
+                35,
+                15
+              ],
+              "score": 0.734916,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                250,
+                330,
+                55,
+                55
+              ],
+              "score": 0.724189,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "07-000478",
+          "scene": 7,
+          "frame": 478,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                332,
+                205,
+                42,
+                42
+              ],
+              "amodalBox": [
+                332,
+                205,
+                42,
+                75
+              ],
+              "visibility": 0.6762806715454154
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              460,
+              50,
+              35,
+              30
+            ],
+            "score": 0.829711,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                460,
+                50,
+                35,
+                30
+              ],
+              "score": 0.829711,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                675,
+                170,
+                35,
+                20
+              ],
+              "score": 0.826525,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                55,
+                35,
+                20
+              ],
+              "score": 0.797363,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                545,
+                195,
+                35,
+                25
+              ],
+              "score": 0.773258,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                250,
+                205,
+                35,
+                20
+              ],
+              "score": 0.769533,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "07-000493",
+          "scene": 7,
+          "frame": 493,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                460,
+                218,
+                46,
+                80
+              ],
+              "amodalBox": [
+                460,
+                218,
+                46,
+                81
+              ],
+              "visibility": 0.6867250182348651
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              475,
+              55,
+              30,
+              20
+            ],
+            "score": 0.79364,
+            "accepted": true,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                475,
+                55,
+                30,
+                20
+              ],
+              "score": 0.79364,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                675,
+                170,
+                35,
+                20
+              ],
+              "score": 0.786196,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                545,
+                195,
+                35,
+                25
+              ],
+              "score": 0.775701,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                485,
+                120,
+                25,
+                35
+              ],
+              "score": 0.770723,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                150,
+                95,
+                35,
+                25
+              ],
+              "score": 0.760533,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "12-000130",
+          "scene": 12,
+          "frame": 130,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              375,
+              330,
+              25,
+              35
+            ],
+            "score": 0.840068,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                375,
+                330,
+                25,
+                35
+              ],
+              "score": 0.840068,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                300,
+                385,
+                70,
+                75
+              ],
+              "score": 0.811328,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                260,
+                305,
+                20,
+                30
+              ],
+              "score": 0.79874,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                310,
+                275,
+                55,
+                55
+              ],
+              "score": 0.780529,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                360,
+                345,
+                35,
+                20
+              ],
+              "score": 0.764939,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "12-000260",
+          "scene": 12,
+          "frame": 260,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              265,
+              30,
+              20
+            ],
+            "score": 0.753824,
+            "accepted": true,
+            "reference": 3,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                440,
+                265,
+                30,
+                20
+              ],
+              "score": 0.753824,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                95,
+                350,
+                35,
+                20
+              ],
+              "score": 0.721193,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                330,
+                280,
+                30,
+                45
+              ],
+              "score": 0.716015,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                385,
+                345,
+                35,
+                35
+              ],
+              "score": 0.707196,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                430,
+                180,
+                25,
+                30
+              ],
+              "score": 0.700934,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "12-000387",
+          "scene": 12,
+          "frame": 387,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              320,
+              305,
+              35,
+              25
+            ],
+            "score": 0.804076,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                320,
+                305,
+                35,
+                25
+              ],
+              "score": 0.804076,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                195,
+                25,
+                35,
+                20
+              ],
+              "score": 0.765599,
+              "accepted": true,
+              "reference": 2,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                455,
+                5,
+                30,
+                45
+              ],
+              "score": 0.761926,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                560,
+                105,
+                35,
+                20
+              ],
+              "score": 0.751956,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                445,
+                60,
+                35,
+                25
+              ],
+              "score": 0.736703,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "16-000153",
+          "scene": 16,
+          "frame": 153,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              625,
+              505,
+              30,
+              30
+            ],
+            "score": 0.825956,
+            "accepted": true,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                625,
+                505,
+                30,
+                30
+              ],
+              "score": 0.825956,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                340,
+                125,
+                35,
+                20
+              ],
+              "score": 0.725519,
+              "accepted": true,
+              "reference": 2,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                405,
+                315,
+                30,
+                20
+              ],
+              "score": 0.71746,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                235,
+                130,
+                30,
+                30
+              ],
+              "score": 0.712823,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                280,
+                120,
+                45,
+                45
+              ],
+              "score": 0.710891,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "16-000298",
+          "scene": 16,
+          "frame": 298,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              475,
+              5,
+              25,
+              35
+            ],
+            "score": 0.785278,
+            "accepted": true,
+            "reference": 10,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                475,
+                5,
+                25,
+                35
+              ],
+              "score": 0.785278,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                505,
+                50,
+                65,
+                45
+              ],
+              "score": 0.744982,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                35,
+                80,
+                25,
+                35
+              ],
+              "score": 0.741062,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                35,
+                95,
+                20,
+                35
+              ],
+              "score": 0.728511,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                250,
+                45,
+                35,
+                20
+              ],
+              "score": 0.717204,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "16-000418",
+          "scene": 16,
+          "frame": 418,
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              440,
+              15,
+              30,
+              45
+            ],
+            "score": 0.823125,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                440,
+                15,
+                30,
+                45
+              ],
+              "score": 0.823125,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                345,
+                375,
+                30,
+                45
+              ],
+              "score": 0.793553,
+              "accepted": true,
+              "reference": 6,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                115,
+                45,
+                30,
+                25
+              ],
+              "score": 0.772546,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                435,
+                65,
+                45,
+                25
+              ],
+              "score": 0.763834,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                70,
+                325,
+                35,
+                20
+              ],
+              "score": 0.758426,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "18-000151",
+          "scene": 18,
+          "frame": 151,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                158,
+                240,
+                52,
+                66
+              ],
+              "amodalBox": [
+                158,
+                240,
+                53,
+                73
+              ],
+              "visibility": 0.9271523178807947
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                183,
+                292,
+                44,
+                74
+              ],
+              "amodalBox": [
+                183,
+                292,
+                53,
+                74
+              ],
+              "visibility": 0.7229634831460674
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                257,
+                271,
+                36,
+                78
+              ],
+              "amodalBox": [
+                242,
+                270,
+                51,
+                79
+              ],
+              "visibility": 0.3218697829716194
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              495,
+              275,
+              25,
+              35
+            ],
+            "score": 0.788424,
+            "accepted": true,
+            "reference": 4,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                495,
+                275,
+                25,
+                35
+              ],
+              "score": 0.788424,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                325,
+                85,
+                35,
+                35
+              ],
+              "score": 0.732063,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                155,
+                420,
+                45,
+                65
+              ],
+              "score": 0.709503,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                625,
+                135,
+                20,
+                30
+              ],
+              "score": 0.702908,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                120,
+                405,
+                25,
+                35
+              ],
+              "score": 0.702547,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "18-000336",
+          "scene": 18,
+          "frame": 336,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                504,
+                247,
+                50,
+                66
+              ],
+              "amodalBox": [
+                502,
+                247,
+                52,
+                86
+              ],
+              "visibility": 0.699816961561928
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                495,
+                223,
+                42,
+                49
+              ],
+              "amodalBox": [
+                493,
+                223,
+                48,
+                85
+              ],
+              "visibility": 0.2886874790198053
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                440,
+                243,
+                48,
+                37
+              ],
+              "amodalBox": [
+                428,
+                243,
+                60,
+                68
+              ],
+              "visibility": 0.46629422718808194
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              25,
+              80,
+              30,
+              45
+            ],
+            "score": 0.762314,
+            "accepted": true,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                25,
+                80,
+                30,
+                45
+              ],
+              "score": 0.762314,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                10,
+                20,
+                35
+              ],
+              "score": 0.73946,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                560,
+                335,
+                45,
+                45
+              ],
+              "score": 0.738609,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                520,
+                35,
+                35,
+                15
+              ],
+              "score": 0.720843,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                420,
+                10,
+                35,
+                15
+              ],
+              "score": 0.717422,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "18-000452",
+          "scene": 18,
+          "frame": 452,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                266,
+                204,
+                30,
+                59
+              ],
+              "amodalBox": [
+                254,
+                203,
+                42,
+                75
+              ],
+              "visibility": 0.1749893299189074
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                232,
+                263,
+                25,
+                23
+              ],
+              "amodalBox": [
+                220,
+                208,
+                43,
+                78
+              ],
+              "visibility": 0.15552903739061258
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                249,
+                243,
+                54,
+                45
+              ],
+              "amodalBox": [
+                249,
+                243,
+                80,
+                45
+              ],
+              "visibility": 0.5372740963855421
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              155,
+              95,
+              35,
+              25
+            ],
+            "score": 0.820991,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                155,
+                95,
+                35,
+                25
+              ],
+              "score": 0.820991,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                45,
+                25,
+                30
+              ],
+              "score": 0.810222,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                515,
+                160,
+                35,
+                20
+              ],
+              "score": 0.799667,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                420,
+                195,
+                35,
+                20
+              ],
+              "score": 0.762987,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                115,
+                55,
+                35
+              ],
+              "score": 0.756976,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "18-000487",
+          "scene": 18,
+          "frame": 487,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                456,
+                240,
+                53,
+                95
+              ],
+              "amodalBox": [
+                456,
+                240,
+                53,
+                95
+              ],
+              "visibility": 0.8728768577494692
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                479,
+                235,
+                51,
+                89
+              ],
+              "amodalBox": [
+                479,
+                235,
+                51,
+                92
+              ],
+              "visibility": 0.20499419279907086
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                420,
+                262,
+                62,
+                49
+              ],
+              "amodalBox": [
+                400,
+                261,
+                86,
+                52
+              ],
+              "visibility": 0.41152
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              465,
+              45,
+              25,
+              30
+            ],
+            "score": 0.820186,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                465,
+                45,
+                25,
+                30
+              ],
+              "score": 0.820186,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                385,
+                85,
+                25,
+                45
+              ],
+              "score": 0.783633,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                480,
+                115,
+                25,
+                35
+              ],
+              "score": 0.759727,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                535,
+                195,
+                35,
+                20
+              ],
+              "score": 0.751119,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                665,
+                165,
+                30,
+                30
+              ],
+              "score": 0.745483,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "20-000327",
+          "scene": 20,
+          "frame": 327,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                452,
+                282,
+                52,
+                78
+              ],
+              "amodalBox": [
+                447,
+                282,
+                57,
+                83
+              ],
+              "visibility": 0.8214607754733995
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                370,
+                187,
+                33,
+                23
+              ],
+              "amodalBox": [
+                358,
+                187,
+                48,
+                60
+              ],
+              "visibility": 0.2704841713221601
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "amodalBox": [
+                -1,
+                -1,
+                -1,
+                -1
+              ],
+              "visibility": 0.0
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                247,
+                259,
+                44,
+                71
+              ],
+              "amodalBox": [
+                247,
+                259,
+                51,
+                71
+              ],
+              "visibility": 0.7433793360686312
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                382,
+                244,
+                60,
+                37
+              ],
+              "amodalBox": [
+                382,
+                243,
+                82,
+                49
+              ],
+              "visibility": 0.04509466437177281
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                459,
+                218,
+                59,
+                32
+              ],
+              "amodalBox": [
+                459,
+                218,
+                59,
+                61
+              ],
+              "visibility": 0.3738132911392405
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                345,
+                287,
+                51,
+                55
+              ],
+              "amodalBox": [
+                345,
+                284,
+                53,
+                62
+              ],
+              "visibility": 0.8615444617784711
+            }
+          ],
+          "eligible": 5,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              410,
+              255,
+              35,
+              35
+            ],
+            "score": 0.783805,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                410,
+                255,
+                35,
+                35
+              ],
+              "score": 0.783805,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                20,
+                35,
+                25
+              ],
+              "score": 0.781089,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                415,
+                5,
+                35,
+                25
+              ],
+              "score": 0.772932,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                335,
+                175,
+                20,
+                35
+              ],
+              "score": 0.750818,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                515,
+                35,
+                35,
+                20
+              ],
+              "score": 0.748195,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "20-000378",
+          "scene": 20,
+          "frame": 378,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                429,
+                226,
+                31,
+                29
+              ],
+              "amodalBox": [
+                385,
+                206,
+                78,
+                49
+              ],
+              "visibility": 0.027049521431543905
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                243,
+                225,
+                75,
+                48
+              ],
+              "amodalBox": [
+                243,
+                225,
+                86,
+                49
+              ],
+              "visibility": 0.4170255051341504
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                258,
+                232,
+                56,
+                79
+              ],
+              "amodalBox": [
+                258,
+                232,
+                56,
+                90
+              ],
+              "visibility": 0.6993049259595043
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                397,
+                296,
+                76,
+                32
+              ],
+              "amodalBox": [
+                382,
+                278,
+                91,
+                50
+              ],
+              "visibility": 0.06497341996455995
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                311,
+                240,
+                7,
+                15
+              ],
+              "amodalBox": [
+                309,
+                222,
+                49,
+                58
+              ],
+              "visibility": 0.019471488178025034
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                290,
+                189,
+                44,
+                58
+              ],
+              "amodalBox": [
+                282,
+                189,
+                58,
+                62
+              ],
+              "visibility": 0.3074588031222897
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                445,
+                238,
+                17,
+                37
+              ],
+              "amodalBox": [
+                379,
+                238,
+                83,
+                47
+              ],
+              "visibility": 0.10919540229885058
+            }
+          ],
+          "eligible": 3,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              140,
+              55,
+              30,
+              25
+            ],
+            "score": 0.771851,
+            "accepted": true,
+            "reference": 8,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                140,
+                55,
+                30,
+                25
+              ],
+              "score": 0.771851,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                400,
+                30,
+                55,
+                30
+              ],
+              "score": 0.765701,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                450,
+                75,
+                45,
+                25
+              ],
+              "score": 0.75905,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                200,
+                65,
+                35,
+                20
+              ],
+              "score": 0.75651,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                65,
+                25,
+                35
+              ],
+              "score": 0.746551,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "20-000407",
+          "scene": 20,
+          "frame": 407,
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                326,
+                290,
+                96,
+                64
+              ],
+              "amodalBox": [
+                326,
+                290,
+                96,
+                64
+              ],
+              "visibility": 0.9296286678784731
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                403,
+                214,
+                56,
+                41
+              ],
+              "amodalBox": [
+                398,
+                214,
+                61,
+                51
+              ],
+              "visibility": 0.7796684118673648
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                385,
+                201,
+                30,
+                48
+              ],
+              "amodalBox": [
+                369,
+                201,
+                46,
+                62
+              ],
+              "visibility": 0.320902394106814
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                230,
+                244,
+                60,
+                43
+              ],
+              "amodalBox": [
+                230,
+                237,
+                78,
+                50
+              ],
+              "visibility": 0.4117005813953488
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                398,
+                280,
+                4,
+                9
+              ],
+              "amodalBox": [
+                398,
+                264,
+                56,
+                52
+              ],
+              "visibility": 0.017895185342991053
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                441,
+                241,
+                77,
+                78
+              ],
+              "amodalBox": [
+                441,
+                241,
+                77,
+                82
+              ],
+              "visibility": 0.752989209682123
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                278,
+                270,
+                28,
+                25
+              ],
+              "amodalBox": [
+                278,
+                270,
+                84,
+                50
+              ],
+              "visibility": 0.07035647279549719
+            }
+          ],
+          "eligible": 5,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              390,
+              30,
+              55,
+              30
+            ],
+            "score": 0.76117,
+            "accepted": true,
+            "reference": 9,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                390,
+                30,
+                55,
+                30
+              ],
+              "score": 0.76117,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                190,
+                65,
+                35,
+                20
+              ],
+              "score": 0.760678,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                30,
+                20,
+                35
+              ],
+              "score": 0.759498,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                440,
+                75,
+                45,
+                25
+              ],
+              "score": 0.757017,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                130,
+                55,
+                30,
+                25
+              ],
+              "score": 0.753848,
+              "accepted": true,
+              "reference": 6,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "20-000450",
+          "scene": 20,
+          "frame": 450,
+          "band": "partial",
+          "targets": [
+            {
+              "index": 0,
+              "visibleBox": [
+                392,
+                227,
+                69,
+                39
+              ],
+              "amodalBox": [
+                384,
+                227,
+                77,
+                48
+              ],
+              "visibility": 0.13019508057675996
+            },
+            {
+              "index": 1,
+              "visibleBox": [
+                244,
+                227,
+                43,
+                46
+              ],
+              "amodalBox": [
+                244,
+                227,
+                85,
+                46
+              ],
+              "visibility": 0.2604871447902571
+            },
+            {
+              "index": 2,
+              "visibleBox": [
+                258,
+                224,
+                56,
+                61
+              ],
+              "amodalBox": [
+                258,
+                224,
+                56,
+                87
+              ],
+              "visibility": 0.5937211449676824
+            },
+            {
+              "index": 3,
+              "visibleBox": [
+                462,
+                285,
+                10,
+                16
+              ],
+              "amodalBox": [
+                382,
+                265,
+                90,
+                50
+              ],
+              "visibility": 0.0380952380952381
+            },
+            {
+              "index": 4,
+              "visibleBox": [
+                350,
+                254,
+                1,
+                1
+              ],
+              "amodalBox": [
+                309,
+                237,
+                49,
+                49
+              ],
+              "visibility": 0.0020607934054611026
+            },
+            {
+              "index": 5,
+              "visibleBox": [
+                296,
+                215,
+                21,
+                22
+              ],
+              "amodalBox": [
+                282,
+                206,
+                58,
+                65
+              ],
+              "visibility": 0.11762171477811288
+            },
+            {
+              "index": 6,
+              "visibleBox": [
+                456,
+                247,
+                5,
+                36
+              ],
+              "amodalBox": [
+                379,
+                244,
+                82,
+                47
+              ],
+              "visibility": 0.013105205678922462
+            }
+          ],
+          "eligible": 2,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              155,
+              95,
+              35,
+              25
+            ],
+            "score": 0.822228,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                155,
+                95,
+                35,
+                25
+              ],
+              "score": 0.822228,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                465,
+                55,
+                35,
+                20
+              ],
+              "score": 0.809899,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                355,
+                225,
+                30,
+                30
+              ],
+              "score": 0.785574,
+              "accepted": true,
+              "reference": 4,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                495,
+                120,
+                20,
+                35
+              ],
+              "score": 0.756148,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                475,
+                45,
+                45,
+                30
+              ],
+              "score": 0.75291,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "isolated": {
+    "topFive": {
+      "summary": {
+        "positivePhotos": 3,
+        "rankOneHits": 2,
+        "photosWithAcceptedHit": 3,
+        "eligibleInstances": 3,
+        "hits": 3,
+        "falseAlarms": 32,
+        "ignored": 0,
+        "absentPhotos": 4,
+        "absentPhotosWithAlarm": 4,
+        "bands": {
+          "high": {
+            "photos": 3,
+            "rankOneHits": 2,
+            "eligible": 3,
+            "hits": 3
+          },
+          "partial": {
+            "photos": 0,
+            "rankOneHits": 0,
+            "eligible": 0,
+            "hits": 0
+          }
+        }
+      },
+      "frames": [
+        {
+          "id": "cal-01-000430",
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibility": 1.0,
+              "visibleBox": [
+                250,
+                155,
+                59,
+                102
+              ]
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": true,
+          "rankOne": {
+            "box": [
+              249,
+              156,
+              62,
+              93
+            ],
+            "score": 0.911141,
+            "accepted": true,
+            "reference": 7,
+            "result": "hit",
+            "nearestTargetIoU": 0.871367,
+            "targetIndex": 0
+          },
+          "accepted": [
+            {
+              "box": [
+                249,
+                156,
+                62,
+                93
+              ],
+              "score": 0.911141,
+              "accepted": true,
+              "reference": 7,
+              "result": "hit",
+              "nearestTargetIoU": 0.871367,
+              "targetIndex": 0
+            },
+            {
+              "box": [
+                261,
+                245,
+                27,
+                16
+              ],
+              "score": 0.812465,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.052889,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                272,
+                241,
+                27,
+                16
+              ],
+              "score": 0.773316,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.071785,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                268,
+                241,
+                23,
+                35
+              ],
+              "score": 0.690756,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.05701,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                253,
+                159,
+                62,
+                35
+              ],
+              "score": 0.684365,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.314708,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-01-000865",
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibility": 1.0,
+              "visibleBox": [
+                251,
+                161,
+                56,
+                102
+              ]
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": true,
+          "rankOne": {
+            "box": [
+              249,
+              167,
+              62,
+              93
+            ],
+            "score": 0.885821,
+            "accepted": true,
+            "reference": 6,
+            "result": "hit",
+            "nearestTargetIoU": 0.830622,
+            "targetIndex": 0
+          },
+          "accepted": [
+            {
+              "box": [
+                249,
+                167,
+                62,
+                93
+              ],
+              "score": 0.885821,
+              "accepted": true,
+              "reference": 6,
+              "result": "hit",
+              "nearestTargetIoU": 0.830622,
+              "targetIndex": 0
+            },
+            {
+              "box": [
+                272,
+                159,
+                27,
+                16
+              ],
+              "score": 0.763205,
+              "accepted": true,
+              "reference": 10,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.065557,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                261,
+                187,
+                35,
+                19
+              ],
+              "score": 0.718375,
+              "accepted": true,
+              "reference": 8,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.116422,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                257,
+                159,
+                35,
+                23
+              ],
+              "score": 0.704794,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.127119,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                261,
+                175,
+                16,
+                27
+              ],
+              "score": 0.675553,
+              "accepted": true,
+              "reference": 3,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.07563,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-01-001295",
+          "band": "high",
+          "targets": [
+            {
+              "index": 0,
+              "visibility": 1.0,
+              "visibleBox": [
+                252,
+                182,
+                57,
+                57
+              ]
+            }
+          ],
+          "eligible": 1,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              257,
+              229,
+              27,
+              16
+            ],
+            "score": 0.706988,
+            "accepted": true,
+            "reference": 1,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0.079156,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                257,
+                229,
+                27,
+                16
+              ],
+              "score": 0.706988,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.079156,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                245,
+                179,
+                66,
+                70
+              ],
+              "score": 0.705316,
+              "accepted": true,
+              "reference": 0,
+              "result": "hit",
+              "nearestTargetIoU": 0.703247,
+              "targetIndex": 0
+            },
+            {
+              "box": [
+                276,
+                229,
+                27,
+                19
+              ],
+              "score": 0.658519,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.07732,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                268,
+                210,
+                27,
+                16
+              ],
+              "score": 0.642885,
+              "accepted": true,
+              "reference": 6,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.132964,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                299,
+                202,
+                16,
+                27
+              ],
+              "score": 0.632323,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0.079156,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-02-000000",
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              241,
+              167,
+              82,
+              82
+            ],
+            "score": 0.908036,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                241,
+                167,
+                82,
+                82
+              ],
+              "score": 0.908036,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                241,
+                202,
+                19,
+                35
+              ],
+              "score": 0.654809,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                296,
+                214,
+                16,
+                27
+              ],
+              "score": 0.616838,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                268,
+                226,
+                23,
+                16
+              ],
+              "score": 0.614842,
+              "accepted": true,
+              "reference": 5,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                292,
+                202,
+                16,
+                27
+              ],
+              "score": 0.614712,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-03-000000",
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              237,
+              167,
+              82,
+              82
+            ],
+            "score": 0.839908,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                237,
+                167,
+                82,
+                82
+              ],
+              "score": 0.839908,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                233,
+                202,
+                19,
+                35
+              ],
+              "score": 0.618383,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                268,
+                175,
+                27,
+                27
+              ],
+              "score": 0.611182,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                237,
+                222,
+                43,
+                27
+              ],
+              "score": 0.609229,
+              "accepted": true,
+              "reference": 11,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                268,
+                233,
+                35,
+                19
+              ],
+              "score": 0.604491,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-04-000000",
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              237,
+              163,
+              86,
+              82
+            ],
+            "score": 0.834109,
+            "accepted": true,
+            "reference": 0,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                237,
+                163,
+                86,
+                82
+              ],
+              "score": 0.834109,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                272,
+                229,
+                35,
+                19
+              ],
+              "score": 0.672314,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                303,
+                179,
+                16,
+                27
+              ],
+              "score": 0.653938,
+              "accepted": true,
+              "reference": 1,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                253,
+                229,
+                27,
+                16
+              ],
+              "score": 0.629291,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                245,
+                171,
+                39,
+                31
+              ],
+              "score": 0.625898,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        },
+        {
+          "id": "cal-07-000000",
+          "band": "absent",
+          "targets": [],
+          "eligible": 0,
+          "rankOneHit": false,
+          "rankOne": {
+            "box": [
+              175,
+              183,
+              35,
+              23
+            ],
+            "score": 0.701003,
+            "accepted": true,
+            "reference": 7,
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null
+          },
+          "accepted": [
+            {
+              "box": [
+                175,
+                183,
+                35,
+                23
+              ],
+              "score": 0.701003,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                171,
+                210,
+                35,
+                19
+              ],
+              "score": 0.689854,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                350,
+                194,
+                16,
+                27
+              ],
+              "score": 0.68323,
+              "accepted": true,
+              "reference": 9,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                237,
+                124,
+                35,
+                35
+              ],
+              "score": 0.680033,
+              "accepted": true,
+              "reference": 0,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            },
+            {
+              "box": [
+                393,
+                128,
+                23,
+                35
+              ],
+              "score": 0.677645,
+              "accepted": true,
+              "reference": 7,
+              "result": "false-alarm",
+              "nearestTargetIoU": 0,
+              "targetIndex": null
+            }
+          ]
+        }
+      ]
+    },
+    "transport": {
+      "frameCount": 7,
+      "raster": [
+        144,
+        108
+      ],
+      "referencePairs": [
+        [
+          0,
+          1
+        ],
+        [
+          688,
+          689
+        ],
+        [
+          621,
+          622
+        ],
+        [
+          507,
+          508
+        ],
+        [
+          325,
+          326
+        ],
+        [
+          914,
+          915
+        ],
+        [
+          945,
+          946
+        ],
+        [
+          299,
+          300
+        ],
+        [
+          975,
+          976
+        ],
+        [
+          752,
+          753
+        ],
+        [
+          614,
+          615
+        ],
+        [
+          695,
+          696
+        ]
+      ],
+      "delayFactor": 3,
+      "loopTicks": [
+        23703,
+        25791
+      ],
+      "probe": {
+        "referenceSHA256": [
+          "a774262cf2f6687a98cf5180705dbfe6916ff9a21e60089e47ef46c18a42f0e4"
+        ],
+        "photoSamplesPerFrame": [
+          15552
+        ],
+        "maxEnergyError": 2.0657153724921763e-16,
+        "framesWithOutput": 7
+      }
+    }
+  },
+  "transport": {
+    "frameCount": 30,
+    "raster": [
+      144,
+      108
+    ],
+    "referencePairs": [
+      [
+        0,
+        1
+      ],
+      [
+        688,
+        689
+      ],
+      [
+        621,
+        622
+      ],
+      [
+        507,
+        508
+      ],
+      [
+        325,
+        326
+      ],
+      [
+        914,
+        915
+      ],
+      [
+        945,
+        946
+      ],
+      [
+        299,
+        300
+      ],
+      [
+        975,
+        976
+      ],
+      [
+        752,
+        753
+      ],
+      [
+        614,
+        615
+      ],
+      [
+        695,
+        696
+      ]
+    ],
+    "delayFactor": 3,
+    "loopTicks": [
+      23703,
+      25791
+    ],
+    "probe": {
+      "referenceSHA256": [
+        "a774262cf2f6687a98cf5180705dbfe6916ff9a21e60089e47ef46c18a42f0e4"
+      ],
+      "photoSamplesPerFrame": [
+        15552
+      ],
+      "maxEnergyError": 1.61519952652065e-16,
+      "framesWithOutput": 30
+    }
+  },
+  "cut": {
+    "frameCount": 30,
+    "raster": [
+      144,
+      108
+    ],
+    "referencePairs": [
+      [
+        0,
+        1
+      ],
+      [
+        688,
+        689
+      ],
+      [
+        621,
+        622
+      ],
+      [
+        507,
+        508
+      ],
+      [
+        325,
+        326
+      ],
+      [
+        914,
+        915
+      ],
+      [
+        945,
+        946
+      ],
+      [
+        299,
+        300
+      ],
+      [
+        975,
+        976
+      ],
+      [
+        752,
+        753
+      ],
+      [
+        614,
+        615
+      ],
+      [
+        695,
+        696
+      ]
+    ],
+    "delayFactor": 3,
+    "loopTicks": [
+      23703,
+      25791
+    ],
+    "probe": {
+      "referenceSHA256": [
+        "a774262cf2f6687a98cf5180705dbfe6916ff9a21e60089e47ef46c18a42f0e4"
+      ],
+      "photoSamplesPerFrame": [
+        15552
+      ],
+      "maxEnergyError": 1.61519952652065e-16,
+      "framesWithOutput": 0
+    }
+  },
+  "synthetic": {
+    "connected": {
+      "id": "synthetic-transfer",
+      "detections": [
+        {
+          "box": [
+            96,
+            32,
+            21,
+            20
+          ],
+          "score": 0.999988,
+          "reference": 0,
+          "angle": 0
+        },
+        {
+          "box": [
+            40,
+            67,
+            17,
+            9
+          ],
+          "score": 0.723833,
+          "reference": 10,
+          "angle": 270
+        },
+        {
+          "box": [
+            108,
+            42,
+            4,
+            7
+          ],
+          "score": 0.714156,
+          "reference": 11,
+          "angle": 15
+        },
+        {
+          "box": [
+            39,
+            59,
+            11,
+            18
+          ],
+          "score": 0.712686,
+          "reference": 11,
+          "angle": 165
+        },
+        {
+          "box": [
+            35,
+            60,
+            14,
+            7
+          ],
+          "score": 0.698903,
+          "reference": 3,
+          "angle": 90
+        }
+      ],
+      "probe": {
+        "cSamples": 4291,
+        "cSHA256": "a774262cf2f6687a98cf5180705dbfe6916ff9a21e60089e47ef46c18a42f0e4",
+        "sceneSamples": 15552,
+        "resultSamples": 34,
+        "cAt": 18499,
+        "cReturnsAt": 33322,
+        "resultAt": 59842,
+        "energyError": 2.0331804190648775e-16
+      }
+    },
+    "disconnected": {
+      "frameCount": 1,
+      "raster": [
+        144,
+        108
+      ],
+      "referencePairs": [
+        [
+          0,
+          1
+        ],
+        [
+          688,
+          689
+        ],
+        [
+          621,
+          622
+        ],
+        [
+          507,
+          508
+        ],
+        [
+          325,
+          326
+        ],
+        [
+          914,
+          915
+        ],
+        [
+          945,
+          946
+        ],
+        [
+          299,
+          300
+        ],
+        [
+          975,
+          976
+        ],
+        [
+          752,
+          753
+        ],
+        [
+          614,
+          615
+        ],
+        [
+          695,
+          696
+        ]
+      ],
+      "delayFactor": 3,
+      "loopTicks": [
+        23703,
+        25791
+      ],
+      "probe": {
+        "referenceSHA256": [
+          "a774262cf2f6687a98cf5180705dbfe6916ff9a21e60089e47ef46c18a42f0e4"
+        ],
+        "photoSamplesPerFrame": [
+          15552
+        ],
+        "maxEnergyError": 2.0331804190648775e-16,
+        "framesWithOutput": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Follow a complete photograph through the wave simulation and inspect its measured proposals.">
+  <title>Full-frame wave test · Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="real-photos.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <nav aria-label="Lab navigation" class="photo-links">
+      <a href="index.html">Wave simulator</a>
+      <a href="real-photos.html?trial=components">Real-photo detector</a>
+      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/RESEARCH.md#full-frame-wave-search">Protocol and results ↗</a>
+    </nav>
+  </header>
+  <main class="photo-page">
+    <h1>A whole photo through the sphere</h1>
+    <p class="photo-intro">Two isolated examples form a returning reference wave. A junction compares the full photograph against that reference, and a distant probe reads the proposed locations.</p>
+    <figure class="panel photo-panel">
+      <div class="active-photo-stage">
+        <img src="photo-data/signal-system.svg" width="1480" height="864" alt="Training photos form wave C inside the sphere. A full scene enters as luminance pulses. The comparator receives the scene and the returned C, then sends candidate positions and scores to the probe. A switch can cut the comparator's C input. The earlier RGB-D pipeline supplies external boxes to a wave verifier.">
+      </div>
+    </figure>
+    <h2 class="full-wave-heading">What the probe returned</h2>
+    <p class="photo-intro">Two of 29 eligible targets appeared in the top five proposals on 30 cluttered photos, alongside 148 false proposals. The development cutoff kept zero detections. Cutting the C input removed the raw output in all 30 photos.</p>
+    <figure class="panel photo-panel">
+      <div class="active-photo-stage">
+        <img src="photo-data/full-wave-detections.jpg" width="1168" height="566" alt="A correct proposal on a small part at the left. A larger false proposal at the right has a higher score in a photo where the target is absent.">
+      </div>
+    </figure>
+    <p class="photo-credit">Photos by Tomáš Hodaň et al. from <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>). Resized images with localization overlays. <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-full-wave-measurements.json">Per-frame measurements</a>.</p>
+  </main>
+</body>
+</html>

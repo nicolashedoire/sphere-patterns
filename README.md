@@ -65,6 +65,10 @@ On 30 further T-LESS camera views, a new detector matches **5 of 33** eligible t
 
 On 117 candidate regions in 13 T-LESS setups, choosing a view with projected CAD disagreement gives 5 correct identities and 70 errors. A fixed angular rule gives 6 correct identities and 70 errors at the same one-view budget. A targeted probe samples 60 times fewer depth pixels than a dense check on the chosen camera. The sphere's distant wave probe recovers the updated score in all 117 cases. [See a correct result and a false alarm](https://nicolashedoire.github.io/sphere-patterns/active-vision.html) · [Protocol and measurements](RESEARCH.md#active-camera-selection)
 
+### Full-frame wave search
+
+The complete photograph enters the sphere as 15,552 luminance amplitudes. Two isolated examples per reference form C, which circulates to the matching junction. On 30 cluttered photos the distant probe ranks two of 29 eligible targets in the top five, with 148 false proposals. The development cutoff keeps zero detections. Cutting comparator access to C removes all raw output. [Signal diagram and photo results](https://nicolashedoire.github.io/sphere-patterns/full-wave.html) · [Protocol](RESEARCH.md#full-frame-wave-search)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.
@@ -87,3 +91,4 @@ python3 -m http.server 8000 --directory lab
 - [Replay script](scripts/replay.sh)
 - [Full-photo replay script](scripts/replay-photos.sh)
 - [Held-out depth-component replay script](scripts/replay-components.sh)
+- [Full-frame wave replay script](scripts/replay-full-wave.sh)

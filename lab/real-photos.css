@@ -121,3 +121,4 @@
   .photo-scenes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .active-photo-stage img { display: block; width: 100%; height: auto; }
+.full-wave-heading { margin-top: 1.6rem; }
