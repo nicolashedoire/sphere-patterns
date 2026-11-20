@@ -170,3 +170,29 @@ The isolated control includes three target photos outside the C pairs and four p
 An exact transport check verifies all 15,552 scene amplitudes at the junction in each run. The physical C trace is identical in the connected and cut runs. The cut suppresses the comparator's access to C while the reference wave continues to circulate. It reduces raw probe output from 30 of 30 cluttered photos to zero. The recognition rule is programmed at the junction. The result tests signal-dependent localization and its accuracy under clutter. [All measurements](outputs/sphere-full-wave-measurements.json)
 
 Run `bash scripts/replay-full-wave.sh MULTIVIEW_PANEL_DIR PHOTO_TRAINING_DIR OUTPUT_DIR` with Node.js 24, Python and Pillow 12. Prepare the two dataset directories using `work/sphere-tless-multiview-fetch.py` and `work/sphere-tless-photos-fetch.py`. Inspect `measurements.json` in the output directory. T-LESS photos are credited under CC BY 4.0. [Dataset and licence](https://cmp.felk.cvut.cz/t-less/)
+
+## Pose agreement from local details
+
+Encode the entire camera frame as RootSIFT points without candidate boxes, masks or depth. Two isolated training views contribute to each C by retaining aligned local descriptors found in both. Twelve C templates represent the different views of T-LESS object 1. On the synthetic plate, the three C groups correspond to the bore, groove and shoulder. On T-LESS, they are three spatial strips in the reference. The synthetic part rotates in the image plane. T-LESS also varies in viewpoint, occlusion and illumination.
+
+The same three local matchers propose pose bins in all arms. Position spacing is 11 pixels at 720 × 540, angles are 15° apart and scale steps are quarter octaves. Each group emits at most one amplitude per bin. The sphere routes the three streams along distinct paths in the 1,000-junction topology. One stream completes a loop before mixing. An agreed bin means pulses arrive in the same time slot. A probe farther along the network reads the combined amplitudes. The event-driven simulator skips empty ticks and models dedicated, lossless paths with launch times compensated by known link delays. RootSIFT encoding and construction of C run offline. The fixed local matchers supply votes to the network, whose measured computation is their timed summation. The comparator requires at least two groups and uses the average of the three amplitudes, counting absent groups as zero. [3D replay](https://nicolashedoire.github.io/sphere-patterns/pose-consensus.html)
+
+Compare the complete vote vectors before thresholding or scoring. Direct arithmetic, the returning circuit and the compensated feed-forward circuit agree exactly in 86 of 86 scenes. Removing the return link zeroes only that branch. Shifting its launch by one tick also removes it from the clocked readout, with the pulses still present outside their sampling slots. Both interventions change the raw vector in all 86 scenes. The connected return can carry a required signal. Its additional circuit does not improve recognition over a compensated feed-forward route with this model.
+
+The cutoff maximizes accepted matches on each domain's development panel under its false-alarm budget, then uses the midpoint of the adjacent observed scores with the same development verdict. The synthetic budget is zero. The real budget is two false boxes and one target-absent frame with an alarm. An accepted localization must have visible-box IoU of at least 0.50. Targets must be at least 20% visible. The two real panels use disjoint physical setups that have appeared in prior project trials. We checked the initial synthetic panel while settling the cutoff procedure. The additional evaluation panel was generated at a fixed seed before scoring and uses the same rendering family as the training and development examples.
+
+| Evaluation panel | Targets | Connected hits | Connected false alarms | Cut hits |
+| --- | ---: | ---: | ---: | ---: |
+| Six synthetic controls | 4 | 3 | 0 | 0 |
+| 24 additional synthetic controls | 16 | 7 | 0 | 0 |
+| 30 real T-LESS photos | 29 | 0 | 0 | 0 |
+
+In the additional synthetic controls, 12 targets are intact, four have a covered bore and eight scenes contain only lures. The three intact targets in the first synthetic panel rank ahead of their lures. In the 58° example, the target scores 0.714 and the lure scores 0.506. Cutting the bore path lowers the first score to 0.476 and leaves the lure at 0.506. Both fall below the calibrated 0.630 cutoff. On the real evaluation panel, none of the 29 targets reaches even the unthresholded top five and 24 have no encoded point centered inside their visible bounding box. The zero accepted real alarms result from calibration abstaining on all proposals. In a second run, a higher point budget and lower contrast threshold reduce the number of targets without points from 24 to two. Top-five matches stay at zero and false top-five proposals rise from 25 to 128. The added points rarely support the correct pose. [Baseline measurements](outputs/sphere-pose-consensus-measurements.json)
+
+To regenerate the results, use Node.js 24 and Python with NumPy and OpenCV. The reference directory contains the 24 isolated PNGs cached by the [full-frame wave replay](#full-frame-wave-search). The camera panel is the same as in that replay. The measured run used OpenCV 5.1.0. T-LESS previews are resized JPEGs under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), credited to Tomáš Hodaň and colleagues. [T-LESS](https://cmp.felk.cvut.cz/t-less/)
+
+```sh
+bash scripts/replay-pose-consensus.sh "$panel" "$full_wave/reference-photos" "$run"
+cmp "$run/measurements.json" outputs/sphere-pose-consensus-measurements.json
+bash scripts/replay-pose-consensus.sh "$panel" "$full_wave/reference-photos" "$dense_run" --dense-real
+```

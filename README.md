@@ -69,6 +69,10 @@ On 117 candidate regions in 13 T-LESS setups, choosing a view with projected CAD
 
 The complete photograph enters the sphere as 15,552 luminance amplitudes. Two isolated examples per reference form C, which circulates to the matching junction. On 30 cluttered photos the distant probe ranks two of 29 eligible targets in the top five, with 148 false proposals. The development cutoff keeps zero detections. Cutting comparator access to C removes all raw output. [Signal diagram and photo results](https://nicolashedoire.github.io/sphere-patterns/full-wave.html) · [Protocol](RESEARCH.md#full-frame-wave-search)
 
+### Pose agreement from local details
+
+Three groups of local details each propose a position, rotation and scale. Their pulses add when they support the same pose. Direct summation, the sphere with a return loop and the feed-forward path give identical votes in all **86 scenes**. With the loop connected, the cutoff accepts **7 of 16** targets in the additional synthetic panel with no false alarms. Severing the bore signal removes all seven accepted matches. On real T-LESS photos the method finds **0 of 29** targets. [Replay the pulses in 3D](https://nicolashedoire.github.io/sphere-patterns/pose-consensus.html) · [Protocol and results](RESEARCH.md#pose-agreement-from-local-details)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.
@@ -92,3 +96,4 @@ python3 -m http.server 8000 --directory lab
 - [Full-photo replay script](scripts/replay-photos.sh)
 - [Held-out depth-component replay script](scripts/replay-components.sh)
 - [Full-frame wave replay script](scripts/replay-full-wave.sh)
+- [Local pose agreement replay script](scripts/replay-pose-consensus.sh)

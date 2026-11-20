@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Compare direct pose agreement with signals measured in the sphere.">
+  <title>Pose agreement · Pattern Sphere Lab</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="real-photos.css">
+  <link rel="stylesheet" href="pose-consensus.css">
+  <script src="pose-consensus.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
+    <nav aria-label="Lab navigation" class="photo-links">
+      <a href="index.html">Wave simulator</a>
+      <a href="full-wave.html">Full-frame wave test</a>
+    </nav>
+  </header>
+  <main class="photo-page">
+    <h1>Pose agreement in the sphere</h1>
+    <p class="photo-intro">A match in one detail proposes a position and an angle. Compare what happens when several details agree, when they disagree, and when one route is cut.</p>
+    <p id="pose-status" role="status">Loading experiment measurements…</p>
+    <div id="pose-experiment" hidden>
+      <div class="pose-controls">
+        <label for="pose-frame">Scene
+          <select id="pose-frame"></select>
+        </label>
+        <label for="pose-mode">Mechanism
+          <select id="pose-mode">
+            <option value="sphere">Sphere</option>
+            <option value="direct">Direct calculation</option>
+            <option value="feedForward">Feed-forward</option>
+            <option value="cut">Sphere with one route cut</option>
+          </select>
+        </label>
+      </div>
+      <div class="pose-layout">
+        <section class="panel" aria-labelledby="pose-scene-heading">
+          <div class="pose-panel-header">
+            <h2 id="pose-scene-heading">Input scene</h2>
+            <span id="pose-scene-meta" class="photo-muted"></span>
+          </div>
+          <div id="pose-scene" class="photo-stage">
+            <img id="pose-photo" alt="">
+            <svg id="pose-boxes" class="photo-boxes" aria-hidden="true"></svg>
+          </div>
+          <p id="pose-no-preview" class="pose-empty" hidden>There is no photo preview for this scene.</p>
+          <div class="photo-caption">
+            <ul class="photo-legend" aria-label="Photo overlays">
+              <li class="photo-mark annotation">Target annotation</li>
+              <li class="photo-mark false-alarm">Decoy annotation</li>
+              <li class="photo-mark">Accepted proposal</li>
+            </ul>
+            <label class="photo-check"><input id="pose-show-truth" type="checkbox" checked> Show annotations</label>
+          </div>
+          <p id="pose-verdict" class="pose-panel-copy"></p>
+        </section>
+        <section class="panel" aria-labelledby="pose-pulse-heading">
+          <div class="pose-panel-header">
+            <h2 id="pose-pulse-heading">Signal replay</h2>
+            <span id="pose-phase" class="photo-muted"></span>
+          </div>
+          <div class="stage pose-stage">
+            <canvas id="pose-sphere" aria-label="Rotatable 3D sphere showing measured signal routes"></canvas>
+            <p id="pose-no-graph" class="pose-empty" hidden></p>
+          </div>
+          <div class="playback">
+            <div class="phase-row">
+              <span id="pose-tracked" class="photo-muted"></span>
+              <output id="pose-clock" for="pose-timeline"></output>
+            </div>
+            <input id="pose-timeline" type="range" min="0" step="1" value="0" aria-label="Replay tick">
+            <div class="transport">
+              <button id="pose-play" class="primary-button" type="button">Play</button>
+              <button id="pose-back" type="button" aria-label="Previous tick">−1</button>
+              <button id="pose-next" type="button" aria-label="Next tick">+1</button>
+              <label class="speed-label" for="pose-speed">Speed
+                <select id="pose-speed">
+                  <option value="0.25">0.25×</option>
+                  <option value="0.5">0.5×</option>
+                  <option value="1" selected>1×</option>
+                  <option value="2">2×</option>
+                </select>
+              </label>
+            </div>
+            <ul id="pose-legend" class="legend" aria-label="Signal amplitudes for the tracked pose"></ul>
+          </div>
+        </section>
+      </div>
+      <section id="pose-results" class="panel pose-results" aria-labelledby="pose-results-heading">
+        <div class="readings-header">
+          <h2 id="pose-results-heading">Mechanism comparison</h2>
+          <span id="pose-summary-split" class="photo-muted"></span>
+        </div>
+        <p id="pose-summary-note" class="photo-muted"></p>
+        <div class="pose-table">
+          <table>
+            <thead id="pose-summary-head"></thead>
+            <tbody id="pose-summary-rows"></tbody>
+          </table>
+        </div>
+        <p id="pose-summary-agreement" class="fine-print"></p>
+      </section>
+      <p id="pose-credit" class="photo-credit" hidden>Real photos by Tomáš Hodaň et al. from <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a> (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).</p>
+    </div>
+  </main>
+</body>
+</html>
