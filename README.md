@@ -57,6 +57,10 @@ In the separate T-LESS pilot, the same geometric search misses all 12 true targe
 
 The full-frame detector now proposes its own boxes on 16 real T-LESS photos. With depth and returning-reference verification, it keeps two correct instances in one photo and two false boxes in a target-absent photo. The matching pulse at the distant probe disappears when the reference return is cut. [Inspect the photos in the lab](https://nicolashedoire.github.io/sphere-patterns/real-photos.html) · [Full protocol and results](RESEARCH.md#full-frame-real-photos)
 
+### Depth components on held-out views
+
+On 30 further T-LESS camera views, a new detector matches **5 of 33** eligible target instances across two physical setups and raises **zero false alarms**. The same frames yield 1 match and 1 false alarm with the published wave verification, and 4 matches and 2 false alarms with the original RGB-D detector. The new detector proposes connected regions from calibrated depth and checks the measured relief and edges against target and competitor views. [Compare the photos](https://nicolashedoire.github.io/sphere-patterns/real-photos.html?trial=components) · [Protocol and limitations](RESEARCH.md#depth-components-on-held-out-views)
+
 ## Reproduce the results
 
 Run this command from the repository root with Node.js 24 and Bash.
@@ -78,3 +82,4 @@ python3 -m http.server 8000 --directory lab
 - [Figures and measurements](outputs/)
 - [Replay script](scripts/replay.sh)
 - [Full-photo replay script](scripts/replay-photos.sh)
+- [Held-out depth-component replay script](scripts/replay-components.sh)

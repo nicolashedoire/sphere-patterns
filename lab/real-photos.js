@@ -5,6 +5,7 @@
     photo: ["Camera image", "Inspect the original frame."],
     rgbd: ["RGB-D predictions", "The detector searched the whole color and depth frame for the target part."],
     wave: ["Returning-reference check", "The returning wave reference checked regions proposed by the RGB-D detector."],
+    components: ["Depth components", "The detector cuts the measured depth at different heights. Each proposed region is checked against the target and similar parts."],
   };
   const resultStyles = {
     hit: ["match", "Match"],
@@ -21,7 +22,9 @@
   const sceneNav = byId("scenes");
   const asset = name => "photo-data/" + name;
   const pct = value => Math.round(value * 100) + "%";
+  const alarmText = count => `${count} false ${count === 1 ? "alarm" : "alarms"}`;
   const svgNS = "http://www.w3.org/2000/svg";
+  const componentTrial = new URLSearchParams(location.search).get("trial") === "components";
   let benchmark;
   let selectedScene = 0;
 
@@ -58,7 +61,7 @@
     marker.setAttribute("aria-hidden", "true");
     const details = reveal && hit.result === "hit"
       ? "Overlap with annotated box " + pct(hit.overlap)
-      : "Training view " + hit.reference;
+      : hit.reference?.startsWith("train-") ? "Training view " + hit.reference : "Candidate check";
     row.append(marker,
       element("span", "", (index + 1) + ". " + label),
       element("span", "photo-value", "Score " + hit.score.toFixed(3)),
@@ -75,7 +78,7 @@
     const matched = predictions.filter(item => item.result === "hit").length;
     const falseAlarms = predictions.filter(item => item.result === "false-alarm").length;
     const missed = scene.targets.length - matched;
-    return accepted + " · " + matched + " matched · " + falseAlarms + " false alarms · " + missed + " missed";
+    return accepted + " · " + matched + " matched · " + alarmText(falseAlarms) + " · " + missed + " missed";
   }
 
   function render() {
@@ -93,6 +96,10 @@
     byId("scene-caption").textContent = "Scene " + scene.scene + " · Frame " + scene.frame;
     byId("readout-title").textContent = modes[mode][0];
     byId("mode-detail").textContent = modes[mode][1];
+    const totals = benchmark.totals?.[mode];
+    const trialSummary = byId("trial-summary");
+    trialSummary.hidden = !totals;
+    trialSummary.textContent = totals ? `${totals.hits}/${totals.eligibleInstances} matched · ${alarmText(totals.falseAlarms)} across ${benchmark.photoCount} views` : "";
     byId("summary").textContent = describe(scene, predictions, mode, reveal);
     const note = byId("annotation-note");
     note.hidden = !reveal;
@@ -122,9 +129,18 @@
   }
 
   async function load() {
-    const response = await fetch(asset("benchmark.json"));
+    const response = await fetch(asset(componentTrial ? "benchmark-components.json" : "benchmark.json"));
     if (!response.ok) throw new Error("Could not load the benchmark.");
     benchmark = await response.json();
+    if (componentTrial) {
+      byId("components-mode").hidden = false;
+      document.querySelector('input[value="components"]').checked = true;
+      annotations.checked = true;
+      byId("trial-link").href = "real-photos.html";
+      byId("trial-link").textContent = "First photo trial";
+      byId("photo-intro").textContent = `Compare the three detectors on ${benchmark.scenes.length} examples from ${benchmark.photoCount} held-out camera views.`;
+      byId("measurement-link").href = "https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-tless-component-measurements.json";
+    }
     for (const [index, scene] of benchmark.scenes.entries()) {
       const button = element("button");
       const thumb = element("img");

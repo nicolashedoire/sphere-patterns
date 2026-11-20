@@ -203,7 +203,9 @@ def main():
     dump = {
         "source": annotations["source"], "target": annotations["target"],
         "protocol": {"visibleFractionAtLeast": VISIBILITY, "boxIoUAtLeast": MIN_IOU,
-                     "primary": "visible boxes", "secondary": "amodal boxes", "negatives": "four full frames without the target"},
+                     "primary": "visible boxes", "secondary": "amodal boxes",
+                     "negatives": ("full frames without the target in the declared scene groups"
+                                   if "split" in annotations else "four full frames without the target")},
         "methods": methods,
     }
     args.output.write_text(json.dumps(dump, indent=2) + "\n", encoding="utf-8")

@@ -15,12 +15,13 @@
     <div class="brand"><span class="brand-mark" aria-hidden="true"></span>Pattern Sphere Lab</div>
     <nav aria-label="Lab navigation" class="photo-links">
       <a href="index.html">Wave simulator</a>
+      <a id="trial-link" href="real-photos.html?trial=components">Depth component trial</a>
       <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/RESEARCH.md">Method and results ↗</a>
     </nav>
   </header>
   <main class="photo-page">
     <h1>Find the part in real photos</h1>
-    <p class="photo-intro">Compare recorded detections for a known mechanical part in four full-frame T-LESS photos.</p>
+    <p id="photo-intro" class="photo-intro">Compare recorded detections for a known mechanical part in full-frame T-LESS photos.</p>
 
     <fieldset class="photo-controls">
       <legend>Overlay</legend>
@@ -28,6 +29,7 @@
         <label><input type="radio" name="layer" value="photo">Photo only</label>
         <label><input type="radio" name="layer" value="rgbd">RGB-D predictions</label>
         <label><input type="radio" name="layer" value="wave" checked>Returning-reference check</label>
+        <label id="components-mode" hidden><input type="radio" name="layer" value="components">Depth components</label>
       </div>
       <label class="photo-check"><input id="annotations" type="checkbox">Show annotations</label>
     </fieldset>
@@ -50,6 +52,7 @@
       <section class="panel photo-readout" aria-labelledby="readout-title">
         <h2 id="readout-title">Returning-reference check</h2>
         <p id="mode-detail" class="photo-muted"></p>
+        <p id="trial-summary" class="photo-muted" hidden></p>
         <p id="summary" class="photo-summary" role="status" aria-atomic="true"></p>
         <ol id="results" class="photo-results"></ol>
         <p id="annotation-note" class="photo-muted" hidden></p>
@@ -61,7 +64,7 @@
       <a href="https://cmp.felk.cvut.cz/t-less/">T-LESS</a>
       (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).
       Images were converted to JPEG. Overlays use the
-      <a href="https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-tless-full-photo-measurements.json">recorded benchmark data</a>.
+      <a id="measurement-link" href="https://github.com/nicolashedoire/sphere-patterns/blob/main/outputs/sphere-tless-full-photo-measurements.json">recorded benchmark data</a>.
     </footer>
   </main>
 </body>

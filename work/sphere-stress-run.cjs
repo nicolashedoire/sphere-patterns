@@ -267,6 +267,13 @@ function compareCached(referenceWave, scene, visibility, locationOnly) {
   return comparator;
 }
 
+function verifyCached(referenceMask, scene, { locationOnly = false } = {}) {
+  const referenceWave = new Float64Array(SPAN);
+  PIXEL_TICKS.forEach((tick, i) => { referenceWave[tick] = referenceMask[i] * C_LEVEL; });
+  const visible = Array(PIXEL_TICKS.length).fill(1);
+  return compareCached(referenceWave, scene, visible, locationOnly).assessments.iou;
+}
+
 function simulate(scene, visibility, disconnected = false, alignedExamples, { locationOnly = false } = {}) {
   const sim = new StressSimulation(visibility, disconnected, !!alignedExamples, locationOnly);
   const { arcs, nodePorts } = sim.network;
@@ -394,4 +401,4 @@ function main() {
 
 if (require.main === module) main();
 
-module.exports = { simulate };
+module.exports = { simulate, verifyCached };

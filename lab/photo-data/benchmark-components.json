@@ -1,0 +1,506 @@
+{
+  "overlapThreshold": 0.5,
+  "visibilityThreshold": 0.2,
+  "photoCount": 30,
+  "totals": {
+    "wave": {
+      "positivePhotos": 12,
+      "rankOneHits": 4,
+      "photosWithAcceptedHit": 1,
+      "eligibleInstances": 33,
+      "hits": 1,
+      "falseAlarms": 1,
+      "ignored": 0,
+      "absentPhotos": 18,
+      "absentPhotosWithAlarm": 1,
+      "bands": {
+        "high": {
+          "photos": 10,
+          "rankOneHits": 4,
+          "eligible": 30,
+          "hits": 1
+        },
+        "partial": {
+          "photos": 2,
+          "rankOneHits": 0,
+          "eligible": 3,
+          "hits": 0
+        }
+      }
+    },
+    "rgbd": {
+      "positivePhotos": 12,
+      "rankOneHits": 8,
+      "photosWithAcceptedHit": 4,
+      "eligibleInstances": 33,
+      "hits": 4,
+      "falseAlarms": 2,
+      "ignored": 0,
+      "absentPhotos": 18,
+      "absentPhotosWithAlarm": 1,
+      "bands": {
+        "high": {
+          "photos": 10,
+          "rankOneHits": 8,
+          "eligible": 30,
+          "hits": 4
+        },
+        "partial": {
+          "photos": 2,
+          "rankOneHits": 0,
+          "eligible": 3,
+          "hits": 0
+        }
+      }
+    },
+    "components": {
+      "positivePhotos": 12,
+      "rankOneHits": 7,
+      "photosWithAcceptedHit": 5,
+      "eligibleInstances": 33,
+      "hits": 5,
+      "falseAlarms": 0,
+      "ignored": 0,
+      "absentPhotos": 18,
+      "absentPhotosWithAlarm": 0,
+      "bands": {
+        "high": {
+          "photos": 10,
+          "rankOneHits": 7,
+          "eligible": 30,
+          "hits": 5
+        },
+        "partial": {
+          "photos": 2,
+          "rankOneHits": 0,
+          "eligible": 3,
+          "hits": 0
+        }
+      }
+    }
+  },
+  "scenes": [
+    {
+      "scene": 7,
+      "frame": 130,
+      "image": "components-07-000130.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [],
+        "components": [
+          {
+            "box": [
+              453,
+              172,
+              56,
+              54
+            ],
+            "score": 0.627384,
+            "accepted": true,
+            "reference": "camera-depth",
+            "result": "hit",
+            "nearestTargetIoU": 0.752988,
+            "targetIndex": 0,
+            "overlap": 0.752988
+          }
+        ]
+      },
+      "targets": [
+        {
+          "box": [
+            453,
+            167,
+            49,
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 20,
+      "frame": 288,
+      "image": "components-20-000288.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [
+          {
+            "box": [
+              192,
+              231,
+              89,
+              103
+            ],
+            "score": 0.677233,
+            "accepted": true,
+            "reference": "train-01-000663",
+            "result": "hit",
+            "nearestTargetIoU": 0.628341,
+            "targetIndex": 5,
+            "overlap": 0.628341
+          }
+        ],
+        "components": [
+          {
+            "box": [
+              328,
+              283,
+              68,
+              58
+            ],
+            "score": 0.622973,
+            "accepted": true,
+            "reference": "camera-depth",
+            "result": "hit",
+            "nearestTargetIoU": 0.615894,
+            "targetIndex": 1,
+            "overlap": 0.615894
+          }
+        ]
+      },
+      "targets": [
+        {
+          "box": [
+            326,
+            266,
+            64,
+            68
+          ]
+        },
+        {
+          "box": [
+            376,
+            257,
+            71,
+            85
+          ]
+        },
+        {
+          "box": [
+            418,
+            222,
+            37,
+            40
+          ]
+        },
+        {
+          "box": [
+            258,
+            261,
+            71,
+            53
+          ]
+        },
+        {
+          "box": [
+            199,
+            238,
+            64,
+            90
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 19,
+      "frame": 291,
+      "image": "components-19-000291.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [
+          {
+            "box": [
+              306,
+              121,
+              89,
+              63
+            ],
+            "score": 0.8857142857142857,
+            "accepted": true,
+            "reference": "train-01-000742",
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null,
+            "overlap": 0
+          }
+        ],
+        "rgbd": [
+          {
+            "box": [
+              306,
+              121,
+              89,
+              63
+            ],
+            "score": 0.664172,
+            "accepted": true,
+            "reference": "train-01-000742",
+            "result": "false-alarm",
+            "nearestTargetIoU": 0,
+            "targetIndex": null,
+            "overlap": 0
+          }
+        ],
+        "components": []
+      },
+      "targets": []
+    },
+    {
+      "scene": 18,
+      "frame": 236,
+      "image": "components-18-000236.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [],
+        "components": []
+      },
+      "targets": [
+        {
+          "box": [
+            249,
+            139,
+            45,
+            64
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 7,
+      "frame": 54,
+      "image": "components-07-000054.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [
+          {
+            "box": [
+              421,
+              133,
+              67,
+              67
+            ],
+            "score": 0.9257425742574258,
+            "accepted": true,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "nearestTargetIoU": 0.600356,
+            "targetIndex": 0,
+            "overlap": 0.600356
+          }
+        ],
+        "rgbd": [
+          {
+            "box": [
+              421,
+              133,
+              67,
+              67
+            ],
+            "score": 0.696822,
+            "accepted": true,
+            "reference": "train-01-000000",
+            "result": "hit",
+            "nearestTargetIoU": 0.600356,
+            "targetIndex": 0,
+            "overlap": 0.600356
+          }
+        ],
+        "components": [
+          {
+            "box": [
+              423,
+              138,
+              56,
+              52
+            ],
+            "score": 0.639812,
+            "accepted": true,
+            "reference": "camera-depth",
+            "result": "hit",
+            "nearestTargetIoU": 0.832952,
+            "targetIndex": 0,
+            "overlap": 0.832952
+          }
+        ]
+      },
+      "targets": [
+        {
+          "box": [
+            427,
+            136,
+            49,
+            55
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 7,
+      "frame": 185,
+      "image": "components-07-000185.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [],
+        "components": [
+          {
+            "box": [
+              284,
+              132,
+              54,
+              46
+            ],
+            "score": 0.607778,
+            "accepted": true,
+            "reference": "world-height",
+            "result": "hit",
+            "nearestTargetIoU": 0.582278,
+            "targetIndex": 0,
+            "overlap": 0.582278
+          }
+        ]
+      },
+      "targets": [
+        {
+          "box": [
+            286,
+            130,
+            46,
+            71
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 7,
+      "frame": 285,
+      "image": "components-07-000285.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [],
+        "components": [
+          {
+            "box": [
+              464,
+              261,
+              62,
+              52
+            ],
+            "score": 0.609908,
+            "accepted": true,
+            "reference": "world-height",
+            "result": "hit",
+            "nearestTargetIoU": 0.571429,
+            "targetIndex": 0,
+            "overlap": 0.571429
+          }
+        ]
+      },
+      "targets": [
+        {
+          "box": [
+            466,
+            259,
+            52,
+            81
+          ]
+        }
+      ]
+    },
+    {
+      "scene": 20,
+      "frame": 339,
+      "image": "components-20-000339.jpg",
+      "width": 720,
+      "height": 540,
+      "detections": {
+        "wave": [],
+        "rgbd": [
+          {
+            "box": [
+              404,
+              254,
+              93,
+              109
+            ],
+            "score": 0.675407,
+            "accepted": true,
+            "reference": "train-01-000720",
+            "result": "hit",
+            "nearestTargetIoU": 0.65325,
+            "targetIndex": 5,
+            "overlap": 0.65325
+          },
+          {
+            "box": [
+              230,
+              252,
+              105,
+              105
+            ],
+            "score": 0.67325,
+            "accepted": true,
+            "reference": "train-01-000688",
+            "result": "false-alarm",
+            "nearestTargetIoU": 0.173651,
+            "targetIndex": null,
+            "overlap": 0.173651
+          }
+        ],
+        "components": []
+      },
+      "targets": [
+        {
+          "box": [
+            276,
+            315,
+            97,
+            59
+          ]
+        },
+        {
+          "box": [
+            398,
+            217,
+            77,
+            53
+          ]
+        },
+        {
+          "box": [
+            400,
+            196,
+            35,
+            50
+          ]
+        },
+        {
+          "box": [
+            239,
+            235,
+            48,
+            34
+          ]
+        },
+        {
+          "box": [
+            417,
+            267,
+            77,
+            86
+          ]
+        }
+      ]
+    }
+  ]
+}

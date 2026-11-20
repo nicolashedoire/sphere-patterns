@@ -34,6 +34,7 @@
   background: #2a2446;
   color: #f4efff;
 }
+.photo-layer label[hidden] { display: none; }
 .photo-layer input, .photo-check input { accent-color: var(--photo-accepted); }
 .photo-layer input { margin: 0; }
 .photo-check { display: flex; align-items: center; gap: .45rem; min-height: 2.5rem; font-size: .82rem; cursor: pointer; }

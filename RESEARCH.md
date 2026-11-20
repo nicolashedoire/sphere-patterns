@@ -71,3 +71,49 @@ For the wave check, the front end supplies a 25 × 25 measured depth-support ras
 The highest-scoring correct window produces **193 pulses at the probe** with the return connected and zero after disconnection. Directly providing the cached reference reproduces both comparator policies. This isolates how the recognition rule and the returning signal contribute to the result. [Interactive photo inspection](https://nicolashedoire.github.io/sphere-patterns/real-photos.html) · [Photo panel](outputs/sphere-tless-full-photo-result.png) · [Detection measurements](outputs/sphere-tless-full-photo-measurements.json) · [Wave comparison](outputs/sphere-tless-wave-measurements.json)
 
 Run `bash scripts/replay-photos.sh` with Node.js 24, Python with Pillow 12, NumPy and SciPy, and curl. It downloads the specific frames and regenerates the full evaluation. Pass a prepared panel directory as the first argument to reuse it. The photos and probe fixtures are derived from the same pinned T-LESS archives and CC BY 4.0 source credited above.
+
+## Depth components on held-out views
+
+We added a geometric front end for a calibrated RGB-D camera. It makes several cuts through the depth image in millimeters, groups connected surfaces, and ranks regions by the measured dimensions of the target. The verifier checks each region against 24 isolated views of the target and 16 isolated views of four similar parts. It compares surface relief, the depth step across the outline, and the direction of interior image edges. Both stages use the full camera frame. They run outside the wave simulator.
+
+The confirmation panel contains **30 previously unused Primesense views**. Twelve views come from three physical setups containing object 1 (scenes 07, 18, and 20), and 18 views come from six setups without it. The photos show new viewpoints of setups used in earlier tests. The detector receives color, depth, intrinsics, and the camera's pose relative to the work surface. Frame selection uses annotation presence and visibility for stratification. The evaluator reads the target boxes after inference and applies one-to-one visible-box IoU ≥ 0.50 with visibility ≥ 0.20. The 33 eligible instances count repeated sightings across views.
+
+| Pipeline on the same 30 views | Correct / 33 | False boxes | Target-absent views with an alarm / 18 |
+| --- | ---: | ---: | ---: |
+| Original RGB-D + returning-reference check | 1 | 1 | 1 |
+| Original RGB-D | 4 | 2 | 1 |
+| **Depth components + reference check** | **5** | **0** | **0** |
+
+The five matches are spread across five views. Four are in scene 07, and one is in scene 20. Zero of the three eligible instances in the partial-visibility band were detected. The amodal-box evaluation gives the same counts. The predeclared comparison required at least two additional matches over the published wave cascade, matches in at least two physical setups, and no increase in false boxes or target-absent views with an alarm. This result meets that comparison for this part and camera. [Interactive photo comparison](https://nicolashedoire.github.io/sphere-patterns/real-photos.html?trial=components) · [All predictions and matches](outputs/sphere-tless-component-measurements.json)
+
+A diagnostic replay gave the same reference check and cutoff to the original RGB-D proposals. It produced 8 matches and 3 false boxes. On the final panel, the top 15 component proposals cover 14 eligible instances before verification, while the original top five cover 12. At an equal five-proposal budget the component shortlist covers 9. The measured gain at the chosen operating point is jointly attributable to proposal generation and verification. Most eligible targets are still missed, especially in clutter. The setup also assumes a measured depth map and a calibrated work surface.
+
+### Earlier trials and selection of the cutoff
+
+We used 24 development views across seven setups for iteration. The first held-out trial compared a single-view CAD filter with the published wave check. The CAD filter gave 2 matches and 1 false box versus 1 match and 0 false boxes for the wave check, both CAD matches in one setup. The second trial projected a CAD hypothesis through multiple calibrated views. It yielded 6 matches and 0 false boxes in development, then accepted no boxes on 30 held-out views. Reviewing the failed predictions showed genuine target overlaps with weak margins over competing geometry. Some competing false hypotheses overlapped fragments of larger assemblies.
+
+On the third 30-photo trial, the component detector at its development threshold of 0.587722 gave 7 matches and 2 false boxes. The wave check gave 2 matches and 0 false boxes there. An alternate competitor penalty gave 6 matches and 4 false boxes. For the fourth trial we froze the original reference scoring rule at 0.60, the next hundredth above the third panel's highest false score (0.594272), before running it on the new photos. Each holdout used distinct frame IDs. These sequential trials use the same sensor and reuse physical setups, so scene-level transfer remains to be measured. [CAD trial code](work/tless-cad/) · [Depth-component detector](work/tless-components/)
+
+### Reproduce the confirmation
+
+Run the following from the repository root with Python, NumPy, SciPy, Pillow 12, Node.js 24, Bash, and curl. The fetcher reads only the required entries from the pinned archive. The final replay writes per-method results plus a figure. It uses the cached wave comparator for the original cascade, verified against the actual returning-wave run on all ten candidates from the earlier published experiment.
+
+```sh
+data=$(mktemp -d)
+python3 work/tless-components/fetch_references.py "$data/refs"
+python3 work/sphere-tless-multiview-fetch.py "$data/panel-1"
+python3 work/sphere-tless-multiview-fetch.py "$data/panel-2" \
+  --confirmation-after "$data/panel-1/heldout.json"
+python3 work/sphere-tless-multiview-fetch.py "$data/panel-3" \
+  --confirmation-after "$data/panel-1/heldout.json" \
+  --confirmation-after "$data/panel-2/confirmation.json"
+python3 work/sphere-tless-multiview-fetch.py "$data/panel-4" \
+  --confirmation-after "$data/panel-1/heldout.json" \
+  --confirmation-after "$data/panel-2/confirmation.json" \
+  --confirmation-after "$data/panel-3/confirmation.json"
+bash scripts/replay-components.sh "$data/refs" "$data/panel-4/confirmation.json" \
+  "$data/panel-4/confirmation-truth.json" "$data/result"
+cmp "$data/result/evaluation.json" outputs/sphere-tless-component-measurements.json
+```
+
+Photos and CAD data are from the T-LESS authors under CC BY 4.0. Gallery photos were converted to JPEG. The figure also resizes photos and adds overlays. [T-LESS project and attribution](https://cmp.felk.cvut.cz/t-less/)
